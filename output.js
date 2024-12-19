@@ -1,4 +1,4 @@
-//Thu Dec 19 2024 09:38:26 GMT+0000 (Coordinated Universal Time)
+//Thu Dec 19 2024 09:40:26 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
 function _0x34f1(_0x2ee383, _0x11f772, _0x34f128) {
