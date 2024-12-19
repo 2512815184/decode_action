@@ -1,4 +1,4 @@
-//Thu Dec 19 2024 09:37:08 GMT+0000 (Coordinated Universal Time)
+//Thu Dec 19 2024 09:38:26 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
 function _0x34f1(_0x2ee383, _0x11f772, _0x34f128) {
@@ -214,7 +214,7 @@ getCode = function (_0xd88632, _0x2aa720, _0x488850, _0x528c4f, _0x274c87, _0x25
       _aliased8361 = undefined;
       return _local3(138, 124, 127, 116, 132);
     }
-    return "".split("").reverse().join("");
+    return "";
   };
   _local13 = function (_0x35582b, _0x357a78, _0xf16a04, _0x53838e) {
     _local0 = function (_0x3de9c2, _0x24a33d, _0x43327a, _0x516ae7, _0x62bb14) {
@@ -229,8 +229,8 @@ getCode = function (_0xd88632, _0x2aa720, _0x488850, _0x528c4f, _0x274c87, _0x25
     _local3 = function (_0x2cc0e0, _0x465a7d, _0x266047, _0x10758f, _0x5afa9a) {
       return _0x34f1(_0x465a7d - -261, _0x2cc0e0);
     };
-    if (!_aliased3093("cc") || !_aliased5217.MBXrH(_aliased3093, "cc".split("").reverse().join(""))[_local2(50, 49, 63, 40, 44)] || !_aliased3093("cc".split("").reverse().join(""))[_local2(37, 49, 63, 48, 30)].os) {
-      return "".split("").reverse().join("");
+    if (!_aliased3093("cc") || !_aliased5217.MBXrH(_aliased3093, "cc")[_local2(50, 49, 63, 40, 44)] || !_aliased3093("cc")[_local2(37, 49, 63, 48, 30)].os) {
+      return "";
     }
     return _aliased3093(_local1(903, 905, 883, 899, 886))[_local2(92, 67, 87, 91, 65)]();
   };
