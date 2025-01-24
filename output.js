@@ -1,3 +1,6 @@
+//Fri Jan 24 2025 03:19:07 GMT+0000 (Coordinated Universal Time)
+//Base:https://github.com/echo094/decode-js
+//Modify:https://github.com/smallfawn/decode_action
 //Fri Jan 24 2025 03:12:12 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
@@ -130,6 +133,7 @@ function _0x4b99(_0x4afcf, _0x4cf999) {
 }(12096, 931940, _0x593c, 191), _0x593c) && (_0xod0 = 191);
 (function () {
   "use strict";
+
   const _0x441b27 = _0x4b99;
   const _0x4c850d = {
     eLbYW: function (_0xa12ae1) {
@@ -687,7 +691,7 @@ function _0x4b99(_0x4afcf, _0x4cf999) {
   _0xc045f8[_0x441b27(1431, "U&Je")][_0x441b27(1388, ")vt2")] = _0x4c850d[_0x441b27(972, "z)f1")];
   _0xc045f8[_0x441b27(1492, "BvLv")][_0x441b27(1191, ")j)c")] = _0x4c850d[_0x441b27(930, "Vf@1")];
   _0xc045f8[_0x441b27(637, "4ahx")][_0x441b27(1455, "16TR")] = _0x4c850d[_0x441b27(1331, "&&48")];
-  _0xc045f8[_0x441b27(1377, ")j)c")] = "猪咪";
+  _0xc045f8[_0x441b27(1377, ")j)c")] = "\u732A\u54AA";
   document[_0x441b27(1370, "AFCf")][_0x441b27(944, "V9BT")](_0xc045f8);
   _0xc045f8[_0x441b27(830, "BvLv")](_0x4c850d[_0x441b27(906, "7Fp$")], _0x580a3b => {
     const _0x2cf52d = _0x441b27;
@@ -1465,7 +1469,7 @@ function _0x4b99(_0x4afcf, _0x4cf999) {
           const _0x18b087 = _0x5ce4d2;
           if (_0x132447[_0x18b087(485, "h0fe")](_0x132447[_0x18b087(838, "&&48")], _0x132447[_0x18b087(885, "BvLv")])) {
             const _0x260d82 = _0xe883a ? _0x18b087(1213, "z)f1") + _0xe883a : "";
-            if (_0x132447[_0x18b087(791, "hJ5[")](_0x68c966[_0x18b087(1402, "gEOv")], "值")) {
+            if (_0x132447[_0x18b087(791, "hJ5[")](_0x68c966[_0x18b087(1402, "gEOv")], "\u503C")) {
               if (_0x132447[_0x18b087(1321, "16TR")](_0x132447[_0x18b087(729, "h0fe")], _0x132447[_0x18b087(1171, "gEOv")])) {
                 {
                   if (_0x132447[_0x18b087(873, "RsSU")](tv[_0x18b087(704, "tFZU")][_0x18b087(1039, "&&48")][_0x18b087(1016, "oGS*")][_0x132447[_0x18b087(1249, "XV9M")](_0x1a6eda, 1)], undefined) && _0x132447[_0x18b087(915, "KqBw")](tv[_0x18b087(1261, "#Kg!")][_0x18b087(1480, "AFCf")][_0x18b087(626, "zHI4")][_0x132447[_0x18b087(612, "hJ5[")](_0x1a6eda, 1)], null)) {
@@ -1492,7 +1496,7 @@ function _0x4b99(_0x4afcf, _0x4cf999) {
         };
         if (_0x132447[_0x4522cf(590, "D%LF")](_0x132447[_0x4522cf(1177, "AFCf")], _0x132447[_0x4522cf(1043, "KqBw")])) {
           const _0x2d0d1b = _0x291987 ? _0x4522cf(557, "zHI4") + _0x291987 : "";
-          if (_0x132447[_0x4522cf(567, "73tN")](_0x68c966[_0x4522cf(1345, "Upk5")], "值")) {
+          if (_0x132447[_0x4522cf(567, "73tN")](_0x68c966[_0x4522cf(1345, "Upk5")], "\u503C")) {
             {
               if (_0x132447[_0x4522cf(1496, "Wznp")](tv[_0x4522cf(1393, "RX9!")][_0x4522cf(1414, "B9A$")][_0x4522cf(703, "XV9M")][_0x132447[_0x4522cf(499, "Vf@1")](_0x45b7f6, 1)], undefined) && _0x132447[_0x4522cf(1211, "xS0o")](tv[_0x4522cf(1461, "xS0o")][_0x4522cf(903, "AFCf")][_0x4522cf(1140, "@9NG")][_0x132447[_0x4522cf(588, "gEOv")](_0x45b7f6, 1)], null)) {
                 let _0x4994c4 = _0x132447[_0x4522cf(652, "U&Je")](tv[_0x4522cf(1000, "EhI0")][_0x4522cf(1209, "Hj0f")][_0x4522cf(477, "lW^%")][_0x132447[_0x4522cf(1170, "KqBw")](_0x45b7f6, 1)], GloableData[_0x4522cf(1225, "UoYy")][_0x4522cf(460, "z)f1")]);
