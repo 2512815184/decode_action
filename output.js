@@ -1,1614 +1,2631 @@
-//Tue Mar 18 2025 14:03:02 GMT+0000 (Coordinated Universal Time)
+//Mon Aug 25 2025 11:11:16 GMT+0000 (Coordinated Universal Time)
 //Base:https://github.com/echo094/decode-js
 //Modify:https://github.com/smallfawn/decode_action
-!function (_0x57c7e5, _0x32f6e8) {
-  "object" == typeof exports && "undefined" != typeof module ? _0x32f6e8(exports) : "function" == typeof define && define.amd ? define(["exports"], _0x32f6e8) : _0x32f6e8(_0x57c7e5.aerosmith = {});
-}(this, function (_0x3a4f59) {
-  "use strict";
+const {
+  use_legacy_floaty_conf: drp_AdA_lovElAce,
+  use_minimal_floaty_conf: drp_ScRipt_KiDdo
+} = hamibot.env;
+var drp_DeMoscEnE;
+var drp_DiStinCtIon;
+var drp_CoMputEr_Science;
+var drp_PaDdinGtOn;
+if (drp_AdA_lovElAce) {
+  drp_DeMoscEnE = floaty.window("\n                <vertical id=\"main_window\" bg=\"#000000\" alpha=\"0.9\" w=\"100\">\n                    <text id=\"title\" text=\"Dr. PopMart\" gravity=\"center\" textColor=\"#66ccff\" textStyle=\"bold\" />\n                    <horizontal>\n                        <button id=\"start\" text=\"运行\" bg=\"#00FFFF\" w=\"100\" visibility=\"visible\" />\n                        <button id=\"end\" text=\"停止\" bg=\"#FF0000\" w=\"100\" visibility=\"gone\" />\n                    </horizontal>\n                    <button text=\"\" bg=\"#111111\" w=\"50\" h=\"10\" />\n                    <horizontal>\n                        <button id=\"type_settings\" text=\"方式\" bg=\"#66ccff\" w=\"50\" h=\"40\" />\n                        <button id=\"number_settings\" text=\"数量\" bg=\"#f0ff0f\" w=\"50\" h=\"40\" />\n                    </horizontal>\n                    <button text=\"\" bg=\"#111111\" w=\"50\" h=\"10\" />\n                    <horizontal>\n                        <button id=\"move_start\" text=\"移动\" bg=\"#f0ff0f\" w=\"100\" h=\"40\" visibility=\"visible\" />\n                        <button id=\"move_end\" text=\"固定\" bg=\"#00FFFF\" w=\"100\" h=\"40\" visibility=\"gone\" />\n                    </horizontal>\n                </vertical>\n                ");
+} else {
+  drp_ScRipt_KiDdo ? drp_DiStinCtIon = floaty.rawWindow("<frame>\n                    <img id=\"drag\" src=\"@drawable/ic_launcher\" circle=\"true\" tint=\"#66ccff\" bg=\"#00000000\" padding=\"2\" w=\"75\" h=\"75\" />\n                    <text id=\"text_status\" text=\"启动\" textColor=\"#FFFFFF\" textSize=\"14sp\" layout_gravity=\"center\" gravity=\"center\" bg=\"#00000000\" />\n                </frame>") : drp_CoMputEr_Science = floaty.window("<vertical id=\"main_window\" bg=\"#000000\" alpha=\"0.9\" w=\"100\">\n                    <text id=\"title\" text=\"Dr. PopMart\" gravity=\"center\" textColor=\"#66ccff\" textStyle=\"bold\" />\n                    <horizontal>\n                        <button id=\"start\" text=\"运行\" bg=\"#00FFFF\" w=\"100\" visibility=\"visible\" />\n                        <button id=\"end\" text=\"停止\" bg=\"#FF0000\" w=\"100\" visibility=\"gone\" />\n                    </horizontal>\n                    <button text=\"\" bg=\"#111111\" w=\"50\" h=\"3\" />\n                    <horizontal>\n                        <button id=\"config_settings\" text=\"配置\" bg=\"#66ccff\" w=\"100\" h=\"40\" />\n                    </horizontal>\n                    <button text=\"\" bg=\"#111111\" w=\"50\" h=\"3\" />\n                    <horizontal>\n                        <button id=\"move_start\" text=\"移动\" bg=\"#f0ff0f\" w=\"100\" h=\"40\" visibility=\"visible\" />\n                        <button id=\"move_end\" text=\"固定\" bg=\"#00FFFF\" w=\"100\" h=\"40\" visibility=\"gone\" />\n                    </horizontal>\n                </vertical>");
+}
+drp_PaDdinGtOn = floaty.rawWindow("<vertical id=\"config_main\" bg=\"#000000\" alpha=\"0.95\" padding=\"10\" w=\"1px\" h=\"1px\">\n                <text text=\"⚙️ 临时配置设置\" gravity=\"center\" textColor=\"#66ccff\" textStyle=\"bold\" textSize=\"18\" />\n                <button text=\"关闭\" id=\"close_config\" bg=\"#F44336\" w=\"*\" h=\"40\" margin=\"0 10\" />\n                <button text=\"本地配置预设\" id=\"preset_config\" bg=\"#FFD700\" w=\"*\" h=\"40\" />\n                <button text=\"\" bg=\"#111111\" w=\"10\" h=\"10\" />\n                <scroll>\n                    <vertical>\n                        <button id=\"delivery_type_config\" text=\"\" bg=\"#66ccff\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"delivery_number_config\" text=\"\" bg=\"#66ccff\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"specs_config\" text=\"\" bg=\"#66ccff\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"extra_selection_regex_config\" text=\"\" bg=\"#66ccff\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"10\" h=\"10\" />\n\n                        <button id=\"refresh_delay_config\" text=\"\" bg=\"#4CAF50\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"enable_random_delay_config\" text=\"\" bg=\"#4CAF50\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"random_delay_lower_config\" text=\"\" bg=\"#4CAF50\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"random_delay_upper_config\" text=\"\" bg=\"#4CAF50\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"max_refresh_time_config\" text=\"\" bg=\"#4CAF50\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"rage_stock_refresh_config\" text=\"\" bg=\"#4CAF50\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"payment_password_config\" text=\"\" bg=\"#4CAF50\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"10\" h=\"10\" />\n\n\n                        <button id=\"extra_delay_config\" text=\"\" bg=\"#2196F3\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"ack_delay_config\" text=\"\" bg=\"#2196F3\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button text=\"\" bg=\"#111111\" w=\"10\" h=\"10\" />\n\n                        <button id=\"ignore_ack_config\" text=\"\" bg=\"#E91E63\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"special_confirm_delay_config\" text=\"\" bg=\"#E91E63\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"ignore_ack_click_delay_config\" text=\"\" bg=\"#E91E63\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"shield_breaker_mode_config\" text=\"\" bg=\"#E91E63\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"ignore_ack_panic_timer_config\" text=\"\" bg=\"#E91E63\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"panic_timer_config\" text=\"\" bg=\"#E91E63\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"10\" h=\"10\" />\n                        \n\n                        <button id=\"vibrate_time_config\" text=\"\" bg=\"#3F51B5\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"main_window_alpha_config\" text=\"\" bg=\"#3F51B5\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"auto_click_notification_config\" text=\"\" bg=\"#3F51B5\" w=\"*\" h=\"50\" />\n                        <button text=\"\" bg=\"#111111\" w=\"*\" h=\"5\" />\n                        <button id=\"reset_floaty_position_config\" text=\"\" bg=\"#3F51B5\" w=\"*\" h=\"50\" />\n                    </vertical>\n                </scroll>\n            </vertical>");
+var drp_mINd_thE_gAp = "Ada lovelace";
+var drp_dARk_soUlS = "See it, say it, sorted.";
+var drp_cOMputEr_Science = "King's Cross";
+var drp_aDA_lovElAce;
+var drp_dIStinCtIon;
+var drp_tENsorFlOw;
+var drp_pADdinGtOn;
+var drp_sCRipt_KiDdo;
+var drp_dEMoscEnE;
+var drp_nOTtinGhAm;
+var drp_DIStinCtIon = "Never Settle.";
+var drp_DIStinCtIon = "lGTW1pMWlUUXVKTWJGZ1Y0aFF2ZllreUdIYnJaL2pJbFYwMFBncmdnUUVYZEJNNjdICkRUYWpqczVUSGJ4eTNIMENCU0pGNVI2WXBTdk9Ed25GeDBOdjN3T2R1TVDMzFQNm2JmeVZadnpRT2JuWGd1V3ptUEVxTE9PZ3lqd05mZWEwQW8zU295S2YxU3FoRW1YQ3ZwZHRDbkJJam9jTUZPNk9QR1VUVGE2Q1AgUT54dH4gRFpIUk9zdU5GTk5vSzluV08hdko4aTFpVFF1Sk1iRmdWNGhRdmZZa3lHSGJyWi9qSWxWMDBQZ3JnZ1FFWGRCTTY3SApEVGFqanM1VEhieHkzSDBDQlNKRjVSNllwU3ZPRHduRngwTnYzd09kdUwvTFlLMXJrN0RB" + drp_DIStinCtIon;
+var drp_PADdinGtOn = "Practice makes perfect.";
+drp_PADdinGtOn = "47cf4380-5bda-40a3-9ab3-74e0cdd5b079";
+function drp_COMputEr_Science(pADdInGtOn, mINd_ThE_gAp) {
+  var pADdInGtOn = pADdInGtOn + 10000;
+  drp_aDA_lovElAce = hamibot;
+  drp_dIStinCtIon = hamibot;
+  drp_tENsorFlOw = drp_dIStinCtIon.exit;
+  drp_dEMoscEnE = exit;
+  drp_nOTtinGhAm = exit;
+  drp_DIStinCtIon = "VTNwU1ZVMTZSazVWVlZaRVRYcEdVVTV0Y0RGalJrWnNVVlpPYUdScmJ6Uk5helF5WVdwS05WZFhaRFpWTWtwdFpWWmFZV1J1Y0ZKVU1rcDFWMGRrTVZZemNIUlZSVlo0VkVVNVVGb3piSEZrTURWdFdsZEZkMUZYT0hwVk1qazFVekpaZUZVelJtOVNWekZaVVROYWQxcElVa1JpYTBwS1lXMDVhbFJWV2xCT2F6bFJVakZXVlZaSFJUSlJNVUZuVlZRMU5HUklOR2RTUm5CSlZXczVlbVJWTlVkVWF6VjJVM3BzZFZZd09IaGxSelV4VW0xMFZFd3hXWEpVUm14SFZGY3hjRTFYYkZWVldGWkxWRmRLUjFveFdUQmhSa1l5V214c2NtVlZaRWxaYmtwaFRESndTbUpHV1hkTlJrSnVZMjFrYmxWVlZsbGFSVXBPVG1wa1NVTnJVbFZaVjNCeFkzcFdWVk5IU2pSbFZFNUpUVVZPUTFVd2NFZE9Wa2t5VjFoQ1ZHUnJPVVZrTWpWSFpVUkNUMlJxVGpOVU1sSXhWRU01VFZkVmMzaGpiWE16VWtWRlBRPT0=";
+  drp_PADdinGtOn = "42f93ddc-1c6f-40fc-82d7-5578a4596cd7";
+}
+for (let drp_PADdInGtOn = 0; drp_PADdInGtOn < 5; drp_PADdInGtOn++) {
+  drp_COMputEr_Science(drp_PADdInGtOn, auto);
+}
+auto.waitFor();
+console.error("[无障碍] 状态正常");
+function drp_DARk_soUlS() {
+  drp_pADdinGtOn = drp_aDA_lovElAce.env;
+  drp_sCRipt_KiDdo = drp_pADdinGtOn;
+  drp_DIStinCtIon = "U3pSVU16Rk5VVVZETXpGUU5tcDFjRkZsUVZOaGRrbzRNazQyYWpKNVdXZDZVMkptZVZaYWRucFJUMkp1V0dkMVYzcHRVRVZ4VEU5UFozbHFkMDVtWldFd1FXOHpVMjk1UzJZeFUzRm9SVzFZUTNad1pIUkRia0pKYW05alRVWlBOazlRUjFWVVZHRTJRMUFnVVQ1NGRINGdSRnBJVWs5emRVNUdUazV2U3psdVYwOHhlRzUxUm10VEwxWXJURmxHVFcxcE1XbFVVWFZLVFdKR1oxWTBhRkYyWmxscmVVZElZbkphTDJwSmJGWXdNRkJuY21kblVVVllaRUpOTmpkSUNrUlVZV3BxY3pWVVNHSjRlVE5JTUVOQ1UwcEdOVkkyV1hCVGRrOUVkMjVHZURCT2RqTjNUMlIxVEM5TVdVc3hjbXMzUkVFPQ==";
+  drp_PADdinGtOn = "d2143c10-f1e5-4fe1-8055-0d07a77b63da";
+}
+drp_DARk_soUlS();
+const {
+  delivery: drp_MINd_thE_gAp,
+  specs_conf: drp_TENsorFlOw,
+  purchase_count_conf: drp_DEMoscEnE,
+  type_conf: drp_ADA_lovElAce,
+  extra_delay_conf: drp_SCRipt_KiDdo,
+  delay_conf: drp_NOTtinGhAm,
+  enable_random_delay_conf: drp_minD_thE_gAp,
+  random_delay_lower_conf: drp_disTinCtIon,
+  random_delay_upper_conf: drp_padDinGtOn,
+  max_refresh_time_conf: drp_comPutEr_Science,
+  auto_click_notification_conf: drp_darK_soUlS,
+  click_new_notification_conf: drp_notTinGhAm,
+  hide_console_conf: drp_tenSorFlOw,
+  disable_click: drp_ada_LovElAce,
+  ack_delay_conf: drp_scrIpt_KiDdo,
+  debug_mode_conf: drp_demOscEnE,
+  ignore_ack_conf: drp_MinD_thE_gAp,
+  main_window_alpha_conf: drp_DisTinCtIon,
+  reset_floaty_position_conf: drp_PadDinGtOn,
+  ignore_ack_click_delay_conf: drp_NotTinGhAm,
+  sku_result_toast_conf: drp_DarK_soUlS,
+  rage_stock_refresh_conf: drp_ComPutEr_Science,
+  vibrate_time_conf: drp_Ada_LovElAce,
+  special_confirm_delay_conf: drp_ScrIpt_KiDdo,
+  special_click_confirm_conf: drp_DemOscEnE,
+  extra_selection_regex_conf: drp_TenSorFlOw,
+  payment_password_conf: drp_pAdDinGtOn,
+  shield_breaker_mode_conf: drp_tEnSorFlOw,
+  panic_timer_conf: drp_sCrIpt_KiDdo,
+  ignore_ack_panic_timer_conf: drp_nOtTinGhAm,
+  keep_screen_on_conf: drp_mInD_thE_gAp,
+  run_on_boot_conf: drp_dEmOscEnE,
+  notification_based_control_conf: drp_aDa_LovElAce,
+  monitored_titles_conf: drp_dIsTinCtIon
+} = drp_pADdinGtOn;
+const {
+  onFreeTrial: drp_dArK_soUlS
+} = drp_aDA_lovElAce.plan;
+var drp_cOmPutEr_Science = drp_dArK_soUlS;
+const drp_NOtTinGhAm = new Date(drp_pADdinGtOn.TIMESTAMP);
+const drp_PAdDinGtOn = new Date();
+const drp_DEmOscEnE = Math.abs(drp_PAdDinGtOn - drp_NOtTinGhAm);
+const drp_COmPutEr_Science = 60000;
+var drp_mINd_thE_gAp;
+var drp_dARk_soUlS;
+var drp_cOMputEr_Science;
+drp_DEmOscEnE > drp_COmPutEr_Science ? (sleep(4000), exit()) : (drp_mINd_thE_gAp = drp_aDA_lovElAce.scriptId, drp_dARk_soUlS = drp_aDA_lovElAce.scriptName, drp_cOMputEr_Science = drp_aDA_lovElAce.plan.name, drp_PADdinGtOn = "2507cf26-ae50-4db9-8bd7-215be2663501");
+function drp_SCrIpt_KiDdo() {
+  drp_sCRipt_KiDdo = drp_pADdinGtOn.JWT_TOKEN;
+  drp_PADdinGtOn = "57901f92-ae0f-41d1-aabd-8e7a4d3200cd";
+  return drp_sCRipt_KiDdo + drp_mINd_thE_gAp + drp_cOMputEr_Science;
+}
+var drp_MInD_thE_gAp;
+var drp_DArK_soUlS;
+var drp_DIsTinCtIon;
+drp_sCRipt_KiDdo = drp_mINd_thE_gAp;
+drp_sCRipt_KiDdo = drp_mINd_thE_gAp + drp_cOMputEr_Science;
+drp_MInD_thE_gAp = drp_SCrIpt_KiDdo();
+drp_DArK_soUlS = http;
+drp_DIsTinCtIon = http.get;
+drp_DIStinCtIon = "N0lRcHJuVDdyNXlMZkpId01Ub1RERWZaaGFUNEhXTGtKc2xYRUJYNWFMVkQ0ckpxTUZEdTRNTGV2N3FOcFRWck9HMnBtb2hyV1hWekFBbmxRWFhtSDdmNGFLZjNLZ2RUQ0V6c2A5SnU7OCxQPiQxVz83QT5XLzdmMTJxb2ZaOXd1K280dVliSGxpdnExRWxlY053Qk5YelIwazZRejBrbjdUYS9CMm9SNklZRkNIczlmRkxkUk8wWmlRMG5JK2dnCmYxSzQ4QlZkZUh1MENyd3E3Z1RZdEd4TWxJWU1zZmNqQk1JWU5ySmR1V2hPMy95aVZkdUI=";
+!drp_pADdinGtOn.JWT_TOKEN ? drp_nOTtinGhAm() : drp_DIStinCtIon = base64.decode(drp_DIStinCtIon);
+!drp_tenSorFlOw && console.show();
+var drp_ADa_LovElAce = 0;
+var drp_TEnSorFlOw = drp_MINd_thE_gAp || "到店取";
+var drp_paDDinGtOn = parseInt(drp_DEMoscEnE) || 1;
+var drp_miND_thE_gAp = drp_TENsorFlOw || "单个";
+var drp_scRIpt_KiDdo = parseInt(drp_NOTtinGhAm) || 300;
+var drp_adA_LovElAce = parseInt(drp_SCRipt_KiDdo) || 0;
+var drp_daRK_soUlS = parseFloat(drp_comPutEr_Science) || 0;
+var drp_coMPutEr_Science = parseInt(drp_scrIpt_KiDdo) || 0;
+var drp_teNSorFlOw = drp_darK_soUlS || false;
+var drp_deMOscEnE = Math.max(parseInt(drp_disTinCtIon) || 10, 1);
+var drp_noTTinGhAm = Math.max(parseInt(drp_padDinGtOn) || 150, 1);
+var drp_diSTinCtIon = Math.min(Math.max(parseFloat(drp_DisTinCtIon) || 0.9, 0), 1);
+var drp_AdA_LovElAce = parseInt(drp_NotTinGhAm) || 200;
+var drp_NoTTinGhAm = 0;
+var drp_ScRIpt_KiDdo = 0;
+var drp_DaRK_soUlS = Date.now();
+var drp_MiND_thE_gAp = parseInt(drp_Ada_LovElAce) || 3000;
+var drp_PaDDinGtOn = parseInt(drp_ScrIpt_KiDdo) || 1750;
+var drp_TeNSorFlOw = drp_PadDinGtOn || false;
+var drp_CoMPutEr_Science = drp_minD_thE_gAp || false;
+var drp_DeMOscEnE = drp_MinD_thE_gAp || false;
+var drp_mIND_thE_gAp = drp_AdA_lovElAce || false;
+var drp_dEMOscEnE = drp_ScRipt_KiDdo || false;
+var drp_sCRIpt_KiDdo = drp_notTinGhAm || false;
+var drp_tENSorFlOw = drp_ComPutEr_Science || false;
+var drp_pADDinGtOn = drp_DemOscEnE || false;
+var drp_dISTinCtIon = drp_TenSorFlOw || "";
+var drp_nOTTinGhAm = drp_pAdDinGtOn || "";
+var drp_cOMPutEr_Science = false;
+var drp_dARK_soUlS = drp_tEnSorFlOw || false;
+var drp_aDA_LovElAce = drp_sCrIpt_KiDdo || 0;
+var drp_DARK_soUlS = drp_nOtTinGhAm || 0;
+var drp_SCRIpt_KiDdo = drp_mInD_thE_gAp || false;
+var drp_TENSorFlOw = drp_dEmOscEnE || false;
+var drp_COMPutEr_Science = drp_aDa_LovElAce || false;
+var drp_MIND_thE_gAp = drp_dIsTinCtIon || "";
+drp_MIND_thE_gAp = drp_MIND_thE_gAp.split(/[,，]/);
+if (drp_COMPutEr_Science) {
+  try {
+    events.observeNotification();
+    console.error("[控制] 正在监听微信消息通知");
+    console.error("[控制] 正在监控的群组: " + drp_MIND_thE_gAp.join(", "));
+  } catch (drp_DIStInCtIon) {
+    console.error("[控制] 监听微信消息失败，请确认已开启hamibot的通知读取权限");
+  }
+}
+drp_TENSorFlOw && console.info("[提示] 脚本已设置为开机自启动");
+drp_SCRIpt_KiDdo && (device.keepScreenOn(7200000000), console.info("[提示] 屏幕已保持常亮"));
+function drp_PADDinGtOn() {
+  return drp_sCRipt_KiDdo ? 200 : 1210;
+}
+var drp_DISTinCtIon;
+var drp_DEMOscEnE;
+var drp_ADA_LovElAce;
+drp_ADA_LovElAce = "Bear";
+drp_DEMOscEnE = drp_ADA_LovElAce;
+drp_DEMOscEnE = "https://internal.alibaba.com/verify/2507cf26-ae50-4db9-8bd7-215be2663501/response";
+function drp_NOTTinGhAm(TENsOrFlOw, scrIPt_KiDdo, ada_LOvElAce) {
+  let padDInGtOn = TENsOrFlOw.substring(ada_LOvElAce, ada_LOvElAce + 16);
+  let demOScEnE = TENsOrFlOw.substring(ada_LOvElAce + 16);
+  return aes.decrypt(demOScEnE, scrIPt_KiDdo, padDInGtOn);
+}
+function drp_dark_SoUlS() {
+  return drp_NOTTinGhAm(drp_DIStinCtIon, drp_PADdinGtOn, drp_PADDinGtOn() / 2);
+}
+drp_ADA_LovElAce += "er ";
+drp_DEMOscEnE = drp_dark_SoUlS();
+function drp_ada_lOvElAce() {
+  try {
+    drp_DEMOscEnE = base64.decode(drp_DEMOscEnE);
+    let MinD_ThE_gAp = {
+      DarK_SoUlS: drp_ADA_LovElAce + drp_sCRipt_KiDdo
+    };
+    var DemOScEnE = "yRFxy902vYq9Kotiy4bU6LIWIx1TlMc07SKjZNXIeV3wAkXEMhzvwlY9y1ekT6C7dp4rvWSlAnUbAMeFOrXUq87xvFnA4U4ftGg3TRLG0{SV{tEy,:m*PNMHFupL79ugesPUPOHhOw==";
+    var DarK_SoUlS = drp_NOTTinGhAm(DemOScEnE, drp_PADdinGtOn, drp_PADDinGtOn() / 2);
+    var TenSOrFlOw = {
+      headers: MinD_ThE_gAp
+    };
+    let Ada_LOvElAce = drp_DIsTinCtIon(drp_DEMOscEnE, TenSOrFlOw);
+    drp_dArK_soUlS && (drp_cOMPutEr_Science = false);
+    drp_DISTinCtIon = Ada_LOvElAce.statusCode;
+    return drp_DISTinCtIon === drp_PADDinGtOn();
+  } catch (NotTInGhAm) {}
+}
+let drp_distInCtIon = drp_ada_lOvElAce();
+if (!drp_distInCtIon) {
+  drp_PADDinGtOn();
+  drp_tENsorFlOw();
+} else {
+  if (drp_DIsTinCtIon) {
+    let drp_dIsTInCtIon = console;
+  }
+}
+console.info("[欢迎使用] Dr. PopMart 辅助脚本");
+drp_dArK_soUlS ? (console.error("目前为免费试用版, 功能受到限制，如果觉得好用请重新订阅后再次购买!"), console.error("在试用期间, 刷新速度的配置选项将无效, 固定为1000ms(1秒)"), drp_scRIpt_KiDdo = 1000) : (console.error("您目前使用的是本脚本的付费版, 功能将不会受到限制!"), console.error("非常感谢您的支持! 目前脚本将全速运行!"), console.error("有任何问题或功能建议，欢迎您发工单"));
+drp_DISTinCtIon / 2 != 100 && drp_tENsorFlOw();
+if (drp_mIND_thE_gAp) {
+  var drp_nottInGhAm = storages.create("DRP");
+  var drp_compUtEr_Science = drp_DeMoscEnE;
+  drp_compUtEr_Science.main_window.attr("alpha", drp_diSTinCtIon);
+  function drp_dArK_SoUlS() {
+    drp_ADa_LovElAce = 1;
+    drp_compUtEr_Science.end.attr("visibility", "visible");
+    drp_compUtEr_Science.start.attr("visibility", "gone");
+  }
+  function drp_sCrIPt_KiDdo() {
+    drp_ADa_LovElAce = 0;
+    drp_compUtEr_Science.end.attr("visibility", "gone");
+    drp_compUtEr_Science.start.attr("visibility", "visible");
+  }
+  drp_compUtEr_Science.start.click(function () {
+    drp_dArK_SoUlS();
+    console.error("[状态] 辅助脚本启动");
+    !drp_cOMPutEr_Science && (console.log("[提示] 如果脚本没反应，请重启hamibot和微信"), drp_cOMPutEr_Science = true);
+  });
+  drp_compUtEr_Science.end.click(function () {
+    drp_sCrIPt_KiDdo();
+    console.error("[状态] 辅助脚本停止");
+  });
+  drp_compUtEr_Science.move_start.click(function () {
+    drp_compUtEr_Science.setAdjustEnabled(true);
+    drp_compUtEr_Science.move_start.attr("visibility", "gone");
+    drp_compUtEr_Science.move_end.attr("visibility", "visible");
+  });
+  drp_compUtEr_Science.move_end.click(function () {
+    drp_compUtEr_Science.setAdjustEnabled(false);
+    drp_compUtEr_Science.move_start.attr("visibility", "visible");
+    drp_compUtEr_Science.move_end.attr("visibility", "gone");
+    var DIsTInCtIon = drp_compUtEr_Science.getX();
+    var PAdDInGtOn = drp_compUtEr_Science.getY();
+    drp_nottInGhAm.put("floaty_position_x", DIsTInCtIon);
+    drp_nottInGhAm.put("floaty_position_y", PAdDInGtOn);
+    console.warn("[提示] 悬浮窗位置已记录");
+  });
+  drp_compUtEr_Science.type_settings.click(function () {
+    "ui";
 
-  var _0x586142 = function () {
-    var _0x4ff738 = new Object();
-    var _0x2312b1 = function (_0x10794a) {
-      var _0x118e1b = document.getElementsByTagName("script");
-      return Array.from(_0x118e1b).find(function (_0x57f9d4) {
-        return _0x10794a.test(_0x57f9d4.src);
-      });
-    }(/aerosmith(.min)?.js/);
-    _0x2312b1 && new URLSearchParams(_0x2312b1.src.split("?")[1]).forEach(function (_0x53eb12, _0xff247b) {
-      _0x4ff738[_0xff247b] = _0x53eb12;
+    const DEmOScEnE = ["送到家", "到店取", "来回刷", "来回刷（到店取）", "来回刷（送到家）"];
+    var SCrIPt_KiDdo = DEmOScEnE.indexOf(drp_TEnSorFlOw);
+    dialogs.singleChoice("请选择配送方案", DEmOScEnE, SCrIPt_KiDdo).then(TEnSOrFlOw => {
+      switch (TEnSOrFlOw) {
+        case 0:
+          drp_TEnSorFlOw = "送到家";
+          break;
+        case 1:
+          drp_TEnSorFlOw = "到店取";
+          break;
+        case 2:
+          drp_TEnSorFlOw = "来回刷";
+          break;
+        case 3:
+          drp_TEnSorFlOw = "来回刷（到店取）";
+          break;
+        case 4:
+          drp_TEnSorFlOw = "来回刷（送到家）";
+          break;
+      }
+      console.info("目前的购买方案为: ", drp_TEnSorFlOw);
+      console.info("如果已在运行状态，请停止后重新运行");
     });
-    return _0x4ff738;
-  };
-  var _0x1b6d8c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (_0x73d38e) {
-    return typeof _0x73d38e;
-  } : function (_0x15fcf4) {
-    return _0x15fcf4 && "function" == typeof Symbol && _0x15fcf4.constructor === Symbol && _0x15fcf4 !== Symbol.prototype ? "symbol" : typeof _0x15fcf4;
-  };
-  (function () {
-    function _0x658501(_0x3ed453) {
-      this.value = _0x3ed453;
+  });
+  drp_compUtEr_Science.number_settings.click(function () {
+    "ui";
+
+    const teNSOrFlOw = ["1", "2", "手动输入"];
+    dialogs.singleChoice("请选择购买数量", teNSOrFlOw).then(diSTInCtIon => {
+      diSTInCtIon === 2 ? dialogs.rawInput("请输入购买数量", drp_paDDinGtOn).then(TeNSOrFlOw => {
+        {
+          parseInt(TeNSOrFlOw) > 0 ? (drp_paDDinGtOn = parseInt(TeNSOrFlOw), console.info("目前的购买数量为: ", drp_paDDinGtOn), console.info("如果已在运行状态，请停止后重新运行")) : console.info("请输入正整数, [", TeNSOrFlOw, "]不符合规范");
+        }
+      }) : (drp_paDDinGtOn = diSTInCtIon + 1, console.info("目前的购买数量为: ", drp_paDDinGtOn), console.info("如果已在运行状态，请停止后重新运行"));
+    });
+  });
+  var drp_tensOrFlOw = drp_nottInGhAm.get("floaty_position_x");
+  var drp_paddInGtOn = drp_nottInGhAm.get("floaty_position_y");
+  var drp_demoScEnE = device.width / 2 + 100;
+  var drp_scriPt_KiDdo = drp_compUtEr_Science.getY() + 100;
+  drp_TENSorFlOw && ui.post(() => {
+    drp_dArK_SoUlS();
+  });
+  typeof drp_tensOrFlOw === "number" && typeof drp_paddInGtOn === "number" && drp_tensOrFlOw >= 0 && drp_tensOrFlOw + 100 <= device.width ? (console.warn("[提示] 悬浮窗位置已读取"), drp_compUtEr_Science.setPosition(drp_tensOrFlOw, drp_paddInGtOn)) : drp_compUtEr_Science.setPosition(drp_demoScEnE, drp_scriPt_KiDdo);
+} else {
+  var drp_nottInGhAm = storages.create("DRP");
+  if (drp_dEMOscEnE) {
+    var drp_compUtEr_Science = drp_DiStinCtIon;
+    drp_compUtEr_Science.setTouchable(true);
+    var drp_ADa_LovElAce = 0;
+    let drp_MIND_ThE_gAp;
+    let drp_COMPUtEr_Science;
+    let drp_TENSOrFlOw;
+    let drp_PADDInGtOn;
+    let drp_ADA_LOvElAce = 0;
+    const drp_DARK_SoUlS = 200;
+    const drp_NOTTInGhAm = 600;
+    const drp_SCRIPt_KiDdo = 10;
+    let drp_DEMOScEnE;
+    let drp_DISTInCtIon = false;
+    drp_compUtEr_Science.drag.setOnTouchListener(function (scripT_KiDdo, mind_tHE_gAp) {
+      switch (mind_tHE_gAp.getAction()) {
+        case mind_tHE_gAp.ACTION_DOWN:
+          drp_MIND_ThE_gAp = mind_tHE_gAp.getRawX();
+          drp_COMPUtEr_Science = mind_tHE_gAp.getRawY();
+          drp_TENSOrFlOw = drp_compUtEr_Science.getX();
+          drp_PADDInGtOn = drp_compUtEr_Science.getY();
+          drp_ADA_LOvElAce = new Date().getTime();
+          drp_DEMOScEnE = setTimeout(() => {
+            drp_DISTInCtIon = true;
+            drp_compuTEr_Science();
+          }, drp_NOTTInGhAm);
+          return true;
+        case mind_tHE_gAp.ACTION_MOVE:
+          let NottiNGhAm = mind_tHE_gAp.getRawX() - drp_MIND_ThE_gAp;
+          let Dark_sOUlS = mind_tHE_gAp.getRawY() - drp_COMPUtEr_Science;
+          drp_compUtEr_Science.setPosition(drp_TENSOrFlOw + NottiNGhAm, drp_PADDInGtOn + Dark_sOUlS);
+          (Math.abs(NottiNGhAm) > drp_SCRIPt_KiDdo || Math.abs(Dark_sOUlS) > drp_SCRIPt_KiDdo) && (clearTimeout(drp_DEMOScEnE), drp_DISTInCtIon = false);
+          return true;
+        case mind_tHE_gAp.ACTION_UP:
+          let CompuTEr_Science = new Date().getTime();
+          CompuTEr_Science - drp_ADA_LOvElAce < drp_DARK_SoUlS && (drp_dark_sOUlS(), drp_DISTInCtIon = false, clearTimeout(drp_DEMOScEnE));
+          return true;
+      }
+      return false;
+    });
+    function drp_compuTEr_Science() {
+      try {
+        if (!drp_mind_ThE_gAp) {
+          {
+            drp_mind_ThE_gAp = drp_nOTTInGhAm();
+            var dEmosCEnE = String(device.width * 0.8) + "px";
+            var dIstiNCtIon = String(device.height * 0.8) + "px";
+            drp_mind_ThE_gAp.config_main.attr("w", dEmosCEnE);
+            drp_mind_ThE_gAp.config_main.attr("h", dIstiNCtIon);
+            sleep(500);
+          }
+        }
+        drp_dARK_SoUlS();
+      } catch (scRipT_KiDdo) {
+        log("Error in config button click: " + scRipT_KiDdo);
+      }
     }
-    function _0x3099ef(_0x567658) {
-      var _0x4ed452;
-      var _0x47e0d2;
-      function _0x33ec13(_0x3331bb, _0xf32178) {
+    function drp_dark_sOUlS() {
+      if (drp_ADa_LovElAce == 1) {
+        console.error("[状态] 辅助脚本停止");
+        drp_compUtEr_Science.text_status.setText("启动");
         try {
-          var _0x2163d6 = _0x567658[_0x3331bb](_0xf32178);
-          var _0x12cdf4 = _0x2163d6.value;
-          _0x12cdf4 instanceof _0x658501 ? Promise.resolve(_0x12cdf4.value).then(function (_0x19312d) {
-            _0x33ec13("next", _0x19312d);
-          }, function (_0xf41289) {
-            _0x33ec13("throw", _0xf41289);
-          }) : _0x1fba51(_0x2163d6.done ? "return" : "normal", _0x2163d6.value);
-        } catch (_0x4fc901) {
-          _0x1fba51("throw", _0x4fc901);
+          drp_compUtEr_Science.drag.attr("tint", "#66ccff");
+        } catch (DaRk_sOUlS) {
+          console.error("Failed to set image tint:", DaRk_sOUlS);
+        }
+        drp_ADa_LovElAce = 0;
+      } else {
+        console.error("[状态] 辅助脚本启动");
+        !drp_cOMPutEr_Science && (console.log("[提示] 如果脚本没反应，请重启hamibot和微信"), drp_cOMPutEr_Science = true);
+        drp_compUtEr_Science.text_status.setText("停止");
+        try {
+          drp_compUtEr_Science.drag.attr("tint", "#FF4444");
+        } catch (MiNd_tHE_gAp) {
+          console.error("Failed to set image tint:", MiNd_tHE_gAp);
+        }
+        drp_ADa_LovElAce = 1;
+      }
+    }
+    drp_TENSorFlOw && ui.post(() => {
+      drp_dark_sOUlS();
+    });
+  } else {
+    var drp_compUtEr_Science = drp_CoMputEr_Science;
+    drp_compUtEr_Science.main_window.attr("alpha", drp_diSTinCtIon);
+    function drp_ScRipT_KiDdo() {
+      drp_ADa_LovElAce = 1;
+      drp_compUtEr_Science.end.attr("visibility", "visible");
+      drp_compUtEr_Science.start.attr("visibility", "gone");
+    }
+    drp_TENSorFlOw && ui.post(() => {
+      drp_ScRipT_KiDdo();
+    });
+    function drp_NoTtiNGhAm() {
+      drp_ADa_LovElAce = 0;
+      drp_compUtEr_Science.end.attr("visibility", "gone");
+      drp_compUtEr_Science.start.attr("visibility", "visible");
+    }
+    drp_compUtEr_Science.start.click(function () {
+      drp_ScRipT_KiDdo();
+      console.error("[状态] 辅助脚本启动");
+      !drp_cOMPutEr_Science && (console.log("[提示] 如果脚本没反应，请重启hamibot和微信"), drp_cOMPutEr_Science = true);
+    });
+    drp_compUtEr_Science.end.click(function () {
+      drp_NoTtiNGhAm();
+      console.error("[状态] 辅助脚本停止");
+    });
+    drp_compUtEr_Science.move_start.click(function () {
+      drp_compUtEr_Science.setAdjustEnabled(true);
+      drp_compUtEr_Science.move_start.attr("visibility", "gone");
+      drp_compUtEr_Science.move_end.attr("visibility", "visible");
+    });
+    drp_compUtEr_Science.move_end.click(function () {
+      drp_compUtEr_Science.setAdjustEnabled(false);
+      drp_compUtEr_Science.move_start.attr("visibility", "visible");
+      drp_compUtEr_Science.move_end.attr("visibility", "gone");
+      var pADdiNGtOn = drp_compUtEr_Science.getX();
+      var mINd_tHE_gAp = drp_compUtEr_Science.getY();
+      drp_nottInGhAm.put("floaty_position_x", pADdiNGtOn);
+      drp_nottInGhAm.put("floaty_position_y", mINd_tHE_gAp);
+      console.warn("[提示] 悬浮窗位置已记录");
+    });
+  }
+  var drp_mind_ThE_gAp = null;
+  var drp_CompUtEr_Science = false;
+  function drp_MiND_ThE_gAp() {
+    var cOMpuTEr_Science = {
+      purchase_type: drp_TEnSorFlOw,
+      purchase_count: drp_paDDinGtOn,
+      specs: drp_miND_thE_gAp,
+      refresh_delay: drp_scRIpt_KiDdo,
+      enable_random_delay: drp_CoMPutEr_Science,
+      extra_delay: drp_adA_LovElAce,
+      ack_delay: drp_coMPutEr_Science,
+      ignore_ack: drp_DeMOscEnE,
+      special_confirm_delay: drp_PaDDinGtOn,
+      ignore_ack_click_delay: drp_AdA_LovElAce,
+      random_refresh_delay_lower: drp_deMOscEnE,
+      random_refresh_delay_upper: drp_noTTinGhAm,
+      max_refresh_time: drp_daRK_soUlS,
+      rage_stock_refresh: drp_tENSorFlOw,
+      vibrate_time: drp_MiND_thE_gAp,
+      main_window_alpha: drp_diSTinCtIon,
+      auto_click_notification: drp_teNSorFlOw,
+      reset_floaty_position: drp_TeNSorFlOw,
+      extra_selection_regex: drp_dISTinCtIon,
+      payment_password: drp_nOTTinGhAm,
+      shield_breaker_mode: drp_dARK_soUlS,
+      panic_timer: drp_aDA_LovElAce
+    };
+    return cOMpuTEr_Science;
+  }
+  function drp_AdA_LOvElAce(SCRipT_KiDdo) {
+    drp_TEnSorFlOw = SCRipT_KiDdo.purchase_type;
+    drp_paDDinGtOn = SCRipT_KiDdo.purchase_count;
+    drp_miND_thE_gAp = SCRipT_KiDdo.specs;
+    drp_scRIpt_KiDdo = SCRipT_KiDdo.refresh_delay;
+    drp_CoMPutEr_Science = SCRipT_KiDdo.enable_random_delay;
+    drp_adA_LovElAce = SCRipT_KiDdo.extra_delay;
+    drp_coMPutEr_Science = SCRipT_KiDdo.ack_delay;
+    drp_DeMOscEnE = SCRipT_KiDdo.ignore_ack;
+    drp_PaDDinGtOn = SCRipT_KiDdo.special_confirm_delay;
+    drp_AdA_LovElAce = SCRipT_KiDdo.ignore_ack_click_delay;
+    drp_deMOscEnE = SCRipT_KiDdo.random_refresh_delay_lower;
+    drp_noTTinGhAm = SCRipT_KiDdo.random_refresh_delay_upper;
+    drp_daRK_soUlS = SCRipT_KiDdo.max_refresh_time;
+    drp_tENSorFlOw = SCRipT_KiDdo.rage_stock_refresh;
+    drp_MiND_thE_gAp = SCRipT_KiDdo.vibrate_time;
+    drp_diSTinCtIon = SCRipT_KiDdo.main_window_alpha;
+    drp_teNSorFlOw = SCRipT_KiDdo.auto_click_notification;
+    drp_TeNSorFlOw = SCRipT_KiDdo.reset_floaty_position;
+    drp_dISTinCtIon = SCRipT_KiDdo.extra_selection_regex !== undefined ? SCRipT_KiDdo.extra_selection_regex : "";
+    drp_nOTTinGhAm = SCRipT_KiDdo.payment_password !== undefined ? SCRipT_KiDdo.payment_password : "";
+    drp_dARK_soUlS = SCRipT_KiDdo.shield_breaker_mode !== undefined ? SCRipT_KiDdo.shield_breaker_mode : false;
+    drp_aDA_LovElAce = SCRipT_KiDdo.panic_timer !== undefined ? SCRipT_KiDdo.panic_timer : 0;
+    drp_compUtEr_Science && drp_compUtEr_Science.main_window && drp_compUtEr_Science.main_window.attr("alpha", drp_diSTinCtIon);
+  }
+  function drp_ScRIPt_KiDdo(NOTtiNGhAm) {
+    var comPuTEr_Science = drp_MiND_ThE_gAp();
+    var disTiNCtIon = drp_sCRIPt_KiDdo(NOTtiNGhAm);
+    drp_nottInGhAm.put("preset_" + NOTtiNGhAm, JSON.stringify(comPuTEr_Science));
+    console.info("📁 配置已保存到 " + disTiNCtIon + " (槽位 " + NOTtiNGhAm + ")");
+    toast("配置已保存到 " + disTiNCtIon);
+  }
+  function drp_CoMPUtEr_Science(padDiNGtOn) {
+    var darK_sOUlS = drp_nottInGhAm.get("preset_" + padDiNGtOn);
+    if (darK_sOUlS) {
+      try {
+        var MinD_tHE_gAp = JSON.parse(darK_sOUlS);
+        var DisTiNCtIon = drp_sCRIPt_KiDdo(padDiNGtOn);
+        drp_AdA_LOvElAce(MinD_tHE_gAp);
+        drp_pADDInGtOn();
+        console.info("📁 配置已从 " + DisTiNCtIon + " (槽位 " + padDiNGtOn + ") 加载");
+        toast("配置已从 " + DisTiNCtIon + " 加载");
+        return true;
+      } catch (mInD_tHE_gAp) {
+        {
+          console.error("加载预设失败: " + mInD_tHE_gAp);
+          toast("加载预设失败");
+          return false;
         }
       }
-      function _0x1fba51(_0x4910c5, _0x239402) {
-        switch (_0x4910c5) {
-          case "return":
-            _0x4ed452.resolve({
-              value: _0x239402,
-              done: true
-            });
-            break;
-          case "throw":
-            _0x4ed452.reject(_0x239402);
-            break;
-          default:
-            _0x4ed452.resolve({
-              value: _0x239402,
-              done: false
-            });
-        }
-        (_0x4ed452 = _0x4ed452.next) ? _0x33ec13(_0x4ed452.key, _0x4ed452.arg) : _0x47e0d2 = null;
+    }
+    return false;
+  }
+  function drp_NoTTInGhAm(sCrIpT_KiDdo) {
+    var cOmPuTEr_Science = drp_nottInGhAm.get("preset_" + sCrIpT_KiDdo);
+    return cOmPuTEr_Science && cOmPuTEr_Science.length > 0;
+  }
+  function drp_sCRIPt_KiDdo(dArK_sOUlS) {
+    var dIsTiNCtIon = drp_nottInGhAm.get("preset_name_" + dArK_sOUlS);
+    return dIsTiNCtIon || "预设 " + dArK_sOUlS;
+  }
+  function drp_aDA_LOvElAce(aDa_LoVElAce, dEmOsCEnE) {
+    if (dEmOsCEnE && dEmOsCEnE.trim().length > 0) {
+      drp_nottInGhAm.put("preset_name_" + aDa_LoVElAce, dEmOsCEnE.trim());
+    } else {
+      {
+        drp_nottInGhAm.remove("preset_name_" + aDa_LoVElAce);
       }
-      this._invoke = function (_0x10e196, _0x21788a) {
-        return new Promise(function (_0x20d604, _0x11f42e) {
-          var _0x252b4e = {
-            key: _0x10e196,
-            arg: _0x21788a,
-            resolve: _0x20d604,
-            reject: _0x11f42e,
-            next: null
-          };
-          _0x47e0d2 ? _0x47e0d2 = _0x47e0d2.next = _0x252b4e : (_0x4ed452 = _0x47e0d2 = _0x252b4e, _0x33ec13(_0x10e196, _0x21788a));
+    }
+  }
+  function drp_cOMPUtEr_Science(PAdDiNGtOn) {
+    var DEmOsCEnE = drp_sCRIPt_KiDdo(PAdDiNGtOn);
+    drp_nottInGhAm.remove("preset_" + PAdDiNGtOn);
+    drp_nottInGhAm.remove("preset_name_" + PAdDiNGtOn);
+    console.info("🗑️ 已删除预设: " + DEmOsCEnE + " (槽位 " + PAdDiNGtOn + ")");
+    toast("已删除预设: " + DEmOsCEnE);
+  }
+  function drp_tENSOrFlOw() {
+    drp_mIND_ThE_gAp();
+    var scRIpT_KiDdo = [];
+    for (var PaDDiNGtOn = 1; PaDDiNGtOn <= 5; PaDDiNGtOn++) {
+      var AdA_LoVElAce = drp_NoTTInGhAm(PaDDiNGtOn);
+      var CoMPuTEr_Science = drp_sCRIPt_KiDdo(PaDDiNGtOn);
+      var MiND_tHE_gAp = AdA_LoVElAce ? " ✓" : " (空)";
+      var ScRIpT_KiDdo = AdA_LoVElAce ? "📁" : "📂";
+      scRIpT_KiDdo.push(ScRIpT_KiDdo + " " + CoMPuTEr_Science + MiND_tHE_gAp);
+    }
+    scRIpT_KiDdo.push("🔙 返回配置");
+    dialogs.select("选择预设槽位", scRIpT_KiDdo).then(DiSTiNCtIon => {
+      if (DiSTiNCtIon === -1) {
+        drp_dISTInCtIon();
+        return;
+      }
+      if (DiSTiNCtIon === 5) {
+        drp_dISTInCtIon();
+        return;
+      }
+      var aDA_LoVElAce = DiSTiNCtIon + 1;
+      drp_dEMOScEnE(aDA_LoVElAce);
+    });
+  }
+  function drp_dEMOScEnE(dEMOsCEnE) {
+    var tENSoRFlOw = drp_NoTTInGhAm(dEMOsCEnE);
+    var dISTiNCtIon = drp_sCRIPt_KiDdo(dEMOsCEnE);
+    var nOTTiNGhAm = [];
+    nOTTiNGhAm.push("💾 保存当前配置");
+    nOTTiNGhAm.push("✏️ 重命名预设");
+    tENSoRFlOw && (nOTTiNGhAm.push("📂 加载此预设"), nOTTiNGhAm.push("🗑️ 删除此预设"));
+    nOTTiNGhAm.push("🔙 返回预设列表");
+    var dARK_sOUlS = dISTiNCtIon + (tENSoRFlOw ? " ✓" : " (空)");
+    dialogs.select(dARK_sOUlS, nOTTiNGhAm).then(tensORFlOw => {
+      if (tensORFlOw === -1) {
+        drp_tENSOrFlOw();
+        return;
+      }
+      var nottINGhAm = nOTTiNGhAm[tensORFlOw];
+      if (nottINGhAm === "💾 保存当前配置") {
+        dialogs.confirm("确认保存", "确定要将当前配置保存到 " + dISTiNCtIon + " 吗？" + (tENSoRFlOw ? "\n\n⚠️ 这将覆盖现有配置" : "")).then(Mind_THE_gAp => {
+          Mind_THE_gAp && drp_ScRIPt_KiDdo(dEMOsCEnE);
+          drp_dISTInCtIon();
         });
-      };
-      "function" != typeof _0x567658.return && (this.return = undefined);
-    }
-    "function" == typeof Symbol && Symbol.asyncIterator && (_0x3099ef.prototype[Symbol.asyncIterator] = function () {
-      return this;
+      } else {
+        if (nottINGhAm === "📂 加载此预设") {
+          {
+            dialogs.confirm("确认加载", "确定要加载 " + dISTiNCtIon + " 的配置吗？\n\n⚠️ 当前配置将被覆盖").then(TensORFlOw => {
+              TensORFlOw && drp_CoMPUtEr_Science(dEMOsCEnE);
+              drp_dISTInCtIon();
+            });
+          }
+        } else {
+          if (nottINGhAm === "✏️ 重命名预设") {
+            {
+              var mind_THE_gAp = drp_sCRIPt_KiDdo(dEMOsCEnE);
+              var paddINGtOn = "预设 " + dEMOsCEnE;
+              var compUTEr_Science = mind_THE_gAp === paddINGtOn ? "" : mind_THE_gAp;
+              dialogs.rawInput("重命名预设（留空恢复默认）", compUTEr_Science, "").then(Ada_lOVElAce => {
+                if (Ada_lOVElAce !== null) {
+                  drp_aDA_LOvElAce(dEMOsCEnE, Ada_lOVElAce);
+                  var pAddINGtOn = Ada_lOVElAce && Ada_lOVElAce.trim().length > 0 ? Ada_lOVElAce.trim() : paddINGtOn;
+                  console.info("📝 预设 " + dEMOsCEnE + " 已重命名为: " + pAddINGtOn);
+                  toast("预设已重命名为: " + pAddINGtOn);
+                }
+                drp_dEMOScEnE(dEMOsCEnE);
+              });
+            }
+          } else {
+            nottINGhAm === "🗑️ 删除此预设" ? dialogs.confirm("确认删除", "确定要删除 " + dISTiNCtIon + " 吗？\n\n⚠️ 此操作不可恢复").then(tEnsORFlOw => {
+              tEnsORFlOw && drp_cOMPUtEr_Science(dEMOsCEnE);
+              drp_tENSOrFlOw();
+            }) : drp_tENSOrFlOw();
+          }
+        }
+      }
     });
-    _0x3099ef.prototype.next = function (_0x233017) {
-      return this._invoke("next", _0x233017);
-    };
-    _0x3099ef.prototype.throw = function (_0x419b8e) {
-      return this._invoke("throw", _0x419b8e);
-    };
-    _0x3099ef.prototype.return = function (_0x3d4657) {
-      return this._invoke("return", _0x3d4657);
-    };
-  })();
-  var _0x3e84e5 = function (_0x296bf5, _0x3f8e09) {
-    if (!(_0x296bf5 instanceof _0x3f8e09)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  };
-  var _0x13f557 = function () {
-    function _0x488a0e(_0x3feb7e, _0x1a2dcf) {
-      for (var _0x5951ee = 0; _0x5951ee < _0x1a2dcf.length; _0x5951ee++) {
-        var _0x3017b2 = _0x1a2dcf[_0x5951ee];
-        _0x3017b2.enumerable = _0x3017b2.enumerable || false;
-        _0x3017b2.configurable = true;
-        "value" in _0x3017b2 && (_0x3017b2.writable = true);
-        Object.defineProperty(_0x3feb7e, _0x3017b2.key, _0x3017b2);
+  }
+  function drp_nOTTInGhAm() {
+    try {
+      drp_mind_ThE_gAp = drp_PaDdinGtOn;
+      if (!drp_mind_ThE_gAp) {
+        {
+          return;
+        }
+      }
+      drp_mind_ThE_gAp.setPosition(-10000, -10000);
+      drp_mind_ThE_gAp.setTouchable(false);
+      drp_CompUtEr_Science = false;
+    } catch (MiNd_THE_gAp) {
+      {
+        log("Error creating config window: " + MiNd_THE_gAp);
+        drp_mind_ThE_gAp = null;
+        return;
       }
     }
-    return function (_0x42b652, _0x312cb5, _0x60522f) {
-      _0x312cb5 && _0x488a0e(_0x42b652.prototype, _0x312cb5);
-      _0x60522f && _0x488a0e(_0x42b652, _0x60522f);
-      return _0x42b652;
-    };
-  }();
-  var _0x3fc534 = Object.assign || function (_0x457d6e) {
-    for (var _0x3b995b = 1; _0x3b995b < arguments.length; _0x3b995b++) {
-      var _0x293428 = arguments[_0x3b995b];
-      for (var _0x5ec8c3 in _0x293428) Object.prototype.hasOwnProperty.call(_0x293428, _0x5ec8c3) && (_0x457d6e[_0x5ec8c3] = _0x293428[_0x5ec8c3]);
+    drp_mind_ThE_gAp.ignore_ack_config.click(function () {
+      drp_DeMOscEnE = !drp_DeMOscEnE;
+      console.info("🚫 特殊刷回流模式已设置为: ", drp_DeMOscEnE ? "开启" : "关闭");
+      drp_pADDInGtOn();
+    });
+    drp_mind_ThE_gAp.delivery_type_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.select("请选择配送方案", ["送到家", "到店取", "来回刷", "来回刷（到店取）", "来回刷（送到家）"]).then(dIStINCtIon => {
+        if (dIStINCtIon !== -1) {
+          switch (dIStINCtIon) {
+            case 0:
+              drp_TEnSorFlOw = "送到家";
+              break;
+            case 1:
+              drp_TEnSorFlOw = "到店取";
+              break;
+            case 2:
+              drp_TEnSorFlOw = "来回刷";
+              break;
+            case 3:
+              drp_TEnSorFlOw = "来回刷（到店取）";
+              break;
+            case 4:
+              drp_TEnSorFlOw = "来回刷（送到家）";
+              break;
+          }
+          console.info("配送方案已设置为: ", drp_TEnSorFlOw);
+          drp_pADDInGtOn();
+        }
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.delivery_number_config.click(function () {
+      drp_mIND_ThE_gAp();
+      const pADdINGtOn = ["1", "2", "手动输入"];
+      dialogs.singleChoice("请选择购买数量", pADdINGtOn).then(TENsORFlOw => {
+        TENsORFlOw === 2 ? dialogs.rawInput("请输入购买数量", drp_paDDinGtOn).then(NOTtINGhAm => {
+          if (parseInt(NOTtINGhAm) > 0) {
+            {
+              drp_paDDinGtOn = parseInt(NOTtINGhAm);
+              console.info("购买数量已设置为: ", drp_paDDinGtOn);
+              drp_pADDInGtOn();
+            }
+          } else {
+            {
+              console.info("请输入正整数, [", NOTtINGhAm, "]不符合规范");
+            }
+          }
+          drp_dISTInCtIon();
+        }) : (drp_paDDinGtOn = TENsORFlOw + 1, console.info("购买数量已设置为: ", drp_paDDinGtOn), drp_pADDInGtOn(), drp_dISTInCtIon());
+      });
+    });
+    drp_mind_ThE_gAp.specs_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.select("请选择规格", ["单个", "整盒"]).then(comPUTEr_Science => {
+        comPUTEr_Science !== -1 && (drp_miND_thE_gAp = comPUTEr_Science === 0 ? "单个" : "整盒", console.info("规格已设置为: ", drp_miND_thE_gAp), drp_pADDInGtOn());
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.refresh_delay_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入库存刷新延迟 (毫秒)", drp_scRIpt_KiDdo).then(PadDINGtOn => {
+        var nOtTINGhAm = parseInt(PadDINGtOn);
+        if (nOtTINGhAm >= 0) {
+          if (drp_dArK_soUlS) {
+            drp_scRIpt_KiDdo = 1000;
+            console.log("🚫 试用期不支持修改库存刷新延迟");
+          } else {
+            drp_scRIpt_KiDdo = nOtTINGhAm;
+            console.info("⏱️ 库存刷新延迟已设置为: ", drp_scRIpt_KiDdo + "ms");
+          }
+          drp_pADDInGtOn();
+        } else {
+          console.info("请输入非负整数");
+        }
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.enable_random_delay_config.click(function () {
+      drp_CoMPutEr_Science = !drp_CoMPutEr_Science;
+      console.info("🎲 启用额外随机库存刷新间隔已设置为: ", drp_CoMPutEr_Science ? "开启" : "关闭");
+      drp_pADDInGtOn();
+    });
+    drp_mind_ThE_gAp.extra_delay_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入主动操作延迟 (毫秒)", drp_adA_LovElAce).then(dIsTINCtIon => {
+        {
+          var cOmPUTEr_Science = parseInt(dIsTINCtIon);
+          cOmPUTEr_Science >= 0 ? (drp_adA_LovElAce = cOmPUTEr_Science, console.info("主动操作延迟已设置为: ", drp_adA_LovElAce + "ms"), drp_pADDInGtOn()) : console.info("请输入非负整数");
+          drp_dISTInCtIon();
+        }
+      });
+    });
+    drp_mind_ThE_gAp.ack_delay_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入点击[我知道了]后等待的延迟 (毫秒)", drp_coMPutEr_Science).then(PAdDINGtOn => {
+        var SCrIPT_KiDdo = parseInt(PAdDINGtOn);
+        SCrIPT_KiDdo >= 0 ? (drp_coMPutEr_Science = SCrIPT_KiDdo, console.info("✅ 点击[我知道了]后等待的延迟已设置为: ", drp_coMPutEr_Science + "ms"), drp_pADDInGtOn()) : console.info("请输入非负整数");
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.special_confirm_delay_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入特殊刷回流点击确认延迟 (毫秒)", drp_PaDDinGtOn).then(DIsTINCtIon => {
+        var TEnSORFlOw = parseInt(DIsTINCtIon);
+        if (TEnSORFlOw >= 0) {
+          {
+            drp_PaDDinGtOn = TEnSORFlOw;
+            console.info("⭐ 特殊刷回流点击确认延迟已设置为: ", drp_PaDDinGtOn + "ms");
+            drp_pADDInGtOn();
+          }
+        } else {
+          console.info("请输入非负整数");
+        }
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.ignore_ack_click_delay_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入特殊刷回流点击延迟 (毫秒)", drp_AdA_LovElAce).then(teNSORFlOw => {
+        var scRIPT_KiDdo = parseInt(teNSORFlOw);
+        scRIPT_KiDdo >= 0 ? (drp_AdA_LovElAce = scRIPT_KiDdo, console.info("⏰ 特殊刷回流点击延迟已设置为: ", drp_AdA_LovElAce + "ms"), drp_pADDInGtOn()) : console.info("请输入非负整数");
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.random_delay_lower_config.click(function () {
+      {
+        drp_mIND_ThE_gAp();
+        dialogs.rawInput("请输入随机延迟下限 (毫秒)", drp_deMOscEnE).then(deMOSCEnE => {
+          var DiSTINCtIon = parseInt(deMOSCEnE);
+          if (DiSTINCtIon >= 1) {
+            {
+              drp_deMOscEnE = DiSTINCtIon;
+              console.info("⬇️ 随机延迟下限已设置为: ", drp_deMOscEnE + "ms");
+              drp_pADDInGtOn();
+            }
+          } else {
+            console.info("请输入大于0的整数");
+          }
+          drp_dISTInCtIon();
+        });
+      }
+    });
+    drp_mind_ThE_gAp.random_delay_upper_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入随机延迟上限 (毫秒)", drp_noTTinGhAm).then(PaDDINGtOn => {
+        var dARK_SOUlS = parseInt(PaDDINGtOn);
+        dARK_SOUlS >= 1 ? (drp_noTTinGhAm = dARK_SOUlS, console.info("⬆️ 随机延迟上限已设置为: ", drp_noTTinGhAm + "ms"), drp_pADDInGtOn()) : console.info("请输入大于0的整数");
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.max_refresh_time_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入最大刷新时间 (分钟)", drp_daRK_soUlS).then(cOMPUTEr_Science => {
+        {
+          var aDA_LOVElAce = parseFloat(cOMPUTEr_Science);
+          aDA_LOVElAce >= 0 ? (drp_daRK_soUlS = aDA_LOVElAce, console.info("最大刷新时间已设置为: ", drp_daRK_soUlS + "分钟"), drp_pADDInGtOn()) : console.info("请输入非负数");
+          drp_dISTInCtIon();
+        }
+      });
+    });
+    drp_mind_ThE_gAp.rage_stock_refresh_config.click(function () {
+      drp_tENSorFlOw = !drp_tENSorFlOw;
+      console.info("⚡ 狂暴库存刷新模式已设置为: ", drp_tENSorFlOw ? "开启" : "关闭");
+      drp_pADDInGtOn();
+    });
+    drp_mind_ThE_gAp.vibrate_time_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入抢购成功振动时长 (毫秒)", drp_MiND_thE_gAp).then(DARK_SOUlS => {
+        var TENSORFlOw = parseInt(DARK_SOUlS);
+        if (TENSORFlOw >= 0) {
+          drp_MiND_thE_gAp = TENSORFlOw;
+          console.info("抢购成功振动时长已设置为: ", drp_MiND_thE_gAp + "ms");
+          drp_pADDInGtOn();
+        } else {
+          console.info("请输入非负整数");
+        }
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.main_window_alpha_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入窗口透明度 (0.0-1.0)", drp_diSTinCtIon).then(nottingHAm => {
+        var tensorfLOw = parseFloat(nottingHAm);
+        tensorfLOw >= 0 && tensorfLOw <= 1 ? (drp_diSTinCtIon = tensorfLOw, drp_compUtEr_Science.main_window.attr("alpha", drp_diSTinCtIon), console.info("🔍 窗口透明度已设置为: ", drp_diSTinCtIon), drp_pADDInGtOn()) : console.info("请输入0.0到1.0之间的数值");
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.auto_click_notification_config.click(function () {
+      drp_teNSorFlOw = !drp_teNSorFlOw;
+      console.info("🔔 自动点击到货通知已设置为: ", drp_teNSorFlOw ? "开启" : "关闭");
+      drp_pADDInGtOn();
+    });
+    drp_mind_ThE_gAp.reset_floaty_position_config.click(function () {
+      drp_TeNSorFlOw = !drp_TeNSorFlOw;
+      console.info("🔄 重置悬浮窗位置已设置为: ", drp_TeNSorFlOw ? "开启" : "关闭");
+      drp_pADDInGtOn();
+    });
+    drp_mind_ThE_gAp.extra_selection_regex_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入额外选择规则 (支持 | 或 ｜ 分隔，如: A组|7.29｜黑)", drp_dISTinCtIon || "").then(ada_loveLAce => {
+        {
+          ada_loveLAce !== null && (drp_dISTinCtIon = ada_loveLAce.trim(), drp_dISTinCtIon.length > 0 ? console.info("🔤 额外选择规则已设置为: ", drp_dISTinCtIon) : console.info("🔤 额外选择规则已清空"), drp_pADDInGtOn());
+          drp_dISTInCtIon();
+        }
+      });
+    });
+    drp_mind_ThE_gAp.shield_breaker_mode_config.click(function () {
+      drp_dARK_soUlS = !drp_dARK_soUlS;
+      console.info("🛡️ 破盾模式已设置为: ", drp_dARK_soUlS ? "开启" : "关闭");
+      drp_pADDInGtOn();
+    });
+    drp_mind_ThE_gAp.ignore_ack_panic_timer_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入自动关闭特殊刷回流时间 (秒，0表示关闭)", drp_DARK_soUlS).then(Script_kIDdo => {
+        var DistincTIon = parseInt(Script_kIDdo);
+        DistincTIon >= 0 ? (drp_DARK_soUlS = DistincTIon, drp_DARK_soUlS > 0 ? console.info("⏰ 自动关闭特殊刷回流时间已设置为: ", drp_DARK_soUlS + "秒") : console.info("⏰ 自动关闭特殊刷回流已关闭"), drp_pADDInGtOn()) : console.info("请输入非负整数");
+        drp_dISTInCtIon();
+      });
+    });
+    drp_mind_ThE_gAp.panic_timer_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入自动关闭破盾模式时间 (秒，0表示关闭)", drp_aDA_LovElAce).then(ComputeR_Science => {
+        {
+          var Dark_souLS = parseInt(ComputeR_Science);
+          if (Dark_souLS >= 0) {
+            {
+              drp_aDA_LovElAce = Dark_souLS;
+              if (drp_aDA_LovElAce > 0) {
+                console.info("⏰ 自动关闭破盾模式时间已设置为: ", drp_aDA_LovElAce + "秒");
+              } else {
+                {
+                  console.info("⏰ 自动关闭破盾模式已关闭");
+                }
+              }
+              drp_pADDInGtOn();
+            }
+          } else {
+            console.info("请输入非负整数");
+          }
+          drp_dISTInCtIon();
+        }
+      });
+    });
+    drp_mind_ThE_gAp.payment_password_config.click(function () {
+      drp_mIND_ThE_gAp();
+      dialogs.rawInput("请输入6位支付密码", drp_nOTTinGhAm || "").then(nOttingHAm => {
+        {
+          if (nOttingHAm !== null) {
+            let DArk_souLS = nOttingHAm.trim();
+            DArk_souLS.length === 6 && /^\d{6}$/.test(DArk_souLS) ? (drp_nOTTinGhAm = DArk_souLS, console.info("🔒 支付密码已设置为: ", drp_nOTTinGhAm), drp_pADDInGtOn()) : (console.error("❌ 支付密码必须是6位数字，请重新输入"), dialogs.alert("密码格式错误", "支付密码必须是6位数字，请重新设置"));
+          }
+          drp_dISTInCtIon();
+        }
+      });
+    });
+    drp_mind_ThE_gAp.close_config.click(function () {
+      drp_mIND_ThE_gAp();
+    });
+    drp_mind_ThE_gAp.preset_config.click(function () {
+      drp_tENSOrFlOw();
+    });
+    return drp_mind_ThE_gAp;
+  }
+  function drp_dISTInCtIon() {
+    if (drp_mind_ThE_gAp && !drp_CompUtEr_Science) {
+      try {
+        drp_pADDInGtOn();
+        ui.post(() => {
+          var coMputeR_Science = Math.floor(device.width * 0.8) + "px";
+          var adA_loveLAce = Math.floor(device.height * 0.8) + "px";
+          drp_mind_ThE_gAp.config_main.attr("w", coMputeR_Science);
+          drp_mind_ThE_gAp.config_main.attr("h", adA_loveLAce);
+          var coMputeR_Science = device.width * 0.8 || device.width * 0.8;
+          var adA_loveLAce = device.height * 0.8 || device.height * 0.8;
+          var daRk_souLS = Math.floor(device.width / 2 - coMputeR_Science / 2);
+          var paDdingTOn = Math.floor(device.height / 2 - adA_loveLAce / 2);
+          drp_mind_ThE_gAp.setPosition(daRk_souLS, paDdingTOn);
+          drp_mind_ThE_gAp.setTouchable(true);
+          drp_CompUtEr_Science = true;
+        });
+      } catch (noTtingHAm) {
+        log("Error showing config window: " + noTtingHAm);
+      }
     }
-    return _0x457d6e;
-  };
-  var _0x46657f = function (_0xf9fc2d, _0x55e639) {
-    if (Array.isArray(_0xf9fc2d)) {
-      return _0xf9fc2d;
+  }
+  function drp_mIND_ThE_gAp() {
+    if (drp_mind_ThE_gAp && drp_CompUtEr_Science) {
+      try {
+        ui.post(() => {
+          drp_mind_ThE_gAp.setPosition(-10000, -10000);
+          drp_mind_ThE_gAp.setTouchable(false);
+          drp_CompUtEr_Science = false;
+        });
+      } catch (DaRk_souLS) {
+        log("Error hiding config window: " + DaRk_souLS);
+      }
     }
-    if (Symbol.iterator in Object(_0xf9fc2d)) {
-      return function (_0xc0701a, _0xda11ad) {
-        var _0x4f037e = [];
-        var _0x2c7e9a = true;
-        var _0x173829 = false;
-        var _0x43fa11 = undefined;
+  }
+  function drp_dARK_SoUlS() {
+    try {
+      drp_CompUtEr_Science ? drp_mIND_ThE_gAp() : drp_dISTInCtIon();
+    } catch (nOTtingHAm) {
+      log("Error toggling config window: " + nOTtingHAm);
+    }
+  }
+  function drp_pADDInGtOn() {
+    if (drp_mind_ThE_gAp) {
+      if (drp_DISTinCtIon != 200) {
+        return;
+      }
+      try {
+        drp_mind_ThE_gAp.delivery_type_config.setText("🚚 配送方式: " + (drp_TEnSorFlOw || "到店取"));
+        drp_mind_ThE_gAp.delivery_number_config.setText("📦 配送数量: " + (drp_paDDinGtOn || 1));
+        drp_mind_ThE_gAp.specs_config.setText("📏 规格: " + (drp_miND_thE_gAp || "单个"));
+        drp_mind_ThE_gAp.refresh_delay_config.setText("⏱️ 库存刷新刷新延迟: " + drp_scRIpt_KiDdo + "ms");
+        drp_mind_ThE_gAp.enable_random_delay_config.setText("🎲 启用额外随机库存刷新间隔: " + (drp_CoMPutEr_Science ? "开启" : "关闭"));
+        drp_mind_ThE_gAp.extra_delay_config.setText("⏰ 主动操作延迟: " + drp_adA_LovElAce + "ms");
+        drp_mind_ThE_gAp.ack_delay_config.setText("✅ 点击[我知道了]后等待的延迟: " + drp_coMPutEr_Science + "ms");
+        drp_mind_ThE_gAp.ignore_ack_config.setText("🚫 特殊刷回流模式(不点击我知道了): " + (drp_DeMOscEnE ? "开启" : "关闭"));
+        drp_mind_ThE_gAp.special_confirm_delay_config.setText("⭐ 特殊刷回流点击确认延迟: " + drp_PaDDinGtOn + "ms");
+        drp_mind_ThE_gAp.ignore_ack_click_delay_config.setText("⏰ 特殊刷回流点击延迟: " + drp_AdA_LovElAce + "ms");
+        drp_mind_ThE_gAp.random_delay_lower_config.setText("⬇️ 随机延迟下限: " + drp_deMOscEnE + "ms");
+        drp_mind_ThE_gAp.random_delay_upper_config.setText("⬆️ 随机延迟上限: " + drp_noTTinGhAm + "ms");
+        drp_mind_ThE_gAp.max_refresh_time_config.setText("⌛ 最大刷新时间: " + drp_daRK_soUlS + "分钟");
+        drp_mind_ThE_gAp.rage_stock_refresh_config.setText("⚡ 狂暴库存刷新模式: " + (drp_tENSorFlOw ? "开启" : "关闭"));
+        drp_mind_ThE_gAp.vibrate_time_config.setText("📳 抢购成功振动时长: " + drp_MiND_thE_gAp + "ms");
+        drp_mind_ThE_gAp.main_window_alpha_config.setText("🔍 窗口透明度: " + drp_diSTinCtIon);
+        drp_mind_ThE_gAp.auto_click_notification_config.setText("🔔 自动点击到货通知: " + (drp_teNSorFlOw ? "开启" : "关闭"));
+        drp_mind_ThE_gAp.reset_floaty_position_config.setText("🔄 重置悬浮窗位置: " + (drp_TeNSorFlOw ? "开启" : "关闭"));
+        drp_mind_ThE_gAp.extra_selection_regex_config.setText("🔤 额外选择规则: " + (drp_dISTinCtIon || "未设置"));
+        drp_mind_ThE_gAp.shield_breaker_mode_config.setText("🛡️ 破盾模式: " + (drp_dARK_soUlS ? "开启" : "关闭"));
+        drp_mind_ThE_gAp.ignore_ack_panic_timer_config.setText("⏰ 自动关闭特殊刷回流: " + (drp_DARK_soUlS > 0 ? drp_DARK_soUlS + "秒" : "关闭"));
+        drp_mind_ThE_gAp.panic_timer_config.setText("⏰ 自动关闭破盾模式: " + (drp_aDA_LovElAce > 0 ? drp_aDA_LovElAce + "秒" : "关闭"));
+        drp_mind_ThE_gAp.payment_password_config.setText("🔒 支付密码: " + (drp_nOTTinGhAm || "未设置"));
+      } catch (TENsorfLOw) {
+        log("Error updating config window: " + TENsorfLOw);
+      }
+    }
+  }
+  !drp_dEMOscEnE && drp_compUtEr_Science.config_settings.click(function () {
+    ui.post(() => {
+      {
         try {
-          for (var _0x298cb0, _0x4b45a7 = _0xc0701a[Symbol.iterator](); !(_0x2c7e9a = (_0x298cb0 = _0x4b45a7.next()).done) && (_0x4f037e.push(_0x298cb0.value), !_0xda11ad || _0x4f037e.length !== _0xda11ad); _0x2c7e9a = true) {}
-        } catch (_0xf43378) {
-          _0x173829 = true;
-          _0x43fa11 = _0xf43378;
-        } finally {
-          try {
-            !_0x2c7e9a && _0x4b45a7.return && _0x4b45a7.return();
-          } finally {
-            if (_0x173829) {
-              throw _0x43fa11;
+          if (!drp_mind_ThE_gAp) {
+            drp_mind_ThE_gAp = drp_nOTTInGhAm();
+            drp_pADDInGtOn();
+            var comPuteR_Science = String(device.width * 0.8) + "px";
+            var minD_the_GAp = String(device.height * 0.8) + "px";
+            drp_mind_ThE_gAp.config_main.attr("w", comPuteR_Science);
+            drp_mind_ThE_gAp.config_main.attr("h", minD_the_GAp);
+            sleep(500);
+          }
+          drp_dARK_SoUlS();
+        } catch (darK_souLS) {
+          log("Error in config button click: " + darK_souLS);
+        }
+      }
+    });
+  });
+  var drp_tensOrFlOw = drp_nottInGhAm.get("floaty_position_x");
+  var drp_paddInGtOn = drp_nottInGhAm.get("floaty_position_y");
+  var drp_demoScEnE = device.width / 2 + 100;
+  var drp_scriPt_KiDdo = drp_compUtEr_Science.getY() + 100;
+  typeof drp_tensOrFlOw === "number" && typeof drp_paddInGtOn === "number" && drp_tensOrFlOw >= 0 && drp_tensOrFlOw + 100 <= device.width && !drp_TeNSorFlOw ? (console.warn("[提示] 悬浮窗位置已读取"), drp_compUtEr_Science.setPosition(drp_tensOrFlOw, drp_paddInGtOn)) : (console.warn("[提示] 已使用默认悬浮窗位置"), drp_compUtEr_Science.setPosition(drp_demoScEnE, drp_scriPt_KiDdo));
+  var drp_mind_ThE_gAp = drp_nOTTInGhAm();
+}
+function drp_PaddInGtOn() {
+  var DisTincTIon = className("android.widget.TextView").text("到货通知").findOne(50);
+  DisTincTIon && (console.warn("[操作] 已点击到货通知按钮"), DisTincTIon.click());
+}
+function drp_DemoScEnE(Ada_LoveLAce, TenSorfLOw) {
+  let NotTingHAm = Ada_LoveLAce;
+  let DarK_souLS = 0;
+  while (NotTingHAm != null && DarK_souLS < TenSorfLOw) {
+    try {
+      NotTingHAm = NotTingHAm.child(0);
+    } catch (mInD_the_GAp) {
+      {
+        log("Exception at level " + DarK_souLS + ": " + mInD_the_GAp);
+        return null;
+      }
+    }
+    DarK_souLS++;
+  }
+  return NotTingHAm;
+}
+function drp_DistInCtIon(sCrIpt_kIDdo) {
+  var NOtTingHAm = null;
+  var ADa_LoveLAce = sCrIpt_kIDdo;
+  for (var MInD_the_GAp = 0; MInD_the_GAp < 13; MInD_the_GAp++) {
+    if (ADa_LoveLAce == null) {
+      break;
+    }
+    ADa_LoveLAce.className() === "android.widget.RelativeLayout" && (NOtTingHAm = ADa_LoveLAce);
+    ADa_LoveLAce && (ADa_LoveLAce = ADa_LoveLAce.parent());
+  }
+  drp_DISTinCtIon + 1 != 201 && drp_dEMoscEnE();
+  if (NOtTingHAm != null) {
+    ADa_LoveLAce = NOtTingHAm;
+    for (var MInD_the_GAp = 0; MInD_the_GAp < 2; MInD_the_GAp++) {
+      if (ADa_LoveLAce == null) {
+        break;
+      }
+      ADa_LoveLAce = ADa_LoveLAce.parent();
+    }
+    if (ADa_LoveLAce != null) {
+      let noTTingHAm = ADa_LoveLAce.bounds();
+    } else {
+      log("Top node is null after going up 3 parents.");
+    }
+  } else {
+    log("No RelativeLayout found in 13 levels.");
+  }
+  return ADa_LoveLAce;
+}
+function drp_NottInGhAm(daRK_souLS) {
+  if (!daRK_souLS) {
+    return "no_header";
+  }
+  if (daRK_souLS.childCount() === 0) {
+    return "no_header";
+  }
+  var teNSorfLOw = daRK_souLS.child(0);
+  if (!teNSorfLOw) {
+    return "no_header";
+  }
+  if (teNSorfLOw.className() !== "android.widget.RelativeLayout") {
+    return "no_header";
+  }
+  var adA_LoveLAce = teNSorfLOw.children();
+  if (!adA_LoveLAce || adA_LoveLAce.length === 0) {
+    return "";
+  }
+  var miND_the_GAp = 0;
+  var CoMPuteR_Science = adA_LoveLAce[0];
+  for (var ScRIpt_kIDdo = 0; ScRIpt_kIDdo < adA_LoveLAce.length; ScRIpt_kIDdo++) {
+    {
+      var DaRK_souLS = adA_LoveLAce[ScRIpt_kIDdo];
+      var DeMOsceNE = DaRK_souLS ? DaRK_souLS.drawingOrder() : 0;
+      DeMOsceNE > miND_the_GAp && DaRK_souLS.childCount() != 0 && (miND_the_GAp = DeMOsceNE, CoMPuteR_Science = DaRK_souLS);
+    }
+  }
+  if (!CoMPuteR_Science) {
+    return "";
+  }
+  var PaDDingTOn = CoMPuteR_Science && CoMPuteR_Science.childCount() > 0 ? CoMPuteR_Science.child(0) : null;
+  if (!PaDDingTOn) {
+    return "";
+  }
+  var TeNSorfLOw = PaDDingTOn.findOne(className("android.widget.TextView").algorithm("BFS"));
+  if (!TeNSorfLOw) {
+    {
+      return "";
+    }
+  }
+  return TeNSorfLOw.text();
+}
+function drp_TensOrFlOw() {
+  var pADDingTOn = className("android.widget.RelativeLayout").algorithm("BFS").findOne(100);
+  if (!pADDingTOn) {
+    return null;
+  }
+  if (!pADDingTOn.parent()) {
+    return null;
+  }
+  var dARK_souLS = pADDingTOn.parent();
+  if (!dARK_souLS) {
+    return null;
+  }
+  if (!dARK_souLS.parent()) {
+    return null;
+  }
+  pADDingTOn = dARK_souLS.parent();
+  return pADDingTOn;
+}
+function drp_Dark_SoUlS(COMPuteR_Science) {
+  var DEMOsceNE = COMPuteR_Science.bounds();
+  var TENSorfLOw = DEMOsceNE.centerX();
+  var NOTTingHAm = DEMOsceNE.centerY();
+  click(TENSorfLOw, NOTTingHAm);
+}
+function drp_Mind_ThE_gAp() {
+  if (drp_mInd_ThE_gAp == -1 || drp_aDa_lOvElAce == -1) {
+    return;
+  }
+  click(drp_mInd_ThE_gAp, drp_aDa_lOvElAce);
+  sleep(200);
+}
+function drp_Ada_lOvElAce(demoSceNE) {
+  if (drp_mInd_ThE_gAp != -1 && drp_aDa_lOvElAce != -1) {
+    return;
+  }
+  var tensOrfLOw = demoSceNE.bounds();
+  var mind_The_GAp = device.width;
+  var compUteR_Science = device.height;
+  var DemoSceNE = tensOrfLOw.centerX();
+  var Dark_SouLS = tensOrfLOw.centerY();
+  if (DemoSceNE < 0 || DemoSceNE > mind_The_GAp || Dark_SouLS < 0 || Dark_SouLS > compUteR_Science) {
+    return;
+  }
+  drp_mInd_ThE_gAp = DemoSceNE;
+  drp_aDa_lOvElAce = Dark_SouLS;
+  var CompUteR_Science = storages.create("DRP");
+  CompUteR_Science.put("unstuck_cap_btn_x", drp_mInd_ThE_gAp);
+  CompUteR_Science.put("unstuck_cap_btn_y", drp_aDa_lOvElAce);
+}
+function drp_ScriPt_KiDdo() {
+  var dIstIncTIon = storages.create("DRP");
+  drp_mInd_ThE_gAp = dIstIncTIon.get("unstuck_cap_btn_x", -1);
+  drp_aDa_lOvElAce = dIstIncTIon.get("unstuck_cap_btn_y", -1);
+  if (drp_mInd_ThE_gAp != -1 && drp_aDa_lOvElAce != -1) {
+    return;
+  }
+  drp_mInd_ThE_gAp = -1;
+  drp_aDa_lOvElAce = -1;
+}
+var drp_mInd_ThE_gAp = -1;
+var drp_aDa_lOvElAce = -1;
+drp_ScriPt_KiDdo();
+function drp_sCriPt_KiDdo(sCriPt_kIDdo) {
+  var dArk_SouLS = sCriPt_kIDdo.childCount();
+  if (dArk_SouLS == 0) {
+    return null;
+  }
+  if (drp_demOscEnE) {
+    {
+      console.error("webview_count: " + sCriPt_kIDdo.childCount());
+    }
+  }
+  var mInd_The_GAp = 0;
+  var dEmoSceNE = dArk_SouLS - 1;
+  var aDa_lOveLAce = false;
+  for (var DArk_SouLS = 0; DArk_SouLS < dArk_SouLS; DArk_SouLS++) {
+    var SCriPt_kIDdo = sCriPt_kIDdo.child(DArk_SouLS);
+    var MInd_The_GAp = drp_NottInGhAm(SCriPt_kIDdo);
+    var DEmoSceNE = SCriPt_kIDdo ? SCriPt_kIDdo.drawingOrder() : 0;
+    if (DEmoSceNE === 0) {
+      aDa_lOveLAce = true;
+      break;
+    }
+    DEmoSceNE > mInd_The_GAp && (mInd_The_GAp = DEmoSceNE, dEmoSceNE = DArk_SouLS);
+  }
+  if (aDa_lOveLAce) {
+    return sCriPt_kIDdo.child(dArk_SouLS - 1);
+  }
+  return sCriPt_kIDdo.child(dEmoSceNE);
+}
+function drp_pAddInGtOn(adA_lOveLAce) {
+  return adA_lOveLAce.findOne(className("android.webkit.WebView").algorithm("DFS")) || null;
+}
+function drp_dEmoScEnE(AdA_lOveLAce) {
+  if (!AdA_lOveLAce) {
+    return null;
+  }
+  if (AdA_lOveLAce.childCount() < 1) {
+    return null;
+  }
+  var CoMpUteR_Science = AdA_lOveLAce.child(0);
+  if (!CoMpUteR_Science) {
+    return null;
+  }
+  if (CoMpUteR_Science.className() !== "android.widget.RelativeLayout") {
+    return null;
+  }
+  var NoTtIngHAm = null;
+  var DeMoSceNE = Number.MAX_VALUE;
+  var TeNsOrfLOw = CoMpUteR_Science.childCount();
+  for (var DaRk_SouLS = 0; DaRk_SouLS < TeNsOrfLOw; DaRk_SouLS++) {
+    var PaDdIngTOn = CoMpUteR_Science.child(DaRk_SouLS);
+    if (!PaDdIngTOn) {
+      continue;
+    }
+    var aDA_lOveLAce = PaDdIngTOn.drawingOrder();
+    aDA_lOveLAce < DeMoSceNE && (DeMoSceNE = aDA_lOveLAce, NoTtIngHAm = PaDdIngTOn);
+  }
+  if (!NoTtIngHAm) {
+    return null;
+  }
+  if (NoTtIngHAm.childCount() < 1) {
+    return null;
+  }
+  var dEMoSceNE = NoTtIngHAm.child(0);
+  if (!dEMoSceNE) {
+    return null;
+  }
+  var dARk_SouLS = null;
+  var nOTtIngHAm = dEMoSceNE.childCount();
+  for (var DaRk_SouLS = 0; DaRk_SouLS < nOTtIngHAm; DaRk_SouLS++) {
+    var PaDdIngTOn = dEMoSceNE.child(DaRk_SouLS);
+    if (!PaDdIngTOn) {
+      continue;
+    }
+    if (PaDdIngTOn.drawingOrder() === 2) {
+      dARk_SouLS = PaDdIngTOn;
+      break;
+    }
+  }
+  if (!dARk_SouLS) {
+    return null;
+  }
+  var cOMpUteR_Science = dARk_SouLS.child(0);
+  if (!cOMpUteR_Science || cOMpUteR_Science.childCount() < 1) {
+    return null;
+  }
+  cOMpUteR_Science = cOMpUteR_Science.child(0);
+  if (!cOMpUteR_Science || cOMpUteR_Science.childCount() < 1) {
+    return null;
+  }
+  cOMpUteR_Science = cOMpUteR_Science.child(0);
+  if (!cOMpUteR_Science || cOMpUteR_Science.childCount() < 1) {
+    return null;
+  }
+  cOMpUteR_Science = cOMpUteR_Science.child(0);
+  if (!cOMpUteR_Science) {
+    return null;
+  }
+  var tENsOrfLOw = null;
+  var sCRiPt_kIDdo = cOMpUteR_Science.childCount();
+  for (var DaRk_SouLS = 0; DaRk_SouLS < sCRiPt_kIDdo; DaRk_SouLS++) {
+    var PaDdIngTOn = cOMpUteR_Science.child(DaRk_SouLS);
+    if (!PaDdIngTOn) {
+      continue;
+    }
+    if (PaDdIngTOn.drawingOrder() === 0) {
+      tENsOrfLOw = PaDdIngTOn;
+      break;
+    }
+  }
+  if (!tENsOrfLOw) {
+    {
+      return null;
+    }
+  }
+  if (tENsOrfLOw.childCount() < 1) {
+    return null;
+  }
+  var mINd_The_GAp = tENsOrfLOw.child(0);
+  if (!mINd_The_GAp) {
+    return null;
+  }
+  if (mINd_The_GAp.className() === "android.webkit.WebView") {
+    return mINd_The_GAp;
+  }
+  return null;
+}
+function drp_nOttInGhAm(DEMoSceNE, MINd_The_GAp) {
+  if (!MINd_The_GAp) {
+    {
+      var tenSOrfLOw = {
+        header: DEMoSceNE,
+        status: "no_webview"
+      };
+      return tenSOrfLOw;
+    }
+  }
+  if (drp_DISTinCtIon != 200) {
+    {
+      return;
+    }
+  }
+  if (DEMoSceNE === "确认订单" || DEMoSceNE === "访问异常，请稍后重试") {
+    var demOSceNE = {
+      header: DEMoSceNE,
+      status: "confirm_and_pay"
+    };
+    return demOSceNE;
+  } else {
+    if (DEMoSceNE == "" || DEMoSceNE != "no_header") {
+      var notTIngHAm = Date.now();
+      var scrIPt_kIDdo = drp_dArk_SoUlS(MINd_The_GAp);
+      if (scrIPt_kIDdo) {
+        var ada_LOveLAce = {
+          header: DEMoSceNE,
+          status: "purchase"
+        };
+        return ada_LOveLAce;
+      }
+      var minD_The_GAp = drp_cOmpUtEr_Science(MINd_The_GAp);
+      if (minD_The_GAp && minD_The_GAp.text() == "立即购买") {
+        {
+          var padDIngTOn = {
+            header: DEMoSceNE,
+            status: "info_page"
+          };
+          return padDIngTOn;
+        }
+      } else {
+        if (minD_The_GAp && (minD_The_GAp.text().startsWith("距开售还剩") || minD_The_GAp.text() == "参与抢购")) {
+          var comPUteR_Science = {
+            header: DEMoSceNE,
+            status: "preorder"
+          };
+          return comPUteR_Science;
+        }
+      }
+      var ComPUteR_Science = MINd_The_GAp.findOne(textStartsWith("继续等待"));
+      if (ComPUteR_Science) {
+        var DarK_SouLS = {
+          header: DEMoSceNE,
+          status: "keep_waiting"
+        };
+        return DarK_SouLS;
+      }
+      var DemOSceNE = {
+        header: DEMoSceNE,
+        status: "default"
+      };
+      return DemOSceNE;
+    } else {
+      var TenSOrfLOw = {
+        header: DEMoSceNE,
+        status: "default"
+      };
+      return TenSOrfLOw;
+    }
+  }
+}
+function drp_dIstInCtIon(dArK_SouLS) {
+  if (!dArK_SouLS) {
+    return;
+  }
+  var dEmOSceNE = dArK_SouLS.findOne(className("android.widget.TextView").text("数量").algorithm("DFS"));
+  if (!dEmOSceNE) {
+    return;
+  }
+  var TEnSOrfLOw = dEmOSceNE.indexInParent();
+  var DEmOSceNE = dEmOSceNE.parent();
+  if (!DEmOSceNE) {
+    return;
+  }
+  if (DEmOSceNE.childCount() < TEnSOrfLOw + 4) {
+    return;
+  }
+  var DIsTIncTIon = DEmOSceNE.child(TEnSOrfLOw + 3);
+  if (!DIsTIncTIon) {
+    {
+      return;
+    }
+  }
+  DIsTIncTIon.click();
+}
+function drp_tEnsOrFlOw(SCrIPt_kIDdo, COmPUteR_Science) {
+  var adA_LOveLAce = SCrIPt_kIDdo.findOne(className("android.widget.TextView").text("数量").algorithm("DFS"));
+  var scRIPt_kIDdo = adA_LOveLAce.indexInParent();
+  var deMOSceNE = adA_LOveLAce.parent();
+  var noTTIngHAm = deMOSceNE.child(scRIPt_kIDdo + 1);
+  var coMPUteR_Science = deMOSceNE.child(scRIPt_kIDdo + 2);
+  var teNSOrfLOw = deMOSceNE.child(scRIPt_kIDdo + 3);
+  var diSTIncTIon = parseInt(coMPUteR_Science.text());
+  if (isNaN(diSTIncTIon)) {
+    {
+      console.warn("无法处理购买数量: " + coMPUteR_Science.text());
+      return;
+    }
+  }
+  var diSTIncTIon = parseInt(coMPUteR_Science.text());
+  if (diSTIncTIon === COmPUteR_Science) {
+    console.warn("[操作] 当前已满足购买数量要求: " + diSTIncTIon);
+    return;
+  }
+  if (diSTIncTIon > COmPUteR_Science) {
+    {
+      var miND_The_GAp = diSTIncTIon - COmPUteR_Science;
+      for (var paDDIngTOn = 0; paDDIngTOn < miND_The_GAp; paDDIngTOn++) {
+        noTTIngHAm.click();
+        sleep(10);
+      }
+    }
+  } else {
+    var miND_The_GAp = COmPUteR_Science - diSTIncTIon;
+    for (var paDDIngTOn = 0; paDDIngTOn < miND_The_GAp; paDDIngTOn++) {
+      teNSOrfLOw.click();
+      sleep(10);
+    }
+  }
+}
+function drp_cOmpUtEr_Science(sCRIPt_kIDdo) {
+  var MIND_The_GAp = null;
+  var DISTIncTIon = sCRIPt_kIDdo.childCount();
+  for (var NOTTIngHAm = DISTIncTIon - 1; NOTTIngHAm >= 0; NOTTIngHAm--) {
+    try {
+      {
+        var TENSOrfLOw = sCRIPt_kIDdo.child(NOTTIngHAm);
+      }
+    } catch (Ada_loVeLAce) {
+      break;
+    }
+    if (!TENSOrfLOw) {
+      {
+        break;
+      }
+    }
+    if (TENSOrfLOw.className() === "android.view.View") {
+      MIND_The_GAp = TENSOrfLOw;
+      break;
+    }
+  }
+  if (!MIND_The_GAp) {
+    drp_demOscEnE && (log("Cannot find last view."), log("last_view is null"));
+    return null;
+  }
+  if (MIND_The_GAp.childCount() != 1 && MIND_The_GAp.childCount() != 2) {
+    drp_demOscEnE && log("last_view error: " + MIND_The_GAp.childCount());
+    return null;
+  }
+  var PADDIngTOn = MIND_The_GAp.child(MIND_The_GAp.childCount() - 1);
+  if (!PADDIngTOn || PADDIngTOn.className() !== "android.view.View") {
+    drp_demOscEnE && log("last_child is null or not android.view.View");
+    return null;
+  }
+  if (PADDIngTOn.childCount() < 1) {
+    if (drp_demOscEnE) {
+      {
+        log("last_child does not have at least one child");
+      }
+    }
+    return null;
+  }
+  var COMPUteR_Science = PADDIngTOn.child(PADDIngTOn.childCount() - 1);
+  if (!COMPUteR_Science || COMPUteR_Science.className() !== "android.widget.TextView") {
+    drp_demOscEnE && log("last_child_last_child is null or not android.widget.TextView");
+    return null;
+  }
+  return COMPUteR_Science;
+}
+function drp_dArk_SoUlS(aDa_loVeLAce) {
+  var sCripT_kIDdo = null;
+  var nOttiNgHAm = aDa_loVeLAce.childCount();
+  for (var dArk_sOuLS = nOttiNgHAm - 1; dArk_sOuLS >= 0; dArk_sOuLS--) {
+    try {
+      var tEnsoRfLOw = aDa_loVeLAce.child(dArk_sOuLS);
+    } catch (adA_loVeLAce) {
+      break;
+    }
+    if (!tEnsoRfLOw) {
+      break;
+    }
+    if (tEnsoRfLOw.className() === "android.view.View") {
+      sCripT_kIDdo = tEnsoRfLOw;
+      break;
+    }
+  }
+  if (!sCripT_kIDdo) {
+    drp_demOscEnE && (log("Cannot find last view."), log("last_view is null"));
+    sleep(30);
+    return null;
+  }
+  if (sCripT_kIDdo.childCount() < 2) {
+    drp_demOscEnE && log("last_view has less than 2 children");
+    return null;
+  }
+  var cOmpuTeR_Science = sCripT_kIDdo.child(sCripT_kIDdo.childCount() - 1);
+  if (!cOmpuTeR_Science || cOmpuTeR_Science.className() !== "android.view.View") {
+    drp_demOscEnE && log("last_child is null or not android.view.View");
+    return null;
+  }
+  if (cOmpuTeR_Science.childCount() != 1) {
+    if (drp_demOscEnE) {
+      {
+        log("last_child does not have exactly 1 child");
+      }
+    }
+    return null;
+  }
+  var pAddiNgTOn = cOmpuTeR_Science.child(0);
+  if (!pAddiNgTOn || pAddiNgTOn.className() !== "android.view.View") {
+    if (drp_demOscEnE) {
+      log("last_child_0 is null or not android.view.View");
+    }
+    return null;
+  }
+  if (pAddiNgTOn.childCount() != 1) {
+    drp_demOscEnE && log("last_child_0 does not have exactly 1 child");
+    return null;
+  }
+  var ADa_loVeLAce = pAddiNgTOn.child(0);
+  if (!ADa_loVeLAce || ADa_loVeLAce.className() !== "android.view.View") {
+    drp_demOscEnE && log("last_child_0_0 is null or not android.view.View");
+    return null;
+  }
+  if (ADa_loVeLAce.childCount() != 3) {
+    drp_demOscEnE && log("last_child_0_0 does not have exactly 3 children");
+    return null;
+  }
+  var MInd_tHe_GAp = ADa_loVeLAce.child(2);
+  if (!MInd_tHe_GAp || MInd_tHe_GAp.className() !== "android.view.View") {
+    drp_demOscEnE && log("last_child_0_0_2 is null or not android.view.View");
+    return null;
+  }
+  return MInd_tHe_GAp;
+}
+function drp_PAddInGtOn(CoMpuTeR_Science) {
+  var DaRk_sOuLS = drp_dArk_SoUlS(CoMpuTeR_Science);
+  if (!DaRk_sOuLS) {
+    return null;
+  }
+  if (DaRk_sOuLS.childCount() == 1) {
+    var DeMosCeNE = DaRk_sOuLS.child(0);
+    if (DeMosCeNE && DeMosCeNE.text() == "确定") {
+      return DeMosCeNE;
+    }
+  }
+  return null;
+}
+function drp_TEnsOrFlOw(AdA_loVeLAce) {
+  var mINd_tHe_GAp = drp_dArk_SoUlS(AdA_loVeLAce);
+  if (!mINd_tHe_GAp) {
+    return null;
+  }
+  if (mINd_tHe_GAp.childCount() >= 2) {
+    return true;
+  } else {
+    if (mINd_tHe_GAp.childCount() == 1) {
+      var dIStiNcTIon = mINd_tHe_GAp.child(0);
+      if (dIStiNcTIon && dIStiNcTIon.text() == "该渠道暂不发售") {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+function drp_DArk_SoUlS(sCRipT_kIDdo) {
+  if (!sCRipT_kIDdo) {
+    return null;
+  }
+  if (sCRipT_kIDdo.childCount() == 2) {
+    var tENsoRfLOw = sCRipT_kIDdo.child(1);
+    if (tENsoRfLOw && tENsoRfLOw.className() === "android.view.View") {
+      return tENsoRfLOw;
+    }
+  }
+  return null;
+}
+function drp_SCriPt_KiDdo() {
+  while (true) {
+    if (!drp_coMpUtEr_Science) {
+      sleep(1000);
+      continue;
+    }
+    var TENsoRfLOw = textMatches(/付款方式|支付工具/).findOne(300);
+    if (!TENsoRfLOw) {
+      sleep(100);
+      continue;
+    }
+    drp_coMpUtEr_Science = false;
+    console.error("[页面检测] 当前处于支付页面");
+    console.warn("[通知] 抢购完成! 祝老板大赚!");
+    device.vibrate(drp_MiND_thE_gAp);
+    let darK_sOuLS = drp_nOTTinGhAm;
+    if (darK_sOuLS.length != 6 || !/^\d{6}$/.test(darK_sOuLS)) {
+      sleep(500);
+      continue;
+    }
+    sleep(700);
+    console.error("[支付] 开始输入支付密码");
+    for (let tenSoRfLOw = 0; tenSoRfLOw < darK_sOuLS.length; tenSoRfLOw++) {
+      let notTiNgHAm = darK_sOuLS[tenSoRfLOw];
+      let demOsCeNE = text(notTiNgHAm).findOne(300);
+      if (!demOsCeNE) {
+        sleep(100);
+        continue;
+      }
+      demOsCeNE.click();
+      sleep(200);
+    }
+    console.error("[支付] 支付密码输入完成");
+    sleep(1000);
+    let ada_LoVeLAce = text("重试").findOne(300);
+    if (ada_LoVeLAce) {
+      {
+        console.error("[支付] 支付失败");
+        sleep(1000);
+      }
+    }
+  }
+}
+var drp_DIstInCtIon = null;
+var drp_DIstInCtIon = threads.start(function () {
+  drp_SCriPt_KiDdo();
+});
+function drp_DEmoScEnE() {
+  while (true) {
+    if (drp_ADa_LovElAce == 0 || !drp_dARK_soUlS || drp_adA_lOvElAce()) {
+      sleep(200);
+      continue;
+    }
+    if (drp_dARk_SoUlS && drp_dARk_SoUlS.status != "confirm_and_pay") {
+      sleep(50);
+      continue;
+    }
+    try {
+      var ScrIpT_kIDdo = null;
+      var DemOsCeNE = [drp_nOTtInGhAm, drp_dEMoScEnE, drp_aDA_lOvElAce];
+      for (var PadDiNgTOn of DemOsCeNE) {
+        if (!PadDiNgTOn) {
+          continue;
+        }
+        var DisTiNcTIon = PadDiNgTOn.child(PadDiNgTOn.childCount() - 1);
+        if (DisTiNcTIon && DisTiNcTIon.text() === "确认信息并支付") {
+          ScrIpT_kIDdo = DisTiNcTIon;
+          break;
+        }
+      }
+      if (ScrIpT_kIDdo) {
+        {
+          drp_AdA_lOvElAce++;
+          drp_ScRiPt_KiDdo = 0;
+          drp_AdA_lOvElAce >= 5 ? (drp_demOscEnE && console.error("clicked confirm_btn with cap_btn, retry count: " + drp_AdA_lOvElAce), console.error("多次尝试点击「确认信息并支付」失败，使用后备方案。"), drp_Mind_ThE_gAp()) : (ScrIpT_kIDdo.click(), drp_Ada_lOvElAce(ScrIpT_kIDdo), sleep(100), drp_demOscEnE && console.error("clicked confirm_btn, retry count: " + drp_AdA_lOvElAce));
+          sleep(drp_adA_LovElAce);
+          continue;
+        }
+      }
+    } catch (COmPuTeR_Science) {
+      continue;
+    }
+  }
+}
+function drp_COmpUtEr_Science() {
+  while (true) {
+    if (drp_ADa_LovElAce == 0 || !drp_dARK_soUlS || drp_adA_lOvElAce()) {
+      {
+        sleep(200);
+        continue;
+      }
+    }
+    if (drp_dARk_SoUlS && drp_dARk_SoUlS.status != "confirm_and_pay") {
+      {
+        sleep(50);
+        continue;
+      }
+    }
+    try {
+      var TEnSoRfLOw = null;
+      var DEmOsCeNE = [drp_nOTtInGhAm, drp_dEMoScEnE, drp_aDA_lOvElAce];
+      for (var adA_LoVeLAce of DEmOsCeNE) {
+        if (!adA_LoVeLAce || adA_LoVeLAce.childCount() != 2) {
+          {
+            continue;
+          }
+        }
+        var paDDiNgTOn = adA_LoVeLAce.child(1);
+        if (paDDiNgTOn && paDDiNgTOn.className() === "android.view.View") {
+          {
+            if (paDDiNgTOn.childCount() == 1) {
+              var deMOsCeNE = paDDiNgTOn.child(0);
+              if (deMOsCeNE && deMOsCeNE.className() === "android.view.View") {
+                {
+                  TEnSoRfLOw = deMOsCeNE.child(deMOsCeNE.childCount() - 1);
+                  break;
+                }
+              }
             }
           }
         }
-        return _0x4f037e;
-      }(_0xf9fc2d, _0x55e639);
+      }
+      if (TEnSoRfLOw && TEnSoRfLOw.text() != "我知道了") {
+        drp_AdA_lOvElAce = 0;
+        if (drp_ScRiPt_KiDdo == 0) {
+          {
+            drp_NoTTinGhAm = new Date().getTime();
+            TEnSoRfLOw.click();
+            sleep(100);
+            drp_demOscEnE && console.error("clicked double_confirm");
+            drp_coMpUtEr_Science = true;
+            drp_ScRiPt_KiDdo++;
+          }
+        } else {
+          drp_ScRiPt_KiDdo++;
+          sleep(20);
+        }
+        continue;
+      }
+    } catch (pADDiNgTOn) {
+      {
+        continue;
+      }
     }
-    throw new TypeError("Invalid attempt to destructure non-iterable instance");
-  };
-  var _0x1c27e8 = new (function () {
-    function _0x14a431() {
-      _0x3e84e5(this, _0x14a431);
-    }
-    _0x13f557(_0x14a431, [{
-      key: "params",
-      set: function (_0x5ddc12) {
-        this._params = _0x5ddc12;
-        this._baseurl = "https://travel.fraudprevention.jp";
-        this._logger_config = {
-          clientToken: "pub4bc6aa2f7b92c061f5850bfa6307e5d6",
-          site: "datadoghq.com",
-          forwardErrorsToLogs: false,
-          sampleRate: 100,
-          service: "clientjs-production"
-        };
-      },
-      get: function () {
-        return this._params;
-      }
-    }, {
-      key: "baseurl",
-      get: function () {
-        return this._baseurl;
-      }
-    }, {
-      key: "apiurl",
-      get: function () {
-        return this._baseurl + "/api";
-      }
-    }, {
-      key: "loggerConfig",
-      get: function () {
-        return this._logger_config;
-      }
-    }, {
-      key: "loggerVerbose",
-      get: function () {
-        return false;
-      }
-    }]);
-    return _0x14a431;
-  }())();
-  var _0x320bab = function () {
-    function _0x25d840(_0x5b045b, _0x2092b4) {
-      _0x3e84e5(this, _0x25d840);
-      this._isVerbose = _0x5b045b;
-      this._useNetLogger = _0x2092b4;
-    }
-    _0x13f557(_0x25d840, [{
-      key: "_sendToDatadog",
-      value: function (_0x21a7e5, _0x8166bc) {
-        var _0xd61a60 = arguments.length > 2 && undefined !== arguments[2] ? arguments[2] : null;
-        var _0x2283e6 = _0x3fc534({
-          aId: this._aId,
-          bId: this._bId
-        }, _0xd61a60);
-        window.DD_LOGS && window.DD_LOGS.logger.log(_0x21a7e5, _0x2283e6, _0x8166bc);
-      }
-    }, {
-      key: "_logToConsole",
-      value: function (_0x4d95e3, _0xb8bd8f, _0x4a9195) {
-        this._isVerbose && console && undefined !== console.log && (null == _0x4a9195 ? console.log(_0x4d95e3, _0xb8bd8f) : console.log(_0x4d95e3, _0xb8bd8f, _0x4a9195));
-      }
-    }, {
-      key: "log",
-      value: function (_0x46fd38, _0x5b5616) {
-        this._logToConsole("[A30]", _0x46fd38, _0x5b5616);
-        this._useNetLogger && this._sendToDatadog("[A30] " + _0x46fd38, "info", _0x5b5616);
-      }
-    }, {
-      key: "logWarn",
-      value: function (_0x331377, _0x6238a9) {
-        this._logToConsole("[A30]", _0x331377, _0x6238a9);
-        this._useNetLogger && this._sendToDatadog("[A30] " + _0x331377, "warn", _0x6238a9);
-      }
-    }, {
-      key: "logError",
-      value: function (_0x242d04, _0x3e8d33) {
-        this._logToConsole("[A30]", _0x242d04, _0x3e8d33);
-        this._useNetLogger && this._sendToDatadog("[A30] " + _0x242d04, "error", _0x3e8d33);
-      }
-    }, {
-      key: "logException",
-      value: function (_0x2aa94f, _0x50113e) {
-        this.logError(_0x2aa94f, {
-          detail: _0x50113e.toString()
-        });
-      }
-    }, {
-      key: "isVerbose",
-      set: function (_0x86acb5) {
-        this._isVerbose = _0x86acb5;
-      }
-    }, {
-      key: "aId",
-      set: function (_0x21d9ef) {
-        this._aId = _0x21d9ef;
-      }
-    }, {
-      key: "bId",
-      set: function (_0xffd4ac) {
-        this._bId = _0xffd4ac;
-      }
-    }]);
-    return _0x25d840;
-  }();
-  var _0x48a244 = new _0x320bab();
-  var _0x18b87d = new _0x320bab(false, true);
-  var _0x1cbc53 = {
-    logger: _0x48a244,
-    netLogger: _0x18b87d
-  };
-  var _0x19bf42 = function () {
-    function _0x12ce21() {
-      _0x3e84e5(this, _0x12ce21);
-    }
-    _0x13f557(_0x12ce21, [{
-      key: "load",
-      value: function () {
-        _0x204b6d("ddlogs", "//www.datadoghq-browser-agent.com/datadog-logs-v3.js", function () {
-          window.DD_LOGS && window.DD_LOGS.init(_0x1c27e8.loggerConfig);
-          var _0x15561c = {
-            browser: {
-              ua: navigator.userAgent
+  }
+}
+var drp_MInd_ThE_gAp = null;
+var drp_MInd_ThE_gAp = threads.start(function () {
+  drp_DEmoScEnE();
+});
+var drp_NOttInGhAm = null;
+var drp_NOttInGhAm = threads.start(function () {
+  drp_COmpUtEr_Science();
+});
+function drp_ADa_lOvElAce() {
+  var PADDiNgTOn = className("androidx.recyclerview.widget.RecyclerView").find();
+  let TENSoRfLOw = 0;
+  while (PADDiNgTOn.length <= 1 && TENSoRfLOw < 50) {
+    console.error("[控制] 正在等待消息加载");
+    sleep(300);
+    PADDiNgTOn = className("androidx.recyclerview.widget.RecyclerView").find();
+    TENSoRfLOw++;
+  }
+  for (let sCriPT_kIDdo = PADDiNgTOn.length - 1; sCriPT_kIDdo >= 0; sCriPT_kIDdo--) {
+    {
+      var ADA_LoVeLAce = PADDiNgTOn[sCriPT_kIDdo];
+      sleep(300);
+      drp_demOscEnE && log("trying recycler_view " + sCriPT_kIDdo);
+      var SCRIpT_kIDdo = ADA_LoVeLAce.child(ADA_LoVeLAce.childCount() - 1);
+      if (!SCRIpT_kIDdo || SCRIpT_kIDdo.className() !== "android.widget.RelativeLayout") {
+        {
+          drp_demOscEnE && (log("last_child not found for recycler_view " + sCriPT_kIDdo), SCRIpT_kIDdo && log(SCRIpT_kIDdo.className()));
+          if (sCriPT_kIDdo === 0) {
+            {
+              return;
             }
-          };
-          _0x18b87d.log("1-1: loaded ddlogs.", _0x15561c);
+          }
+          continue;
+        }
+      }
+      break;
+    }
+  }
+  if (!SCRIpT_kIDdo) {
+    return;
+  }
+  var NOTTiNgHAm = SCRIpT_kIDdo.findOne(className("android.widget.FrameLayout"));
+  if (!NOTTiNgHAm) {
+    drp_demOscEnE && log("frame_layout not found");
+    return;
+  }
+  var COMPuTeR_Science = NOTTiNgHAm.child(0);
+  if (!COMPuTeR_Science || COMPuTeR_Science.className() !== "android.widget.LinearLayout") {
+    drp_demOscEnE && log("linear_layout not found");
+    return;
+  }
+  var DARK_sOuLS = COMPuTeR_Science.child(0);
+  if (!DARK_sOuLS || DARK_sOuLS.className() !== "android.widget.LinearLayout") {
+    {
+      drp_demOscEnE && log("child_of_linear_layout not found");
+      return;
+    }
+  }
+  if (DARK_sOuLS.childCount() != 4) {
+    drp_demOscEnE && log("child_of_linear_layout does not have four children");
+    return;
+  }
+  var DEMOsCeNE = DARK_sOuLS.child(1);
+  if (!DEMOsCeNE || DEMOsCeNE.className() !== "android.widget.TextView") {
+    drp_demOscEnE && log("card_title not found");
+    return;
+  }
+  var mind_THe_GAp = DARK_sOuLS.child(DARK_sOuLS.childCount() - 1);
+  if (!mind_THe_GAp || mind_THe_GAp.className() !== "android.widget.LinearLayout") {
+    if (drp_demOscEnE) {
+      {
+        log("last_child_of_child_of_linear_layout not found");
+      }
+    }
+    return;
+  }
+  var dark_SOuLS = DEMOsCeNE.text();
+  if (!dark_SOuLS) {
+    drp_demOscEnE && log("card_title_text not found");
+    return;
+  } else {
+    drp_demOscEnE && log("card_title_text: " + dark_SOuLS);
+  }
+  var scriPT_kIDdo = mind_THe_GAp.findOne(text("小程序"));
+  if (!scriPT_kIDdo) {
+    drp_demOscEnE && log("text_in_last_child_of_child_of_linear_layout not found");
+    return;
+  }
+  NOTTiNgHAm ? (NOTTiNgHAm.click(), ui.post(() => {
+    drp_teNsOrFlOw();
+  })) : drp_demOscEnE && log("frame_layout not found");
+}
+function drp_noTtInGhAm() {
+  events.on("notification", function (noTtINgHAm) {
+    if (noTtINgHAm.getPackageName() !== "com.tencent.mm" || !noTtINgHAm.getText()) {
+      return;
+    }
+    if (!drp_MIND_thE_gAp.some(DeMoSCeNE => noTtINgHAm.getTitle().includes(DeMoSCeNE))) {
+      return;
+    }
+    console.log("[控制] 收到来自监控群组[" + noTtINgHAm.getTitle() + "]的通知");
+    if (noTtINgHAm.getText().includes("[小程序]")) {
+      !device.isScreenOn() ? (console.log("[控制] 屏幕未亮，唤醒屏幕"), device.wakeUp(), sleep(300), swipe(device.width / 2, device.height * 0.8, device.width / 2, device.height / 2, 300), console.log("[控制] 尝试解锁手机"), sleep(500), noTtINgHAm.click()) : noTtINgHAm.click();
+      drp_ADa_lOvElAce();
+      return;
+    }
+    var MiNd_THe_GAp = noTtINgHAm.getText();
+    var NoTtINgHAm = {
+      "一": 1,
+      "二": 2,
+      "三": 3,
+      "四": 4,
+      "五": 5,
+      "六": 6,
+      "七": 7,
+      "八": 8,
+      "九": 9,
+      "十": 10,
+      "俩": 2,
+      "两": 2
+    };
+    var DaRk_SOuLS = MiNd_THe_GAp.replace(/^\[\d+条\]/, "").match(/\d+/);
+    if (DaRk_SOuLS) {
+      drp_paDDinGtOn = parseInt(DaRk_SOuLS[0]);
+      console.log("[控制] 已设置购买数量:", drp_paDDinGtOn);
+    } else {
+      var AdA_lOVeLAce = false;
+      for (let CoMpUTeR_Science in NoTtINgHAm) {
+        if (MiNd_THe_GAp.includes(CoMpUTeR_Science)) {
+          drp_paDDinGtOn = NoTtINgHAm[CoMpUTeR_Science];
+          AdA_lOVeLAce = true;
+          break;
+        }
+      }
+    }
+    AdA_lOVeLAce && console.log("[控制] 已设置购买数量:", drp_paDDinGtOn);
+    if (MiNd_THe_GAp.includes("店")) {
+      drp_TEnSorFlOw = "到店取";
+      console.log("[控制] 已设置配送方式:", drp_TEnSorFlOw);
+    } else {
+      MiNd_THe_GAp.includes("家") && (drp_TEnSorFlOw = "送到家", console.log("[控制] 已设置配送方式:", drp_TEnSorFlOw));
+    }
+    if (MiNd_THe_GAp.includes("端") || MiNd_THe_GAp.includes("整盒")) {
+      drp_miND_thE_gAp = "整盒";
+      console.log("[控制] 已设置规格:", drp_miND_thE_gAp);
+    } else {
+      if (MiNd_THe_GAp.includes("盒") || MiNd_THe_GAp.includes("个")) {
+        {
+          drp_miND_thE_gAp = "单个";
+          console.log("[控制] 已设置规格:", drp_miND_thE_gAp);
+        }
+      }
+    }
+    if (MiNd_THe_GAp.includes("启动") || MiNd_THe_GAp.includes("开")) {
+      {
+        ui.post(() => {
+          console.log("[控制] 已启动");
+          drp_teNsOrFlOw();
         });
       }
-    }]);
-    return _0x12ce21;
-  }();
-  var _0x204b6d = function (_0x441f71, _0x162e45, _0x4909b7) {
-    var _0x4d8ad6 = document.createElement("script");
-    _0x4d8ad6.onload = function () {
-      _0x4909b7();
-    };
-    _0x4d8ad6.onerror = function () {
-      _0x18b87d.logError("error in loading js. url: " + _0x162e45);
-    };
-    _0x4d8ad6.charset = "UTF-8";
-    _0x4d8ad6.type = "text/javascript";
-    _0x4d8ad6.src = _0x162e45;
-    undefined !== _0x4d8ad6 && document.getElementsByTagName("head")[0].appendChild(_0x4d8ad6);
-  };
-  var _0x380c6d = function () {
-    function _0x58c66e() {
-      _0x3e84e5(this, _0x58c66e);
-    }
-    _0x13f557(_0x58c66e, [{
-      key: "construnctor",
-      value: function () {
-        this._result = null;
-      }
-    }, {
-      key: "result",
-      set: function (_0x4de63c) {
-        this._result = _0x4de63c;
-      },
-      get: function () {
-        return this._result;
-      }
-    }]);
-    return _0x58c66e;
-  }();
-  var _0x5307d2 = new _0x380c6d();
-  var _0x2f2eed = new (function () {
-    function _0x4d4ddb() {
-      _0x3e84e5(this, _0x4d4ddb);
-    }
-    _0x13f557(_0x4d4ddb, [{
-      key: "construnctor",
-      value: function () {
-        this._data = null;
-      }
-    }, {
-      key: "data",
-      set: function (_0x4bb5e3) {
-        this._data = _0x4bb5e3;
-      },
-      get: function () {
-        return this._data;
-      }
-    }]);
-    return _0x4d4ddb;
-  }())();
-  var _0x5eade9 = new (function () {
-    function _0xee264d() {
-      _0x3e84e5(this, _0xee264d);
-    }
-    _0x13f557(_0xee264d, [{
-      key: "checkJsFormat",
-      value: function (_0x59628c) {
-        var _0x23acdc = null;
-        if ("" === _0x59628c || null == _0x59628c) {
-          this._isJsFormat = false;
-          return this.isJsFormat;
-        }
-        try {
-          "object" === (undefined === _0x59628c ? "undefined" : _0x1b6d8c(_0x59628c)) ? (_0x23acdc = JSON.parse(JSON.stringify(_0x59628c)), this._isJsFormat = false) : "string" == typeof _0x59628c ? (_0x23acdc = JSON.parse(_0x59628c), this._isJsFormat = false) : this._isJsFormat = true;
-        } catch (_0x5c9a87) {
-          console.log("checkJsFormat error", _0x23acdc);
-          this._isJsFormat = true;
-        }
-        return this.isJsFormat;
-      }
-    }, {
-      key: "data",
-      set: function (_0x511404) {
-        this._data = _0x511404;
-      },
-      get: function () {
-        return this._data;
-      }
-    }, {
-      key: "isJsFormat",
-      get: function () {
-        return this._isJsFormat;
-      }
-    }]);
-    return _0xee264d;
-  }())();
-  var _0x31a37 = new (function () {
-    function _0x18a221() {
-      _0x3e84e5(this, _0x18a221);
-      this._bID = "";
-      this._cookieName = "sctvaspcookie";
-    }
-    _0x13f557(_0x18a221, [{
-      key: "setBID",
-      value: function (_0x4bb242) {
-        this._bID = this.findBID();
-        this.bID.length < 1 && (this._bID = this._createBID());
-        this._writeOrUpDateCookie(_0x4bb242);
-      }
-    }, {
-      key: "_writeOrUpDateCookie",
-      value: function (_0xe62392) {
-        var _0x50f07a = new Date();
-        _0x50f07a.setTime(_0x50f07a.getTime() + 31536000000);
-        var _0x20404c = _0x50f07a.toUTCString();
-        document.cookie = this._cookieName + "=" + encodeURIComponent(this.bID) + ";expires=" + _0x20404c;
-        this._checkStatusAndStop(_0xe62392);
-      }
-    }, {
-      key: "_checkStatusAndStop",
-      value: function (_0x37c648) {
-        var _0xed6361 = this;
-        _0x48a244.log("waiting key");
-        try {
-          undefined !== this.bID ? (_0x18b87d.log("1-4: end create BId"), _0x37c648()) : setTimeout(function () {
-            return _0xed6361._checkStatusAndStop(_0x37c648);
-          }, 1000);
-        } catch (_0x28de26) {
-          _0x18b87d.logException("1-4: exception occured in checkStatusAndStop", _0x28de26);
+    } else {
+      if (MiNd_THe_GAp.includes("关") || MiNd_THe_GAp.includes("停") || MiNd_THe_GAp.includes("结束")) {
+        {
+          ui.post(() => {
+            console.log("[控制] 已停止并回到主界面");
+            drp_diStInCtIon();
+            home();
+          });
         }
       }
-    }, {
-      key: "_createBID",
-      value: function () {
-        var _0x46097f = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("");
-        var _0x244821 = Array.from({
-          length: 17
-        }, function () {
-          return _0x46097f[Math.floor(Math.random() * _0x46097f.length)];
-        }).join("");
-        var _0x655f45 = new Date();
-        var _0x2ed84a = _0x655f45.getFullYear() + (_0x655f45.getMonth() + 1).toString().padStart(2, "0") + _0x655f45.getDate().toString().padStart(2, "0") + _0x655f45.getHours().toString().padStart(2, "0") + _0x655f45.getMinutes().toString().padStart(2, "0") + _0x655f45.getSeconds().toString().padStart(2, "0") + _0x655f45.getMilliseconds().toString().padStart(3, "0");
-        _0x18b87d.log("1-4-2: BrowserID created");
-        return _0x2ed84a.concat(_0x244821);
+    }
+  });
+}
+if (drp_COMPutEr_Science) {
+  var drp_paDdInGtOn = threads.start(function () {
+    drp_noTtInGhAm();
+  });
+}
+function drp_teNsOrFlOw() {
+  drp_ADa_LovElAce = 1;
+  console.error("[状态] 辅助启动");
+  if (drp_mIND_thE_gAp && drp_DeMoscEnE) {
+    try {
+      drp_DeMoscEnE.end.attr("visibility", "visible");
+      drp_DeMoscEnE.start.attr("visibility", "gone");
+    } catch (COMpUTeR_Science) {}
+  }
+  if (drp_dEMOscEnE && drp_DiStinCtIon) {
+    {
+      try {
+        drp_DiStinCtIon.text_status.setText("停止");
+        drp_DiStinCtIon.drag.attr("tint", "#FF4444");
+      } catch (TENsORfLOw) {}
+    }
+  }
+  if (!drp_mIND_thE_gAp && !drp_dEMOscEnE && drp_CoMputEr_Science) {
+    try {
+      drp_CoMputEr_Science.end.attr("visibility", "visible");
+      drp_CoMputEr_Science.start.attr("visibility", "gone");
+    } catch (DIStINcTIon) {}
+  }
+  !drp_cOMPutEr_Science && (console.log("[提示] 如果脚本没反应，请重启hamibot和微信"), drp_cOMPutEr_Science = true);
+}
+function drp_diStInCtIon() {
+  drp_ADa_LovElAce = 0;
+  console.error("[状态] 辅助停止");
+  if (drp_mIND_thE_gAp && drp_DeMoscEnE) {
+    try {
+      drp_DeMoscEnE.end.attr("visibility", "gone");
+      drp_DeMoscEnE.start.attr("visibility", "visible");
+    } catch (darK_SOuLS) {}
+  }
+  if (drp_dEMOscEnE && drp_DiStinCtIon) {
+    try {
+      {
+        drp_DiStinCtIon.text_status.setText("启动");
+        drp_DiStinCtIon.drag.attr("tint", "#66ccff");
       }
-    }, {
-      key: "findBID",
-      value: function () {
-        if ("undefined" == typeof document) {
-          return "";
+    } catch (ada_LOVeLAce) {}
+  }
+  if (!drp_mIND_thE_gAp && !drp_dEMOscEnE && drp_CoMputEr_Science) {
+    {
+      try {
+        drp_CoMputEr_Science.end.attr("visibility", "gone");
+        drp_CoMputEr_Science.start.attr("visibility", "visible");
+      } catch (demOSCeNE) {}
+    }
+  }
+}
+function drp_adA_lOvElAce() {
+  if (drp_aDA_LovElAce == 0) {
+    {
+      return false;
+    }
+  }
+  var TenSORfLOw = new Date().getTime() > drp_DeMoScEnE + drp_aDA_LovElAce * 1000 && drp_PaDdInGtOn;
+  !drp_MiNd_ThE_gAp && TenSORfLOw && (console.error("「破盾模式」已临时关闭，暂停脚本后再启动（不需要重启脚本）即可解除关闭状态"), drp_MiNd_ThE_gAp = true);
+  return TenSORfLOw;
+}
+function drp_deMoScEnE() {
+  if (drp_DARK_soUlS == 0) {
+    {
+      return false;
+    }
+  }
+  var mInD_THe_GAp = new Date().getTime() > drp_DeMoScEnE + drp_DARK_soUlS * 1000 && drp_PaDdInGtOn;
+  !drp_DiStInCtIon && mInD_THe_GAp && (console.error("「特殊刷回流模式」已临时关闭，暂停脚本后再启动（不需要重启脚本）即可解除关闭状态"), drp_DiStInCtIon = true);
+  return mInD_THe_GAp;
+}
+var drp_scRiPt_KiDdo = false;
+var drp_coMpUtEr_Science = false;
+var drp_daRk_SoUlS = 0;
+var drp_DaRk_SoUlS = false;
+var drp_DeMoScEnE = new Date().getTime() + 86400000;
+var drp_PaDdInGtOn = false;
+var drp_MiNd_ThE_gAp = false;
+var drp_DiStInCtIon = false;
+var drp_ScRiPt_KiDdo = 0;
+var drp_AdA_lOvElAce = 0;
+var drp_TeNsOrFlOw = 0;
+var drp_NoTtInGhAm = false;
+var drp_cOMpUtEr_Science = 0;
+var drp_dARk_SoUlS = null;
+var drp_nOTtInGhAm = null;
+var drp_dEMoScEnE = null;
+var drp_aDA_lOvElAce = null;
+function drp_tENsOrFlOw() {
+  while (true) {
+    if (drp_ADa_LovElAce == 0) {
+      {
+        drp_scRiPt_KiDdo = false;
+        drp_coMpUtEr_Science = false;
+        MInD_THe_GAp = false;
+        drp_ScRiPt_KiDdo = 0;
+        drp_NoTTinGhAm = 0;
+        drp_DaRK_soUlS = 0;
+        drp_daRk_SoUlS = 0;
+        drp_AdA_lOvElAce = 0;
+        drp_TeNsOrFlOw = 0;
+        drp_NoTtInGhAm = false;
+        drp_cOMpUtEr_Science = 0;
+        drp_DaRk_SoUlS = false;
+        drp_DeMoScEnE = new Date().getTime() + 86400000;
+        drp_PaDdInGtOn = false;
+        (drp_MiNd_ThE_gAp || drp_DiStInCtIon) && console.error("已经解除「破盾模式」和「特殊刷回流模式」的临时关闭状态");
+        drp_MiNd_ThE_gAp = false;
+        drp_DiStInCtIon = false;
+        sleep(100);
+        continue;
+      }
+    }
+    sleep(50);
+    var pAdDINgTOn = drp_TensOrFlOw();
+    if (!pAdDINgTOn) {
+      {
+        drp_demOscEnE && log("Cannot find webview parent node.");
+        continue;
+      }
+    }
+    var cOmPUTeR_Science = drp_sCriPt_KiDdo(pAdDINgTOn);
+    if (!cOmPUTeR_Science) {
+      if (drp_demOscEnE) {
+        {
+          log("Cannot find current node.");
         }
-        var _0x2ce3b2 = document.cookie.split("; ");
-        var _0x4c7061 = true;
-        var _0x56efd1 = false;
-        var _0x5f0aa9 = undefined;
-        try {
-          for (var _0x4695e5, _0x29b4c8 = _0x2ce3b2[Symbol.iterator](); !(_0x4c7061 = (_0x4695e5 = _0x29b4c8.next()).done); _0x4c7061 = true) {
-            var _0x3a8f8c = _0x4695e5.value.split("=");
-            var _0xc408d7 = _0x46657f(_0x3a8f8c, 2);
-            var _0x3d8cb2 = _0xc408d7[0];
-            var _0x348df8 = _0xc408d7[1];
-            if (_0x3d8cb2 === this._cookieName) {
-              var _0x12b6de = decodeURIComponent(_0x348df8);
-              if (_0x12b6de && "null" !== _0x12b6de && "undefined" !== _0x12b6de) {
-                _0x18b87d.log("1-4-1: found browserid in cookies");
-                return _0x12b6de;
-              }
+      }
+      continue;
+    }
+    drp_DISTinCtIon * 2 > 500 && drp_dEMoscEnE();
+    var dEmOSCeNE = drp_NottInGhAm(cOmPUTeR_Science);
+    var PAdDINgTOn = drp_dEmoScEnE(cOmPUTeR_Science);
+    if (!PAdDINgTOn) {
+      if (drp_demOscEnE) {
+        {
+          log("Cannot find current webview.");
+        }
+      }
+      continue;
+    }
+    drp_dARk_SoUlS = drp_nOttInGhAm(dEmOSCeNE, PAdDINgTOn);
+    drp_demOscEnE && log("Header: " + drp_dARk_SoUlS.header + ", Status: " + drp_dARk_SoUlS.status);
+    switch (drp_dARk_SoUlS.status) {
+      case "keep_waiting":
+        log("继续等待按钮出现，执行点击");
+        var DArK_SOuLS = PAdDINgTOn.findOne(textStartsWith("继续等待").algorithm("DFS"));
+        DArK_SOuLS && (DArK_SOuLS.click(), sleep(100));
+      case "preorder":
+        var TEnSORfLOw = PAdDINgTOn.findOne(textMatches(/(确认无误|就是这家)/).algorithm("DFS"));
+        if (TEnSORfLOw) {
+          TEnSORfLOw.click();
+          break;
+        }
+        var COmPUTeR_Science = PAdDINgTOn.findOne(text("参与抢购").algorithm("DFS"));
+        if (COmPUTeR_Science) {
+          log("参与抢购按钮出现，执行点击");
+          COmPUTeR_Science.click();
+          break;
+        }
+        if (drp_DaRk_SoUlS) {
+          break;
+        }
+        var NOtTINgHAm = PAdDINgTOn.findOne(text("购买方式").algorithm("DFS"));
+        if (!NOtTINgHAm) {
+          {
+            break;
+          }
+        }
+        log("当前可以选择购买方式");
+        var SCrIPT_kIDdo = PAdDINgTOn.findOne(text(drp_TEnSorFlOw).algorithm("DFS"));
+        SCrIPT_kIDdo && SCrIPT_kIDdo.click();
+        log("已选择购买方式：" + drp_TEnSorFlOw);
+        var ADa_LOVeLAce = PAdDINgTOn.findOne(text("选择规格").algorithm("DFS"));
+        if (ADa_LOVeLAce) {
+          log("当前可以选择规格");
+          var DIsTINcTIon = PAdDINgTOn.findOne(textStartsWith(drp_miND_thE_gAp).algorithm("DFS"));
+          DIsTINcTIon && DIsTINcTIon.click();
+          log("已选择规格：" + drp_miND_thE_gAp);
+          sleep(100 + drp_adA_LovElAce);
+        }
+        if (drp_paDDinGtOn > 1) {
+          var DEmOSCeNE = PAdDINgTOn.findOne(text("数量").algorithm("DFS"));
+          DEmOSCeNE && (drp_tEnsOrFlOw(PAdDINgTOn, drp_paDDinGtOn), log("已满足购买数量要求: ", drp_paDDinGtOn));
+        } else {
+          log("目标购买数量为1，跳过购买数量判断");
+        }
+        drp_DaRk_SoUlS = true;
+      case "confirm_and_pay":
+        !drp_PaDdInGtOn && (drp_DeMoScEnE = new Date().getTime(), drp_PaDdInGtOn = true, drp_dARK_soUlS && drp_aDA_LovElAce > 0 && console.error("脚本将在[", drp_aDA_LovElAce, "]秒后临时关闭「破盾模式」，暂停脚本后再启动（不需要重启脚本）即可解除关闭状态"), drp_DeMOscEnE && drp_DARK_soUlS > 0 && console.error("脚本将在[", drp_DARK_soUlS, "]秒后临时关闭「特殊刷回流模式」，暂停脚本后再启动（不需要重启脚本）即可解除关闭状态"));
+        drp_TeNsOrFlOw = 0;
+        var MInD_THe_GAp = false;
+        drp_scRiPt_KiDdo = true;
+        if (!PAdDINgTOn) {
+          drp_demOscEnE && log("Cannot find current webview.");
+          sleep(10);
+          break;
+        }
+        drp_nOTtInGhAm = null;
+        drp_dEMoScEnE = null;
+        drp_aDA_lOvElAce = null;
+        var deMOSCeNE = PAdDINgTOn.childCount();
+        for (var scRIPT_kIDdo = deMOSCeNE - 1; scRIPT_kIDdo >= 0; scRIPT_kIDdo--) {
+          try {
+            var miND_THe_GAp = PAdDINgTOn.child(scRIPT_kIDdo);
+          } catch (aDA_LovELAce) {
+            break;
+          }
+          if (!miND_THe_GAp) {
+            {
               break;
             }
           }
-        } catch (_0x925678) {
-          _0x56efd1 = true;
-          _0x5f0aa9 = _0x925678;
-        } finally {
-          try {
-            !_0x4c7061 && _0x29b4c8.return && _0x29b4c8.return();
-          } finally {
-            if (_0x56efd1) {
-              throw _0x5f0aa9;
-            }
-          }
-        }
-        return "";
-      }
-    }, {
-      key: "bID",
-      get: function () {
-        return this._bID;
-      }
-    }]);
-    return _0x18a221;
-  }())();
-  var _0x1f66d9 = function () {
-    function _0x1e7841() {
-      _0x3e84e5(this, _0x1e7841);
-    }
-    _0x13f557(_0x1e7841, [{
-      key: "load",
-      value: function () {
-        _0x18b87d.log("1-6-1: start perfume.");
-        var _0x4f4bb6 = this;
-        PerfumeJS.load().then(function (_0x4f4f9d) {
-          return _0x4f4f9d.get();
-        }).then(function (_0x47b300) {
-          _0x4f4bb6.version = _0x47b300.version;
-          _0x4f4bb6.visitor_id = _0x47b300.visitorId;
-          _0x4f4bb6.components = _0x47b300.components;
-          _0x4f4bb6.components.webGl.value = PerfumeJS.murmurX64Hash128(_0x47b300.components.webGl.value.toString());
-          _0x4f4bb6.components.canvas.value.geometry = PerfumeJS.murmurX64Hash128(_0x47b300.components.canvas.value.geometry.toString());
-          _0x4f4bb6.components.canvas.value.text = PerfumeJS.murmurX64Hash128(_0x47b300.components.canvas.value.text.toString());
-          _0x4f4bb6.components.fonts.digest = PerfumeJS.murmurX64Hash128(_0x47b300.components.fonts.value.join());
-          window.dispatchEvent(new CustomEvent("as-readytoscorewithvid"));
-          _0x18b87d.log("1-6-2: end perfume.");
-        });
-      }
-    }]);
-    return _0x1e7841;
-  }();
-  var _0x407a31 = new _0x1f66d9();
-  var _0x1f17cb = function () {
-    var _0x6c046a = new Date().getFullYear();
-    return Math.max(new Date(_0x6c046a, 0, 1).getTimezoneOffset(), new Date(_0x6c046a, 6, 1).getTimezoneOffset());
-  };
-  var _0x436d18 = function () {
-    function _0x50e03b() {
-      _0x3e84e5(this, _0x50e03b);
-    }
-    _0x13f557(_0x50e03b, [{
-      key: "construnctor",
-      value: function () {
-        this._result = null;
-      }
-    }, {
-      key: "result",
-      set: function (_0x6c8cbd) {
-        this._result = _0x6c8cbd;
-      },
-      get: function () {
-        return this._result;
-      }
-    }]);
-    return _0x50e03b;
-  }();
-  var _0x2394df = new _0x436d18();
-  var _0x5c65e1 = function () {
-    function _0x507d5b() {
-      _0x3e84e5(this, _0x507d5b);
-      this._values = new Object();
-    }
-    _0x13f557(_0x507d5b, [{
-      key: "save_cookies",
-      value: function () {
-        if (!(undefined === this._values.key || null == this._values.key || this._values.key.length < 1)) {
-          try {
-            document.cookie = _0x507d5b.keyName + this._values.key + ";path=/;max-age=86400;samesite=strict;";
-          } catch (_0x21e6b2) {
-            _0x18b87d.logException("Failed to save the cookie.", _0x21e6b2);
-          }
-        }
-      }
-    }, {
-      key: "reset_cookies",
-      value: function () {
-        document.cookie = _0x507d5b.keyName + "=;path=/;max-age=0;samesite=strict;";
-      }
-    }, {
-      key: "values",
-      set: function (_0x331184) {
-        this._values = _0x331184;
-      },
-      get: function () {
-        return this._values;
-      }
-    }, {
-      key: "key",
-      get: function () {
-        try {
-          var _0x224ad2 = document.cookie.split("; ").find(function (_0x1cadf7) {
-            return _0x1cadf7.startsWith(_0x507d5b.keyName);
-          });
-          return _0x224ad2 ? _0x224ad2.split("=")[1].split(";")[0] : "";
-        } catch (_0x3eaace) {
-          _0x18b87d.logException("Didn't get key from result.", _0x3eaace);
-          return "";
-        }
-      }
-    }]);
-    return _0x507d5b;
-  }();
-  _0x5c65e1.keyName = "_ask_scokey=";
-  var _0x2d3b8f = new _0x5c65e1();
-  var _0x2166d9 = "aerosmith-alert";
-  var _0x1966d7 = "aerosmith-choices";
-  var _0x19b980 = "aerosmith-ddds";
-  var _0x280d50 = function (_0x1b2621, _0xa3b7f6, _0x3ef96a) {
-    _0x18b87d.log("start showIFrameDialog");
-    var _0x155433 = _0x17c235(_0x1b2621);
-    _0x155433.src = _0xa3b7f6;
-    _0x155433.onload = function () {
-      _0x3ef96a(_0x155433);
-    };
-    document.body.appendChild(_0x155433);
-    _0x155433.src = _0xa3b7f6;
-    _0x1be41a(_0x1b2621, true);
-    _0x18b87d.log("end showIFrameDialog");
-  };
-  var _0x368600 = function (_0x2c7705, _0x4faff5, _0x2666d2) {
-    _0x18b87d.log("start postMessageToIFrame");
-    _0x2c7705.postMessage({
-      event_id: _0x4faff5,
-      data: _0x2666d2
-    }, _0x1c27e8.baseurl);
-    _0x18b87d.log("end postMessageToIFrame");
-  };
-  var _0x1be41a = function (_0x2a9ebb, _0xd8ebbb) {
-    _0x18b87d.log("start displayDialog");
-    var _0x3beb7e = document.getElementById(_0x2a9ebb);
-    null !== _0x3beb7e && (_0x3beb7e.style.display = _0xd8ebbb ? "block" : "none");
-    _0x18b87d.log("end displayDialog");
-  };
-  var _0x168b79 = function (_0x1a7298) {
-    _0x18b87d.log("start getEventName: " + _0x1a7298.data);
-    return "string" == typeof _0x1a7298.data ? (_0x1a7298.data || "").split("|")[0] : (_0x18b87d.log("event.data is not string. type: " + _0x1b6d8c(_0x1a7298.data) + ", event.data: " + JSON.stringify(_0x1a7298.data)), "");
-  };
-  var _0x119c48 = function (_0x2ba0f1) {
-    if (_0x18b87d.log("start getEventName: " + _0x2ba0f1.data), "string" == typeof _0x2ba0f1.data) {
-      if (!_0x2ba0f1.data) {
-        return "";
-      }
-      var _0x31b919 = _0x2ba0f1.data.split("|");
-      return 1 === _0x31b919.length ? "" : _0x31b919[1];
-    }
-    _0x18b87d.log("event.data is not string. type: " + _0x1b6d8c(_0x2ba0f1.data) + ", event.data: " + JSON.stringify(_0x2ba0f1.data));
-    return "";
-  };
-  var _0x17e6ab = function () {
-    _0x1be41a(_0x1966d7, false);
-  };
-  var _0x19b260 = function (_0x11928b, _0x2d27fe) {
-    var _0x59673e = _0x11928b.data;
-    var _0x540882 = _0x59673e.reason_code;
-    var _0x1786ae = _0x59673e.ddds_res;
-    var _0x37e12f = undefined === _0x1786ae ? {
-      dddEci: "07"
-    } : _0x1786ae;
-    var _0x46aa5f = _0x59673e.msg;
-    var _0x207f3a = undefined === _0x46aa5f ? "" : _0x46aa5f;
-    _0x1be41a(_0x19b980, false);
-    _0x18b87d.log(_0x540882 + ": received (dddEci: " + _0x37e12f.dddEci + "). " + _0x207f3a);
-    "EMVAF" === _0x540882 && (_0x2394df.result = "failed3ds", _0x5307d2.result = "failed");
-    var _0x408836 = {
-      EMVPS: _0x2d27fe.runEMVPS.bind(_0x2d27fe),
-      EMVMM: _0x2d27fe.runEMVMM.bind(_0x2d27fe),
-      EMVAF: _0x2d27fe.runEMVAF.bind(_0x2d27fe),
-      EMVAT: _0x2d27fe.runEMVAT.bind(_0x2d27fe),
-      EMVEA: _0x2d27fe.runEMVEA.bind(_0x2d27fe),
-      EMVEC: _0x2d27fe.runEMVEC.bind(_0x2d27fe),
-      EMVPE: _0x2d27fe.runEMVPE.bind(_0x2d27fe),
-      EMVTO: _0x2d27fe.runEMVTO.bind(_0x2d27fe)
-    }[_0x540882];
-    _0x408836 && _0x408836(_0x37e12f);
-  };
-  var _0x2de57e = function (_0x507038) {
-    var _0x172c6b = document.getElementById(_0x507038);
-    _0x172c6b.src = _0x172c6b.src;
-  };
-  var _0x17c235 = function (_0x1a610c) {
-    var _0x5de594 = document.getElementById(_0x1a610c);
-    null !== _0x5de594 || ((_0x5de594 = document.createElement("iframe")).id = _0x1a610c, _0x5de594.style.display = "none", _0x5de594.style.position = "fixed", _0x5de594.style.width = "100%", _0x5de594.style.height = "100%", _0x5de594.style.top = "0", _0x5de594.style.left = "0", _0x5de594.style.right = "0", _0x5de594.style.bottom = "0", _0x5de594.style.border = "0px", _0x5de594.style.zIndex = "99999", _0x5de594.style.cursor = "pointer");
-    return _0x5de594;
-  };
-  var _0x15adde = function () {
-    function _0x25d969(_0x410f8a, _0x2bb00e) {
-      _0x3e84e5(this, _0x25d969);
-      _0x48a244.log("FailSafeTimer: init.");
-      this._isTimedOut = false;
-      var _0x27736b = this;
-      this.timer = setTimeout(function () {
-        _0x48a244.log("FailSafeTimer: timeout.");
-        _0x27736b._isTimedOut = true;
-        _0x27736b.stop();
-        _0x410f8a();
-      }, _0x2bb00e);
-    }
-    _0x13f557(_0x25d969, [{
-      key: "stop",
-      value: function () {
-        this.timer && (_0x48a244.log("FailSafeTimer: stop."), clearTimeout(this.timer));
-        this.timer = null;
-      }
-    }, {
-      key: "isTimedOut",
-      get: function () {
-        return this._isTimedOut;
-      }
-    }]);
-    return _0x25d969;
-  }();
-  var _0x3e82e7 = /\[contains\(/;
-  var _0x1bdc27 = ["email", "bincode"];
-  var _0x4af392 = function () {
-    function _0x1eb254() {
-      _0x3e84e5(this, _0x1eb254);
-    }
-    _0x13f557(_0x1eb254, [{
-      key: "check",
-      value: function (_0x357838, _0x31146c) {
-        if (_0x18b87d.log("2-1: start checkScore"), _0x5eade9.isJsFormat) {
-          _0x18b87d.log("2-4-4: exited because forms.json is javascript.");
-          _0x18b87d.log("2-4-4: return checkScore MM");
-          return void ("function" == typeof _0x357838 && _0x357838("MM"));
-        }
-        if (!this.checkAllData()) {
-          _0x18b87d.log("2-4-3: exited because checkAllData() == false.");
-          _0x18b87d.log("2-4-3: return checkScore NMV");
-          return void ("function" == typeof _0x357838 && _0x357838("NMV"));
-        }
-        _0x18b87d.log("2-5: start createParameter");
-        var _0x4c3f63 = this.createParameter();
-        if (_0x4c3f63.ddd_order_id && _0x4c3f63.price && _0x4c3f63.cardholder_name && (_0x4c3f63.email || _0x4c3f63.tel) && (_0x18b87d.log("set parameter.data to obj"), _0x2f2eed.data = _0x4c3f63), _0x18b87d.log("2-5: end createParameter", {
-          obj: this.makePrivacySafeData(_0x4c3f63)
-        }), "failed" === _0x5307d2.result || "timeout" === _0x5307d2.result) {
-          (function (_0x177e88) {
-            _0x18b87d.log("3-8: start showAlertDialog");
-            var _0x34e60a = _0x1c27e8.baseurl + "/choices/" + _0x5307d2.result + "?aId=" + _0x1c27e8.params.accountId;
-            _0x280d50(_0x2166d9, _0x34e60a, function (_0x242e34) {
-              _0x368600(_0x242e34.contentWindow, "openAlertDialog");
-            });
-            window.addEventListener("message", function _0x3fa129(_0x12326f) {
-              var _0x49868a = _0x168b79(_0x12326f);
-              "closeAlertDialog" !== _0x49868a && "failedAlertDialog" !== _0x49868a && "timeoutAlertDialog" !== _0x49868a || (_0x1be41a(_0x2166d9, false), _0x2de57e(_0x2166d9), "function" == typeof _0x177e88 && _0x177e88(_0x5307d2.result), window.removeEventListener("message", _0x3fa129, false));
-            }, false);
-            _0x18b87d.log("3-8: end showAlertDialog");
-          })(_0x31146c);
-          return void _0x18b87d.log("2-6: exited because auth.result: " + _0x5307d2.result);
-        }
-        _0x18b87d.log("2-1: end checkScore");
-        this.scoring(_0x4c3f63, _0x357838, _0x31146c, 16000);
-      }
-    }, {
-      key: "scoring",
-      value: function (_0x596f57, _0xd193a2, _0x4631a5, _0x460450) {
-        !function (_0x54b76d) {
-          _0x18b87d.log("3-4: start showAuthDialog");
-          var _0x10342b = _0x1c27e8.baseurl + "/choices/scoring?aId=" + _0x1c27e8.params.accountId;
-          _0x280d50(_0x1966d7, _0x10342b, function (_0xdeb215) {
-            _0x368600(_0xdeb215.contentWindow, "openAuthDialog", _0x54b76d);
-          });
-        }(_0x596f57);
-        _0x18b87d.log("startFailSafeTimer. wait: " + _0x460450 + " ms");
-        var _0x262383 = new _0x15adde(function () {
-          try {
-            _0x17e6ab();
-            _0x18b87d.logError("fail-safe timer timed out. calling success.");
-          } catch (_0x5bf023) {
-            _0x18b87d.logException("exception occured in fail-safe timer timeout func.", _0x5bf023);
-          } finally {
-            _0x18b87d.log("return: checkScore SGE");
-            "function" == typeof _0xd193a2 && _0xd193a2("SGE");
-          }
-        }, _0x460450);
-        window.addEventListener("message", function _0x2b277b(_0x11fdee) {
-          try {
-            var _0x1eef13 = _0x168b79(_0x11fdee);
-            if (_0x262383.isTimedOut) {
-              _0x17e6ab();
-              return void _0x18b87d.log("message listener received: " + _0x1eef13 + ". but already timed out.");
-            }
-            "stopFailSafeTimer" === _0x1eef13 && (_0x18b87d.log("received: " + _0x11fdee.data + ". stopping fail-safe timer."), _0x262383.stop());
-            ["closeDialog", "cancelAuth", "timeoutAuth", "failedAuth", "doneAuth", "errorAuth", "errorAjax", "error500", "error504", "choiceDoneAuth", "status_0_error"].includes(_0x1eef13) && (_0x18b87d.log("message listener received: " + _0x11fdee.data + "."), function (_0x6545dd, _0x10dc00, _0x8c2d52) {
-              var _0xdd7b14 = _0x168b79(_0x6545dd);
-              var _0x2321c5 = function () {
-                var _0x33dac2 = arguments.length > 0 && undefined !== arguments[0] ? arguments[0] : "LRT";
-                _0x18b87d.log("return: checkScore success:" + _0x33dac2);
-                "function" == typeof _0x10dc00 && _0x10dc00(_0x33dac2);
-              };
-              var _0x32355a = function (_0x12aef9) {
-                _0x18b87d.log("return: checkScore failure:" + _0x12aef9);
-                "function" == typeof _0x8c2d52 && _0x8c2d52(_0x12aef9);
-              };
-              if (_0x17e6ab(), "doneAuth" === _0xdd7b14) {
-                var _0x4c8d15 = _0x119c48(_0x6545dd);
-                _0x5f0ed8.setScoreBaseKey(_0x4c8d15);
-                var _0x3b13ea = {
-                  key: _0x4c8d15
-                };
-                _0x2d3b8f.values = _0x3b13ea;
-                _0x2d3b8f.save_cookies();
-                _0x2321c5();
-              } else {
-                if ("choiceDoneAuth" === _0xdd7b14) {
-                  var _0x28274c = _0x119c48(_0x6545dd);
-                  _0x5f0ed8.setScoreBaseKey(_0x28274c);
-                  var _0x27da14 = {
-                    key: _0x28274c
-                  };
-                  _0x2d3b8f.values = _0x27da14;
-                  _0x2d3b8f.save_cookies();
-                  _0x18b87d.log("return: checkScore BIAT");
-                  "function" == typeof _0x10dc00 && _0x10dc00("BIAT");
-                } else {
-                  "errorAuth" === _0xdd7b14 || "errorAjax" === _0xdd7b14 ? (_0x18b87d.logError(_0xdd7b14 + ": received (" + _0x6545dd.data + ")."), _0x2321c5("SGE")) : "error500" === _0xdd7b14 || "error504" === _0xdd7b14 ? (_0x18b87d.logError(_0xdd7b14 + ": received (" + _0x6545dd.data + ")."), _0x2321c5("MM")) : "status_0_error" == _0xdd7b14 ? (_0x18b87d.logError(_0xdd7b14 + ": received (" + _0x6545dd.data + ")."), _0x2321c5("SGE")) : "failedAuth" === _0xdd7b14 ? (_0x5307d2.result = "failed", _0x32355a(_0x5307d2.result)) : "timeoutAuth" === _0xdd7b14 ? (_0x5307d2.result = "timeout", _0x32355a(_0x5307d2.result)) : "cancelAuth" === _0xdd7b14 && (_0x5307d2.result = "cancel", _0x32355a(_0x5307d2.result));
-                }
-              }
-            }(_0x11fdee, _0xd193a2, _0x4631a5), window.removeEventListener("message", _0x2b277b, false));
-          } catch (_0x13b0a6) {
-            _0x18b87d.logException("exception occured in scoring message listener. event: " + _0x11fdee.data, _0x13b0a6);
-          }
-        }, false);
-      }
-    }, {
-      key: "checkAllData",
-      value: function () {
-        var _0x34ffc7 = this;
-        if (_0x18b87d.log("2-4: start checkAllData"), !this._isFormDataValid()) {
-          return false;
-        }
-        _0x18b87d.log("2-4-1: pass isFormDataValid");
-        var _0x50ad75 = _0x5eade9.data.path.forms;
-        var _0xe45ec = Object.entries(_0x50ad75).map(function (_0x14e21d) {
-          var _0x213633 = _0x46657f(_0x14e21d, 2);
-          var _0x5049e4 = _0x213633[0];
-          var _0x154391 = _0x213633[1];
-          var _0x5b2c1b = _0x34ffc7.scrape(_0x154391);
-          if ((null === _0x5b2c1b || "" === _0x5b2c1b) && _0x34ffc7._isRequired(_0x5049e4)) {
-            if ("email" === _0x5049e4) {
-              return _0x5049e4;
-            }
-            if ("bincode" === _0x5049e4 && (false === _0x5eade9.data.allow_bincode_null || undefined === _0x5eade9.data.allow_bincode_null)) {
-              return _0x5049e4;
-            }
-          }
-        }).filter(function (_0x3fbb2e) {
-          return undefined !== _0x3fbb2e;
-        });
-        return _0xe45ec.length > 0 ? (_0x18b87d.log("2-4-2: lacked input data: " + _0xe45ec.toString()), false) : (_0x18b87d.log("2-4-2: all data is valid"), true);
-      }
-    }, {
-      key: "createParameter",
-      value: function () {
-        var _0x1cdc41 = [];
-        if (_0x1cdc41.push({
-          aId: _0x1c27e8.params.accountId,
-          pId: _0x1c27e8.params.pageId,
-          bId: _0x31a37.bID
-        }), _0x1cdc41.push(this._getAllData()), null !== _0x5eade9.data && _0x5eade9.data.additionalParams && _0x1cdc41.push(this._getAdditionalParams()), null != _0x5eade9.data && _0x5eade9.data.travelPlansParams) {
-          var _0x24d199 = this._getTravelPlansParams();
-          _0x1cdc41.push(_0x24d199);
-        }
-        return _0x1cdc41.reduce(function (_0x17a5a9, _0x26d5c4) {
-          Object.keys(_0x26d5c4).forEach(function (_0x4bc1a9) {
-            _0x17a5a9[_0x4bc1a9] = _0x26d5c4[_0x4bc1a9];
-          });
-          return _0x17a5a9;
-        }, {});
-      }
-    }, {
-      key: "scrape",
-      value: function (_0x3feac0) {
-        var _0x4eaafc = !(arguments.length > 1 && undefined !== arguments[1]) || arguments[1];
-        var _0x5f03ea = _0x3feac0.findIndex(function (_0x838237) {
-          return _0x3e82e7.test(_0x838237);
-        });
-        return -1 === _0x5f03ea ? this._scrapeElements(_0x3feac0.filter(function (_0x5d0ca4) {
-          return !_0x3e82e7.test(_0x5d0ca4);
-        }), _0x4eaafc).join("") : this._scrapeElementsByContains(_0x3feac0[_0x5f03ea], _0x4eaafc);
-      }
-    }, {
-      key: "makePrivacySafeData",
-      value: function (_0x125a3c) {
-        var _0xf6e385 = _0x3fc534({}, _0x125a3c);
-        delete _0xf6e385.email;
-        return _0xf6e385;
-      }
-    }, {
-      key: "_getAdditionalParams",
-      value: function () {
-        var _0x539cf0 = this;
-        _0x18b87d.log("2-5-2: start getAdditionalParams");
-        var _0x5b8758 = {};
-        ["as-user-entry-date", "as-username", "as-username-kana", "as-username-sei", "as-username-mei", "as-username-sei-kana", "as-username-mei-kana", "as-useraddress", "as-order-total-count", "as-order-gift", "as-order-discount-amount", "as-shippingname", "as-shippingname-kana", "as-cardholder-name", "as-cardexpire"].forEach(function (_0x5172b3) {
-          var _0x41c169 = "//input[@id='" + _0x5172b3 + "']";
-          var _0x18ea58 = _0x539cf0._getElement(_0x41c169);
-          _0x18ea58 && (_0x5b8758[_0x5172b3] = _0x18ea58.value);
-        });
-        _0x18b87d.log("2-5-2: end getAdditionalParams");
-        return _0x5b8758;
-      }
-    }, {
-      key: "_getTravelPlansParams",
-      value: function () {
-        var _0x28a440 = this;
-        _0x18b87d.log("2-5-3: start getTravelPlansParams");
-        var _0x5d2185 = {};
-        ["asair-reservation-date", "asair-passengername-mei", "asair-passengername-sei", "asair-passengername", "asair-passengername-mei-kana", "asair-passengername-sei-kana", "asair-passengername-kana", "asair-passengername-first", "asair-passengername-last", "asair-passengername-full", "asair-number-in-party", "asair-leg1-carrier-code", "asair-leg1-flight-number", "asair-leg1-departure-airport", "asair-leg1-departure-country", "asair-leg1-departure-date", "asair-leg1-destination-airport", "asair-leg1-destination-country", "asair-leg1-destination-arrival-date", "asair-leg2-carrier-code", "asair-leg2-flight-number", "asair-leg2-departure-airport", "asair-leg2-departure-country", "asair-leg2-departure-date", "asair-leg2-destination-airport", "asair-leg2-destination-country", "asair-leg2-destination-arrival-date", "asair-leg3-carrier-code", "asair-leg3-flight-number", "asair-leg3-departure-airport", "asair-leg3-departure-country", "asair-leg3-departure-date", "asair-leg3-destination-airport", "asair-leg3-destination-country", "asair-leg3-destination-arrival-date", "ashotel-hotel-name", "ashotel-room-category", "ashotel-checkin-date", "ashotel-checkout-date", "ashotel-number-of-rooms", "ashotel-total-number-of-guests", "ashotel-number-of-adult", "ashotel-number-of-child", "astransport1-boarding-date", "astransport1-category", "astransport1-name-of-line", "astransport1-departure-station", "astransport1-departure-time", "astransport1-destination", "astransport1-arrival-time", "astransport1-seat-type", "astransport2-boarding-date", "astransport2-category", "astransport2-name-of-line", "astransport2-departure-station", "astransport2-departure-time", "astransport2-destination", "astransport2-arrival-time", "astransport2-seat-type", "asticket-eventname", "asticket-eventlocation", "asticket-eventdate", "asticket-ticketcategory", "asticket-guestname", "asticket-guestname-mei", "asticket-guestname-sei", "asticket-numberofguests"].forEach(function (_0x6330c5) {
-          var _0x1e1699 = "//input[@id='" + _0x6330c5 + "']";
-          var _0x256ddc = _0x28a440._getElement(_0x1e1699);
-          null != _0x256ddc && (_0x5d2185[_0x6330c5] = _0x256ddc.value);
-        });
-        _0x18b87d.log("2-5-3: end getTravelPlansParams");
-        return _0x5d2185;
-      }
-    }, {
-      key: "_isFormDataValid",
-      value: function () {
-        return undefined !== _0x5eade9.data && null !== _0x5eade9.data && null !== _0x5eade9.data.path && null !== _0x5eade9.data.path.forms || (_0x18b87d.log("form data is invalid."), false);
-      }
-    }, {
-      key: "_getAllData",
-      value: function () {
-        var _0x2703e8 = this;
-        if (_0x18b87d.log("2-5-1: start getAllData"), this._isFormDataValid()) {
-          var _0x4cacf9 = new Object();
-          var _0x11340a = _0x5eade9.data.path.forms;
-          Object.entries(_0x11340a).forEach(function (_0x5c1d14) {
-            var _0x12a0e6 = _0x46657f(_0x5c1d14, 2);
-            var _0x5c5d4f = _0x12a0e6[0];
-            var _0xd4918a = _0x12a0e6[1];
-            var _0x136ae7 = _0x2703e8.scrape(_0xd4918a);
-            "bincode" === _0x5c5d4f && null !== _0x136ae7 && "" !== _0x136ae7 && (_0x5eade9.data.panLast3digits && _0x136ae7.length >= 9 && (_0x4cacf9.pan_last_3digits = _0x136ae7.substring(_0x136ae7.length - 3)), _0x136ae7 = _0x136ae7.substring(0, 6));
-            null !== _0x136ae7 && "" !== _0x136ae7 && (_0x4cacf9[_0x5c5d4f] = _0x136ae7);
-          });
-          var _0x29b779 = function () {
-            if (window.Intl) {
-              var _0x1fe657 = window.Intl.DateTimeFormat;
-              if (_0x1fe657) {
-                var _0x49fb66 = new _0x1fe657().resolvedOptions().timeZone;
-                if (_0x49fb66) {
-                  return _0x49fb66;
-                }
-              }
-            }
-            var _0xd18a4b = -_0x1f17cb();
-            return "UTC" + (_0xd18a4b >= 0 ? "+" : "") + Math.abs(_0xd18a4b);
-          }();
-          if (_0x29b779 && (_0x4cacf9.timezone = _0x29b779), undefined !== _0x407a31.components) {
-            try {
-              _0x18b87d.log("2-5-1-1: include perfumes.");
-              _0x4cacf9.pf_version = _0x407a31.version;
-              _0x4cacf9.pf_visitor_id = _0x407a31.visitor_id;
-              _0x4cacf9.pf_components = JSON.stringify(_0x407a31.components);
-            } catch (_0xdd4f59) {
-              _0x18b87d.logException("2-5-1-2: error include perfumes.", _0xdd4f59);
-            }
-          }
-          _0x18b87d.log("2-5-1: end getAllData");
-          return _0x4cacf9;
-        }
-      }
-    }, {
-      key: "_scrapeElements",
-      value: function (_0x50dc27, _0x4abefc) {
-        var _0x45813e = this;
-        return _0x50dc27.map(function (_0x53200d) {
-          return _0x45813e._getElement(_0x53200d);
-        }).filter(function (_0xffc394) {
-          null === _0xffc394 && _0x4abefc && _0x45813e._postLogNoElement(_0xffc394);
-          return !!_0xffc394;
-        }).map(function (_0xe9e436) {
-          return null === _0xe9e436.value ? _0xe9e436.innerHTML : _0xe9e436.value;
-        });
-      }
-    }, {
-      key: "_scrapeElementsByContains",
-      value: function (_0x2d4f16, _0x5c4505) {
-        for (var _0x4aac14 = document.evaluate(_0x2d4f16, document, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null), _0x5bf876 = [], _0xee3b1b = _0x4aac14.iterateNext(); _0xee3b1b;) {
-          null !== _0xee3b1b.value && _0xee3b1b.value.length > 0 && _0x5bf876.push(_0xee3b1b.value);
-          _0xee3b1b = _0x4aac14.iterateNext();
-        }
-        0 === _0x5bf876.length && _0x5c4505 && this._postLogNoElement(_0x2d4f16);
-        return _0x5bf876;
-      }
-    }, {
-      key: "_postLogNoElement",
-      value: function (_0x5d8e89) {
-        var _0xc0decb = "no element in formsValue(): " + _0x5d8e89;
-        _0x18b87d.log(_0xc0decb);
-      }
-    }, {
-      key: "_isRequired",
-      value: function (_0xcc1df1) {
-        return _0x1bdc27.indexOf(_0xcc1df1) >= 0;
-      }
-    }, {
-      key: "_getElement",
-      value: function (_0x17ad8e) {
-        return document.evaluate(_0x17ad8e, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-      }
-    }]);
-    return _0x1eb254;
-  }();
-  var _0x46c39a = /\[contains\(/;
-  var _0x1c7886 = ["ddd_order_id", "price"];
-  var _0x272edd = function () {
-    function _0x422194(_0x58d5ba) {
-      _0x3e84e5(this, _0x422194);
-      var _0x5b22f2 = function (_0x575462, _0x30d4a8) {
-        if (!_0x575462) {
-          throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-        }
-        return !_0x30d4a8 || "object" != typeof _0x30d4a8 && "function" != typeof _0x30d4a8 ? _0x575462 : _0x30d4a8;
-      }(this, (_0x422194.__proto__ || Object.getPrototypeOf(_0x422194)).call(this, _0x58d5ba));
-      _0x5b22f2.name = "DddsSetCallbackError";
-      return _0x5b22f2;
-    }
-    (function (_0x14e5df, _0x27db36) {
-      if ("function" != typeof _0x27db36 && null !== _0x27db36) {
-        throw new TypeError("Super expression must either be null or a function, not " + typeof _0x27db36);
-      }
-      _0x14e5df.prototype = Object.create(_0x27db36 && _0x27db36.prototype, {
-        constructor: {
-          value: _0x14e5df,
-          enumerable: false,
-          writable: true,
-          configurable: true
-        }
-      });
-      _0x27db36 && (Object.setPrototypeOf ? Object.setPrototypeOf(_0x14e5df, _0x27db36) : _0x14e5df.__proto__ = _0x27db36);
-    })(_0x422194, Error);
-    return _0x422194;
-  }();
-  var _0x5444fc = function () {
-    function _0x311bf4() {
-      for (var _0xf38c23 in _0x3e84e5(this, _0x311bf4), this.reasonCode = {
-        LRT: "scoring",
-        BIAT: "scoring",
-        SGE: "scoringOnly",
-        NMV: "scoringOnly",
-        MM: "scoringOnly",
-        ASF: "required",
-        EMVPS: "required",
-        EMVMM: "required",
-        EMVAF: "required",
-        EMVAT: "3ds",
-        EMVEA: "3ds",
-        EMVEC: "3ds",
-        EMVPE: "3ds",
-        EMVTO: "3ds"
-      }, this.callbacks = {}, this.existRequiredCallbacks = {}, this.exist3dsOptionalCallbacks = {}, this.existScoringOnlyCallbacks = {}, this.reasonCode) this.callbacks[_0xf38c23] = function () {}, "required" === this.reasonCode[_0xf38c23] ? this.existRequiredCallbacks[_0xf38c23] = false : "3ds" === this.reasonCode[_0xf38c23] ? this.exist3dsOptionalCallbacks[_0xf38c23] = false : "scoringOnly" === this.reasonCode[_0xf38c23] && (this.existScoringOnlyCallbacks[_0xf38c23] = false);
-    }
-    _0x13f557(_0x311bf4, [{
-      key: "setCallbacks",
-      value: function (_0x5ec596) {
-        if ("object" !== (undefined === _0x5ec596 ? "undefined" : _0x1b6d8c(_0x5ec596))) {
-          throw new _0x272edd("Not object type");
-        }
-        for (var _0x5cc921 in _0x5ec596) {
-          if ("function" != typeof _0x5ec596[_0x5cc921]) {
-            throw new _0x272edd("Not callback function type");
-          }
-          var _0x1c5d3c = _0x5cc921.split("|");
-          var _0x423464 = true;
-          var _0x557501 = false;
-          var _0x548562 = undefined;
-          try {
-            for (var _0x422086, _0x2ae7f0 = _0x1c5d3c[Symbol.iterator](); !(_0x423464 = (_0x422086 = _0x2ae7f0.next()).done); _0x423464 = true) {
-              var _0x3f4966 = _0x422086.value;
-              undefined !== this.callbacks[_0x3f4966] && (this.callbacks[_0x3f4966] = _0x5ec596[_0x5cc921], undefined !== this.existRequiredCallbacks[_0x3f4966] && (this.existRequiredCallbacks[_0x3f4966] = true), undefined !== this.exist3dsOptionalCallbacks[_0x3f4966] && (this.exist3dsOptionalCallbacks[_0x3f4966] = true), undefined !== this.existScoringOnlyCallbacks[_0x3f4966] && (this.existScoringOnlyCallbacks[_0x3f4966] = true));
-            }
-          } catch (_0x1e91f2) {
-            _0x557501 = true;
-            _0x548562 = _0x1e91f2;
-          } finally {
-            try {
-              !_0x423464 && _0x2ae7f0.return && _0x2ae7f0.return();
-            } finally {
-              if (_0x557501) {
-                throw _0x548562;
-              }
-            }
-          }
-        }
-        for (var _0x296ae5 in this.existRequiredCallbacks) if (!this.existRequiredCallbacks[_0x296ae5]) {
-          throw new _0x272edd("No \"" + _0x296ae5 + "\" exist");
-        }
-        for (var _0x3371a5 in this.exist3dsOptionalCallbacks) this.exist3dsOptionalCallbacks[_0x3371a5] || (this.callbacks[_0x3371a5] = "EMVAT" === _0x3371a5 ? this.callbacks.EMVPS : this.callbacks.EMVAF);
-        for (var _0x56e337 in this.existScoringOnlyCallbacks) this.existScoringOnlyCallbacks[_0x56e337] || (this.callbacks[_0x56e337] = "MM" === _0x56e337 ? this.callbacks.EMVMM : this.callbacks.ASF);
-      }
-    }, {
-      key: "isScoring",
-      value: function () {
-        return !(_0x5eade9.data && _0x5eade9.data.path && _0x5eade9.data.path.forms && undefined === _0x5eade9.data.path.forms.bincode && !_0x5eade9.data.allow_bincode_null);
-      }
-    }, {
-      key: "run",
-      value: function () {
-        this.isScoring() ? this.runScoring() : this.run3ds();
-      }
-    }, {
-      key: "runScoring",
-      value: function () {
-        var _0x39222a = this;
-        try {
-          new _0x4af392().check(function (_0x431d57) {
-            var _0x1e9d5c = {
-              LRT: _0x39222a.runLRT,
-              BIAT: _0x39222a.runBIAT,
-              SGE: _0x39222a.runSGE,
-              NMV: _0x39222a.runNMV,
-              MM: _0x39222a.runMM
-            };
-            !_0x1e9d5c[_0x431d57] || false === _0x1e9d5c[_0x431d57].call(_0x39222a) || "LRT" !== _0x431d57 && "BIAT" !== _0x431d57 || _0x39222a.run3ds();
-          }, function () {
-            _0x39222a.runASF(_0x39222a.errorResponse());
-          });
-        } catch (_0x209478) {
-          this.runASF(this.errorResponse());
-        }
-      }
-    }, {
-      key: "is3ds",
-      value: function () {
-        return !!(_0x5eade9.data && _0x5eade9.data.path && _0x5eade9.data.path.forms && _0x5eade9.data.path.forms.ddd_order_id);
-      }
-    }, {
-      key: "run3ds",
-      value: function () {
-        if (_0x18b87d.log("5-1: start check3ds"), !this.is3ds()) {
-          _0x18b87d.log("5-4-5: exited because 3ds is invalid.");
-          _0x18b87d.log("5-4-5: return check3ds EMVMM");
-          return void this.runEMVMM(this.errorResponse());
-        }
-        if (!_0x2f2eed.data) {
-          if (_0x5eade9.isJsFormat) {
-            _0x18b87d.log("5-4-4: exited because forms.json is javascript.");
-            _0x18b87d.log("5-4-4: return check3ds EMVMM");
-            return void this.runEMVMM(this.errorResponse());
-          }
-          if (!this.checkAllData()) {
-            _0x18b87d.log("5-4-3: exited because checkAllData() == false.");
-            _0x18b87d.log("5-4-3: return check3ds EMVPE");
-            return void this.runEMVPE(this.errorResponse());
-          }
-        }
-        _0x18b87d.log("5-5: start createParameter");
-        var _0x5de16f = this.createParameter();
-        if (_0x18b87d.log("5-5: end createParameter", {
-          obj: this.makePrivacySafeData(_0x5de16f)
-        }), "failed3ds" === _0x2394df.result) {
-          (function (_0x3bc3fe) {
-            _0x18b87d.log("6-8: start showAlert3dsDialog");
-            var _0x19e208 = _0x1c27e8.baseurl + "/ddds/failed?aId=" + _0x1c27e8.params.accountId;
-            _0x280d50(_0x2166d9, _0x19e208, function (_0x5c5017) {
-              _0x368600(_0x5c5017.contentWindow, "openAlert3dsDialog");
-            });
-            window.addEventListener("message", function _0x3819ca(_0x59b97b) {
-              var _0x2b9371 = _0x59b97b.data;
-              var _0x56c9e7 = _0x2b9371.reason_code;
-              var _0x75626c = _0x2b9371.ddds_res;
-              var _0xf97a2b = undefined === _0x75626c ? {
-                dddEci: "07"
-              } : _0x75626c;
-              "EMVAF" === _0x56c9e7 && (_0x1be41a(_0x2166d9, false), _0x2de57e(_0x2166d9), _0x3bc3fe.runEMVAF(_0xf97a2b), window.removeEventListener("message", _0x3819ca, false));
-            }, false);
-            _0x18b87d.log("6-8: end showAlert3dsDialog");
-          })(this);
-          return void _0x18b87d.log("5-6: exited because auth3ds.result: " + _0x2394df.result);
-        }
-        _0x18b87d.log("5-1: end check3ds");
-        this.authorize(_0x5de16f);
-      }
-    }, {
-      key: "authorize",
-      value: function (_0x50ade5) {
-        var _0x2ed6cc = this;
-        !function (_0x351415) {
-          _0x18b87d.log("6-4: start showAuth3dsDialog");
-          var _0x36fdc1 = _0x1c27e8.baseurl + "/ddds/authorize?aId=" + _0x1c27e8.params.accountId;
-          _0x280d50(_0x19b980, _0x36fdc1, function (_0x4fbe83) {
-            _0x368600(_0x4fbe83.contentWindow, "openAuth3dsDialog", _0x351415);
-          });
-        }(_0x50ade5);
-        window.addEventListener("message", function _0x57e13c(_0x53d968) {
-          try {
-            var _0x4501af = _0x53d968.data.reason_code;
-            if ("doneAuth3ds" === _0x4501af) {
-              _0x18b87d.log("message listener received: doneAuth3ds.");
-              return document.getElementById("aerosmith-ddds").style.backgroundColor = "white";
-            }
-            ["EMVPS", "EMVMM", "EMVAF", "EMVAT", "EMVEA", "EMVEC", "EMVPE", "EMVTO"].includes(_0x4501af) && (_0x18b87d.log("message listener received: " + _0x4501af + "."), _0x19b260(_0x53d968, _0x2ed6cc), window.removeEventListener("message", _0x57e13c, false));
-          } catch (_0x1bf0b2) {
-            _0x18b87d.logException("exception occured in 3ds authorize message listener. event: " + _0x53d968.data, _0x1bf0b2);
-          }
-        }, false);
-      }
-    }, {
-      key: "errorResponse",
-      value: function () {
-        return {
-          dddEci: "07"
-        };
-      }
-    }, {
-      key: "runLRT",
-      value: function () {
-        return this.callbacks.LRT();
-      }
-    }, {
-      key: "runBIAT",
-      value: function () {
-        return this.callbacks.BIAT();
-      }
-    }, {
-      key: "runSGE",
-      value: function () {
-        return this.callbacks.SGE();
-      }
-    }, {
-      key: "runNMV",
-      value: function () {
-        return this.callbacks.NMV();
-      }
-    }, {
-      key: "runMM",
-      value: function () {
-        return this.callbacks.MM();
-      }
-    }, {
-      key: "runASF",
-      value: function () {
-        return this.callbacks.ASF();
-      }
-    }, {
-      key: "runEMVPS",
-      value: function (_0x35d649) {
-        _0x35d649.reason_code = "EMVPS";
-        return this.callbacks.EMVPS(_0x35d649);
-      }
-    }, {
-      key: "runEMVMM",
-      value: function (_0x18ac6e) {
-        _0x18ac6e.reason_code = "EMVMM";
-        return this.callbacks.EMVMM(_0x18ac6e);
-      }
-    }, {
-      key: "runEMVAT",
-      value: function (_0x47c61a) {
-        _0x47c61a.reason_code = "EMVAT";
-        return this.callbacks.EMVAT(_0x47c61a);
-      }
-    }, {
-      key: "runEMVAF",
-      value: function (_0xb01f02) {
-        _0xb01f02.reason_code = "EMVAF";
-        return this.callbacks.EMVAF(_0xb01f02);
-      }
-    }, {
-      key: "runEMVEA",
-      value: function (_0x1876c8) {
-        _0x1876c8.reason_code = "EMVEA";
-        return this.callbacks.EMVEA(_0x1876c8);
-      }
-    }, {
-      key: "runEMVEC",
-      value: function (_0x4c2fe9) {
-        _0x4c2fe9.reason_code = "EMVEC";
-        return this.callbacks.EMVEC(_0x4c2fe9);
-      }
-    }, {
-      key: "runEMVPE",
-      value: function (_0x2f4937) {
-        _0x2f4937.reason_code = "EMVPE";
-        return this.callbacks.EMVPE(_0x2f4937);
-      }
-    }, {
-      key: "runEMVTO",
-      value: function (_0x4a10a9) {
-        _0x4a10a9.reason_code = "EMVTO";
-        return this.callbacks.EMVTO(_0x4a10a9);
-      }
-    }, {
-      key: "checkAllData",
-      value: function () {
-        var _0x2f80d3 = this;
-        if (_0x18b87d.log("5-4: start checkAllData"), !this._isFormDataValid()) {
-          return false;
-        }
-        _0x18b87d.log("5-4-1: pass isFormDataValid");
-        var _0x3b58c4 = _0x5eade9.data.path.forms;
-        var _0x25109a = Object.entries(_0x3b58c4).map(function (_0x139004) {
-          var _0x366ada = _0x46657f(_0x139004, 2);
-          var _0xb0e253 = _0x366ada[0];
-          var _0xc2af40 = _0x366ada[1];
-          var _0x475ebe = _0x2f80d3.scrape(_0xc2af40);
-          if ((null === _0x475ebe || "" === _0x475ebe) && _0x2f80d3._isRequired(_0xb0e253)) {
-            return _0xb0e253;
-          }
-        }).filter(function (_0x6091a1) {
-          return undefined !== _0x6091a1;
-        });
-        return _0x25109a.length > 0 ? (_0x18b87d.log("5-4-2: lacked input data: " + _0x25109a.toString()), false) : (_0x18b87d.log("5-4-2: all data is valid"), true);
-      }
-    }, {
-      key: "_isFormDataValid",
-      value: function () {
-        return undefined !== _0x5eade9.data && null !== _0x5eade9.data && null !== _0x5eade9.data.path && null !== _0x5eade9.data.path.forms || (_0x18b87d.log("form data is invalid."), false);
-      }
-    }, {
-      key: "scrape",
-      value: function (_0x58d702) {
-        var _0x1d515c = !(arguments.length > 1 && undefined !== arguments[1]) || arguments[1];
-        if (-1 === _0x58d702.findIndex(function (_0x5bb378) {
-          return _0x46c39a.test(_0x5bb378);
-        })) {
-          return this._scrapeElements(_0x58d702.filter(function (_0x181ccf) {
-            return !_0x46c39a.test(_0x181ccf);
-          }), _0x1d515c).join("");
-        }
-      }
-    }, {
-      key: "_scrapeElements",
-      value: function (_0x15b9c7, _0xd3f3a9) {
-        var _0x3d2f7d = this;
-        return _0x15b9c7.map(function (_0x359536) {
-          return _0x3d2f7d._getElement(_0x359536);
-        }).filter(function (_0x9c1228) {
-          null === _0x9c1228 && _0xd3f3a9 && _0x3d2f7d._postLogNoElement(_0x9c1228);
-          return !!_0x9c1228;
-        }).map(function (_0x1c96dc) {
-          return null === _0x1c96dc.value ? _0x1c96dc.innerHTML : _0x1c96dc.value;
-        });
-      }
-    }, {
-      key: "_isRequired",
-      value: function (_0x244289) {
-        return _0x1c7886.indexOf(_0x244289) >= 0;
-      }
-    }, {
-      key: "setScoreBaseKey",
-      value: function (_0x3df7d7) {
-        _0x3df7d7.push({
-          score_base_key: _0x5f0ed8.getScoreBaseKey()
-        });
-        return _0x3df7d7;
-      }
-    }, {
-      key: "createParameter",
-      value: function () {
-        var _0x21fd66 = [];
-        (_0x21fd66 = this.setScoreBaseKey(_0x21fd66)).push(this._getDddsStoreParams());
-        _0x2f2eed.data ? _0x21fd66.push(_0x2f2eed.data) : (_0x21fd66.push({
-          aId: _0x1c27e8.params.accountId,
-          pId: _0x1c27e8.params.pageId,
-          bId: _0x31a37.bID
-        }), _0x21fd66.push(this._getAllData()));
-        return _0x21fd66.reduce(function (_0x47331a, _0x363983) {
-          Object.keys(_0x363983).forEach(function (_0x2523cb) {
-            _0x47331a[_0x2523cb] = _0x363983[_0x2523cb];
-          });
-          return _0x47331a;
-        }, {});
-      }
-    }, {
-      key: "_getElement",
-      value: function (_0x3afd0c) {
-        return document.evaluate(_0x3afd0c, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-      }
-    }, {
-      key: "makePrivacySafeData",
-      value: function (_0x21ff83) {
-        var _0x5ad9d5 = _0x3fc534({}, _0x21ff83);
-        delete _0x5ad9d5.email;
-        return _0x5ad9d5;
-      }
-    }, {
-      key: "_getDddsStoreParams",
-      value: function () {
-        var _0x380c40 = this;
-        _0x18b87d.log("5-5-2: start getDddsStoreParams");
-        var _0x2801e9 = {};
-        ["asuka-store-id"].forEach(function (_0x31af6c) {
-          var _0x5cb409 = "//input[@id='" + _0x31af6c + "']";
-          var _0x9abc28 = _0x380c40._getElement(_0x5cb409);
-          _0x9abc28 && (_0x2801e9[_0x31af6c] = _0x9abc28.value);
-        });
-        _0x18b87d.log("5-5-2: end getDddsStoreParams");
-        return _0x2801e9;
-      }
-    }, {
-      key: "_getAllData",
-      value: function () {
-        var _0x42c674 = this;
-        if (_0x18b87d.log("5-5-1: start getAllData"), this._isFormDataValid()) {
-          var _0x111a1d = new Object();
-          var _0x3876e2 = _0x5eade9.data.path.forms;
-          Object.entries(_0x3876e2).forEach(function (_0x2b954c) {
-            var _0x473690 = _0x46657f(_0x2b954c, 2);
-            var _0x201907 = _0x473690[0];
-            var _0x8dbcbf = _0x473690[1];
-            var _0x6e2c40 = _0x42c674.scrape(_0x8dbcbf);
-            null !== _0x6e2c40 && "" !== _0x6e2c40 && (_0x111a1d[_0x201907] = _0x6e2c40);
-          });
-          _0x18b87d.log("5-5-1: end getAllData");
-          return _0x111a1d;
-        }
-      }
-    }, {
-      key: "_postLogNoElement",
-      value: function (_0x258f0b) {
-        var _0x5db2b3 = "no element in formsValue(): " + _0x258f0b;
-        _0x18b87d.log(_0x5db2b3);
-      }
-    }]);
-    return _0x311bf4;
-  }();
-  var _0x589b5a = function () {
-    function _0x4a2088() {
-      _0x3e84e5(this, _0x4a2088);
-      this.timeoutmillisec = 16000;
-    }
-    _0x13f557(_0x4a2088, [{
-      key: "post",
-      value: function (_0x859b38, _0x23bc9d, _0x278e4f) {
-        var _0x2ba83a = arguments.length > 3 && undefined !== arguments[3] ? arguments[3] : null;
-        return _0x37a4b1("POST", _0x1c27e8.apiurl + _0x859b38, _0x23bc9d, this.timeoutmillisec, _0x278e4f, _0x2ba83a);
-      }
-    }]);
-    return _0x4a2088;
-  }();
-  var _0x37a4b1 = function (_0x53bfea, _0x425241, _0x224f8d, _0x2ce5f8, _0x2e97af) {
-    var _0x48d538 = arguments.length > 5 && undefined !== arguments[5] ? arguments[5] : null;
-    _0x18b87d.log("post: start sendAjax", {
-      data: _0x224f8d
-    });
-    var _0x4aea71 = "string" == typeof _0x224f8d ? _0x224f8d : Object.keys(_0x224f8d).map(function (_0x2f1407) {
-      return encodeURIComponent(_0x2f1407) + "=" + encodeURIComponent(_0x224f8d[_0x2f1407]);
-    }).join("&");
-    var _0x536b1b = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-    _0x536b1b.open(_0x53bfea, _0x425241);
-    _0x536b1b.timeout = _0x2ce5f8;
-    _0x536b1b.onreadystatechange = function () {
-      _0x536b1b.readyState > 3 && (200 == _0x536b1b.status ? _0x2e97af(_0x536b1b.responseText) : "function" == typeof _0x48d538 && _0x48d538(_0x536b1b));
-    };
-    _0x536b1b.ontimeout = function () {
-      _0x18b87d.log("post: ajax timeout. readyStatus: " + _0x536b1b.readyState);
-    };
-    _0x536b1b.withCredentials = true;
-    _0x536b1b.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-    _0x536b1b.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    _0x536b1b.send(_0x4aea71);
-    _0x18b87d.log("post: end sendAjax");
-    return _0x536b1b;
-  };
-  var _0x4e5ce3 = new _0x589b5a();
-  var _0x374e81 = function () {
-    var _0x1b080a = {
-      bId: _0x31a37.bID,
-      aId: _0x1c27e8.params.accountId,
-      pId: _0x1c27e8.params.pageId
-    };
-    _0x18b87d.log("1-5: loading forms", {
-      obj: _0x1b080a
-    });
-    _0x4e5ce3.post("/forms.json", _0x1b080a, function (_0x517633) {
-      _0x18b87d.log("1-5-1: received forms");
-      try {
-        _0x5eade9.checkJsFormat(_0x517633) || _0x4cafb2(_0x517633);
-        window.dispatchEvent(new CustomEvent("as-readytoscore"));
-        null != _0x5eade9.data && _0x5eade9.data.fingerPrint && _0x258af1();
-      } catch (_0x1f5c09) {
-        window.dispatchEvent(new CustomEvent("as-readytoscore"));
-        _0x18b87d.logException("1-5-4: exception occured in setup forms", _0x1f5c09);
-      }
-    }, function (_0x45d64b) {
-      window.dispatchEvent(new CustomEvent("as-readytoscore"));
-      _0x18b87d.logWarn("1-5-5: error in loading forms.json. error: " + _0x45d64b.statusText);
-      _0x45d64b.ontimeout = function () {
-        _0x18b87d.log("1-5-6: ajax timeout. readyStatus: " + _0x45d64b.readyState);
-      };
-    });
-  };
-  var _0x4cafb2 = function (_0x3866a4) {
-    var _0x239e61 = JSON.parse(_0x3866a4);
-    var _0x55e230 = _0x239e61.aerosmith;
-    _0x18b87d.log("1-5-2: start setup forms");
-    _0x5eade9.data = _0x55e230;
-    null !== _0x5eade9.data ? _0x5eade9.data.accountId === _0x1c27e8.params.accountId && _0x5eade9.data.pageId === _0x1c27e8.params.pageId ? _0x18b87d.log("1-5-2: end setup forms") : _0x18b87d.logError("1-5-2-2: parameter invalid error", {
-      detail: _0x239e61.error
-    }) : _0x18b87d.logError("1-5-2-1: server error", {
-      detail: _0x239e61.error
-    });
-  };
-  var _0x258af1 = function () {
-    _0x204b6d("perfume", _0x1c27e8.baseurl + "/js/perfume.js", function () {
-      _0x18b87d.log("1-5-3: loaded perfumejs.");
-      _0x407a31.load();
-    });
-  };
-  var _0x5f0ed8 = new (function () {
-    function _0x5b60fe() {
-      _0x3e84e5(this, _0x5b60fe);
-      _0x1c27e8.params = _0x586142();
-      Object.keys(_0x1cbc53).forEach(function (_0xb60009) {
-        _0x1cbc53[_0xb60009].isVerbose = _0x1c27e8.loggerVerbose;
-        _0x1cbc53[_0xb60009].aId = _0x1c27e8.params.accountId;
-      });
-      this.score_base_key = "";
-    }
-    _0x13f557(_0x5b60fe, [{
-      key: "init",
-      value: function () {
-        console.log("startup aerosmith.");
-        this.score_base_key = "";
-        new _0x19bf42().load();
-        _0x31a37.setBID(_0x374e81);
-        Object.keys(_0x1cbc53).forEach(function (_0x394a90) {
-          _0x1cbc53[_0x394a90].bId = _0x31a37.bID;
-        });
-      }
-    }, {
-      key: "checkScore",
-      value: function (_0x36c4ee, _0x1c133e) {
-        _0x18b87d.log("2: checkScore() called.");
-        try {
-          new _0x4af392().check(_0x36c4ee, _0x1c133e);
-          _0x18b87d.log("2: checkScore() exited.");
-        } catch (_0x269c1e) {
-          _0x18b87d.logException("2: exception occured in checkScore().", _0x269c1e);
-          _0x18b87d.log("2: return checkScore NMV", _0x269c1e);
-          "function" == typeof _0x36c4ee && _0x36c4ee("NMV");
-        }
-      }
-    }, {
-      key: "add3dsHiddenInputs",
-      value: function (_0x4545c6, _0xaa8bac) {
-        for (var _0x5ee63c in _0xaa8bac) if (_0xaa8bac.hasOwnProperty(_0x5ee63c)) {
-          var _0x2c8e72 = document.createElement("input");
-          _0x2c8e72.type = "hidden";
-          _0x2c8e72.name = _0x5ee63c;
-          _0x2c8e72.value = _0xaa8bac[_0x5ee63c];
-          _0x4545c6.appendChild(_0x2c8e72);
-        }
-      }
-    }, {
-      key: "check3ds",
-      value: function (_0x1f50c6) {
-        _0x18b87d.log("5: check3ds() called.");
-        var _0x31a77b = new _0x5444fc();
-        try {
-          _0x31a77b.setCallbacks(_0x1f50c6);
-          _0x31a77b.run();
-          _0x18b87d.log("5: check3ds() exited.");
-        } catch (_0x166de5) {
-          _0x18b87d.logException("exception occured in check3ds().", _0x166de5);
-          "DddsSetCallbackError" == _0x166de5.name ? alert("正しくコールバック関数を記述してください") : _0x31a77b.runEMVPE(_0x31a77b.errorResponse());
-        }
-      }
-    }, {
-      key: "setScoreBaseKey",
-      value: function (_0x4ea28a) {
-        _0x18b87d.log("4-1: set score base key");
-        this.score_base_key = _0x4ea28a;
-      }
-    }, {
-      key: "getScoreBaseKey",
-      value: function () {
-        _0x18b87d.log("4-2: return score base key");
-        return this.score_base_key;
-      }
-    }, {
-      key: "complete",
-      value: function () {
-        try {
-          !function () {
-            if (_0x18b87d.log("4-1: Complete - start"), null != _0x1c27e8.params.accountId) {
-              if (null != _0x2d3b8f.key) {
-                var _0x7db494 = {
-                  aid: _0x1c27e8.params.accountId,
-                  key: _0x2d3b8f.key
-                };
-                var _0x1b0439 = _0x1c27e8.baseurl + "/api/scores/complete";
-                return fetch(_0x1b0439, {
-                  method: "POST",
-                  mode: "cors",
-                  cache: "no-cache",
-                  credentials: "same-origin",
-                  headers: {
-                    "Content-Type": "application/json"
-                  },
-                  redirect: "follow",
-                  referrerPolicy: "no-referrer",
-                  body: JSON.stringify(_0x7db494)
-                }).then(function (_0x35c2d2) {
-                  if (!_0x35c2d2.ok) {
-                    var _0x12e89c = _0x35c2d2.status + "(" + _0x35c2d2.statusText + ")";
-                    throw new Error(_0x12e89c);
-                  }
-                  return _0x35c2d2.json();
-                }).then(function (_0xbc587) {
-                  1 == _0xbc587.result ? _0x18b87d.log("4-4: Complete - end(code=" + _0xbc587.code + ")") : _0x18b87d.logError("4-5: Complete - error(code=" + _0xbc587.code + ")");
-                  _0x2d3b8f.reset_cookies();
-                  return _0xbc587;
-                }).catch(function (_0x2e8a4e) {
-                  _0x18b87d.logException("4-x: fetch exception error occurred", _0x2e8a4e);
-                  return _0x2e8a4e;
-                });
-              }
-              _0x18b87d.log("4-3: Complete - key doesn't exist");
+          if (miND_THe_GAp.className() === "android.view.View") {
+            if (!drp_nOTtInGhAm) {
+              drp_nOTtInGhAm = miND_THe_GAp;
             } else {
-              _0x18b87d.log("4-2: Complete - aid doesn't exist");
+              if (!drp_dEMoScEnE) {
+                drp_dEMoScEnE = miND_THe_GAp;
+              } else {
+                if (!drp_aDA_lOvElAce) {
+                  drp_aDA_lOvElAce = miND_THe_GAp;
+                  break;
+                }
+              }
             }
-          }();
-        } catch (_0x3892e2) {
-          _0x18b87d.logException("exception occured in complete().", _0x3892e2);
+          }
         }
-      }
-    }]);
-    return _0x5b60fe;
-  }())();
-  _0x3a4f59.checkScore = function (_0x538968, _0x186eac) {
-    _0x5f0ed8.checkScore(_0x538968, _0x186eac);
-  };
-  _0x3a4f59.check3ds = function (_0x1bbb1a) {
-    _0x5f0ed8.check3ds(_0x1bbb1a);
-  };
-  _0x3a4f59.add3dsHiddenInputs = function (_0x13b92d, _0x4b887f) {
-    _0x5f0ed8.add3dsHiddenInputs(_0x13b92d, _0x4b887f);
-  };
-  _0x3a4f59.init = function () {
-    _0x5f0ed8.init();
-  };
-  _0x3a4f59.getScoreBaseKey = function () {
-    return _0x5f0ed8.getScoreBaseKey();
-  };
-  _0x3a4f59.complete = function () {
-    _0x5f0ed8.complete();
-  };
-  Object.defineProperty(_0x3a4f59, "__esModule", {
-    value: true
-  });
+        if (!drp_nOTtInGhAm) {
+          drp_demOscEnE && log("Cannot find last view.");
+          sleep(10);
+          break;
+        }
+        if (!drp_dARK_soUlS || drp_adA_lOvElAce()) {
+          var coMPUTeR_Science = null;
+          if (!drp_nOTtInGhAm) {
+            break;
+          }
+          var noTTINgHAm = drp_nOTtInGhAm.child(drp_nOTtInGhAm.childCount() - 1);
+          noTTINgHAm && noTTINgHAm.text() === "确认信息并支付" && (coMPUTeR_Science = noTTINgHAm);
+          if (coMPUTeR_Science) {
+            drp_ScRiPt_KiDdo = 0;
+            drp_AdA_lOvElAce++;
+            drp_AdA_lOvElAce >= 7 ? (drp_Mind_ThE_gAp(), drp_demOscEnE && console.error("clicked confirm_btn (physical click)"), console.error("多次尝试点击「确认信息并支付」失败，使用后备方案。")) : (coMPUTeR_Science.click(), drp_Ada_lOvElAce(coMPUTeR_Science), drp_demOscEnE && console.error("clicked confirm_btn"));
+            sleep(drp_adA_LovElAce);
+            break;
+          }
+          var diSTINcTIon = null;
+          if (drp_nOTtInGhAm.childCount() == 2) {
+            var teNSORfLOw = drp_nOTtInGhAm.child(1);
+            if (teNSORfLOw && teNSORfLOw.className() === "android.view.View") {
+              if (teNSORfLOw.childCount() == 1) {
+                var daRK_SOuLS = teNSORfLOw.child(0);
+                if (daRK_SOuLS && daRK_SOuLS.className() === "android.view.View") {
+                  {
+                    diSTINcTIon = daRK_SOuLS.child(daRK_SOuLS.childCount() - 1);
+                  }
+                }
+              }
+            }
+          }
+          if (diSTINcTIon) {
+            drp_AdA_lOvElAce = 0;
+            if (drp_ScRiPt_KiDdo == 0) {
+              {
+                drp_NoTTinGhAm = new Date().getTime();
+                diSTINcTIon.click();
+                if (drp_demOscEnE) {
+                  console.error("clicked double_confirm");
+                }
+                drp_coMpUtEr_Science = true;
+                drp_ScRiPt_KiDdo++;
+                sleep(250 + drp_adA_LovElAce);
+              }
+            } else {
+              if (drp_ScRiPt_KiDdo >= 8) {
+                drp_Dark_SoUlS(diSTINcTIon);
+                drp_demOscEnE && console.error("clicked double_confirm (clickButton)");
+                drp_coMpUtEr_Science = true;
+                drp_ScRiPt_KiDdo = 0;
+              } else {
+                {
+                  drp_ScRiPt_KiDdo++;
+                  sleep(20);
+                }
+              }
+            }
+            break;
+          }
+        }
+        if (drp_DeMOscEnE && !drp_deMoScEnE()) {
+          var paDDINgTOn = PAdDINgTOn.findOne(text("我知道了").algorithm("DFS"));
+        } else {
+          var daRK_SOuLS = drp_DArk_SoUlS(drp_nOTtInGhAm);
+          if (!daRK_SOuLS) {
+            break;
+          }
+          if (daRK_SOuLS.childCount() != 2) {
+            break;
+          }
+          var adA_LOVeLAce = daRK_SOuLS.child(0);
+          var paDDINgTOn = daRK_SOuLS.child(1);
+        }
+        if (paDDINgTOn) {
+          if (!drp_DeMOscEnE || drp_deMoScEnE()) {
+            adA_LOVeLAce && console.log(adA_LOVeLAce.text());
+            drp_ScRiPt_KiDdo = 0;
+            paDDINgTOn.click();
+            drp_demOscEnE && console.error("clicked acknowledge");
+            sleep(100 + drp_adA_LovElAce + drp_coMPutEr_Science);
+          } else {
+            if (!drp_dARK_soUlS || drp_adA_lOvElAce()) {
+              var MiND_THe_GAp = PAdDINgTOn.findOne(textMatches(/(确认无误|就是这家)/).algorithm("DFS"));
+              if (MiND_THe_GAp) {
+                if (drp_ScRiPt_KiDdo == 0) {
+                  drp_NoTTinGhAm = new Date().getTime();
+                  MiND_THe_GAp.click();
+                  drp_coMpUtEr_Science = true;
+                  drp_ScRiPt_KiDdo++;
+                  sleep(drp_AdA_LovElAce);
+                  break;
+                }
+              }
+              var NoTTINgHAm = PAdDINgTOn.findOne(text("确认信息并支付").algorithm("DFS"));
+              if (NoTTINgHAm) {
+                drp_ScRiPt_KiDdo = 0;
+                drp_AdA_lOvElAce++;
+                if (drp_AdA_lOvElAce >= 7) {
+                  drp_Mind_ThE_gAp();
+                } else {
+                  NoTTINgHAm.click();
+                  sleep(drp_AdA_LovElAce);
+                  drp_coMpUtEr_Science = false;
+                  break;
+                }
+              }
+            }
+          }
+          drp_coMpUtEr_Science = false;
+          break;
+        }
+        break;
+      case "info_page":
+        drp_coMpUtEr_Science = false;
+        MInD_THe_GAp = false;
+        drp_AdA_lOvElAce = 0;
+        var coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+        if (!drp_scRiPt_KiDdo) {
+          sleep(300);
+          if (!coMPUTeR_Science) {
+            var PaDDINgTOn = PAdDINgTOn.findOne(text("立即购买").algorithm("DFS"));
+            PaDDINgTOn && PaDDINgTOn.click();
+            sleep(400);
+          }
+        } else {
+          !coMPUTeR_Science && (drp_scRiPt_KiDdo = false);
+          sleep(150);
+        }
+        break;
+      case "purchase":
+        if (MInD_THe_GAp) {
+          MInD_THe_GAp = false;
+          break;
+        }
+        drp_coMpUtEr_Science = false;
+        drp_ScRiPt_KiDdo = 0;
+        if (!drp_scRiPt_KiDdo) {
+          var NOtTINgHAm = PAdDINgTOn.findOne(text("购买方式").algorithm("DFS"));
+          if (NOtTINgHAm) {
+            if (!drp_TEnSorFlOw.startsWith("来回刷")) {
+              log("当前可以选择购买方式");
+              var SCrIPT_kIDdo = PAdDINgTOn.findOne(text(drp_TEnSorFlOw).algorithm("DFS"));
+              SCrIPT_kIDdo && SCrIPT_kIDdo.click();
+              log("已选择购买方式：" + drp_TEnSorFlOw);
+              sleep(50);
+            }
+          }
+          var ADa_LOVeLAce = PAdDINgTOn.findOne(text("选择规格").algorithm("DFS"));
+          if (ADa_LOVeLAce) {
+            {
+              log("当前可以选择规格");
+              var DIsTINcTIon = PAdDINgTOn.findOne(textStartsWith(drp_miND_thE_gAp).algorithm("DFS"));
+              if (DIsTINcTIon) {
+                {
+                  DIsTINcTIon.click();
+                }
+              }
+              log("已选择规格：" + drp_miND_thE_gAp);
+              sleep(100 + drp_adA_LovElAce);
+            }
+          }
+          if (NOtTINgHAm && drp_dISTinCtIon && drp_dISTinCtIon.trim() !== "") {
+            {
+              var DeMOSCeNE = NOtTINgHAm.parent();
+              if (DeMOSCeNE) {
+                var CoMPUTeR_Science = drp_dISTinCtIon.replace(/｜/g, "|").split("|").map(function (paddInGTOn) {
+                  {
+                    return paddInGTOn.trim();
+                  }
+                }).filter(function (dark_SoULS) {
+                  {
+                    return dark_SoULS.length > 0;
+                  }
+                }).map(function (PaddInGTOn) {
+                  return ".*" + PaddInGTOn.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ".*";
+                });
+                if (CoMPUTeR_Science.length > 0) {
+                  var TeNSORfLOw = CoMPUTeR_Science.join("|");
+                  console.info("🔍 使用额外选择规则: ", drp_dISTinCtIon);
+                  var DaRK_SOuLS = DeMOSCeNE.find(textMatches(TeNSORfLOw).algorithm("BFS"));
+                  if (DaRK_SOuLS) {
+                    for (var scRIPT_kIDdo = 0; scRIPT_kIDdo < DaRK_SOuLS.length; scRIPT_kIDdo++) {
+                      {
+                        var ScRIPT_kIDdo = DaRK_SOuLS[scRIPT_kIDdo];
+                        ScRIPT_kIDdo && (ScRIPT_kIDdo.click(), console.error("已点击额外选择: ", ScRIPT_kIDdo.text()), sleep(10));
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          drp_teNSorFlOw && drp_PaddInGtOn();
+          var coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+          var AdA_LOVeLAce = new Date();
+          var DiSTINcTIon = "到店取";
+          while (!coMPUTeR_Science && !drp_scRiPt_KiDdo) {
+            if (drp_daRK_soUlS > 0) {
+              {
+                var dARK_SOuLS = new Date();
+                if (dARK_SOuLS - AdA_LOVeLAce > 60000 * drp_daRK_soUlS) {
+                  drp_ADa_LovElAce = 0;
+                  ui.post(() => {
+                    if (!drp_dEMOscEnE) {
+                      drp_compUtEr_Science.end.attr("visibility", "gone");
+                      drp_compUtEr_Science.start.attr("visibility", "visible");
+                    } else {
+                      drp_compUtEr_Science.text_status.setText("启动");
+                      try {
+                        drp_compUtEr_Science.drag.attr("tint", "#66ccff");
+                      } catch (CompUtER_Science) {
+                        console.error("Failed to set image tint:", CompUtER_Science);
+                      }
+                    }
+                  });
+                  var cOMPUTeR_Science = parseFloat((drp_daRK_soUlS * 60).toFixed(2));
+                  console.warn("[通知] 超过设定的库存最大连续刷新时长[", drp_daRK_soUlS, "]分钟(", cOMPUTeR_Science, "秒) ", "，脚本已停止");
+                }
+              }
+            }
+            if (drp_ADa_LovElAce == 0) {
+              drp_scRiPt_KiDdo = false;
+              drp_coMpUtEr_Science = false;
+              drp_ScRiPt_KiDdo = 0;
+              break;
+            }
+            var dISTINcTIon = new Date().getTime();
+            var PaDDINgTOn = PAdDINgTOn.findOne(text("立即购买").algorithm("DFS"));
+            if (PaDDINgTOn) {
+              coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+              if (coMPUTeR_Science) {
+                break;
+              }
+              if (!drp_tENSorFlOw) {
+                {
+                  var nOTTINgHAm = drp_TEnsOrFlOw(PAdDINgTOn);
+                  var sCRIPT_kIDdo = 0;
+                  var dEMOSCeNE = false;
+                  var pADDINgTOn = new Date().getTime();
+                  var mIND_THe_GAp = pADDINgTOn - drp_ScRIpt_KiDdo;
+                  mIND_THe_GAp > Math.max(drp_scRIpt_KiDdo, 300) && console.error("正在判断库存情况...");
+                  while (!nOTTINgHAm) {
+                    sCRIPT_kIDdo++;
+                    if (sCRIPT_kIDdo > 30) {
+                      {
+                        dEMOSCeNE = true;
+                        sleep(20);
+                        break;
+                      }
+                    }
+                    nOTTINgHAm = drp_TEnsOrFlOw(PAdDINgTOn);
+                    if (nOTTINgHAm) {
+                      {
+                        break;
+                      }
+                    }
+                    drp_teNSorFlOw && drp_sCRIpt_KiDdo && drp_PaddInGtOn();
+                    sleep(20);
+                    coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+                    if (coMPUTeR_Science) {
+                      break;
+                    }
+                    if (drp_ADa_LovElAce == 0) {
+                      drp_scRiPt_KiDdo = false;
+                      drp_coMpUtEr_Science = false;
+                      drp_ScRiPt_KiDdo = 0;
+                      break;
+                    }
+                  }
+                  var pADDINgTOn = new Date().getTime();
+                  var mIND_THe_GAp = pADDINgTOn - drp_ScRIpt_KiDdo;
+                  if (mIND_THe_GAp > Math.max(drp_scRIpt_KiDdo, 300)) {
+                    if (nOTTINgHAm) {
+                      console.warn("已售罄");
+                    } else {
+                      coMPUTeR_Science && console.warn("有库存");
+                    }
+                  }
+                  if (dEMOSCeNE || nOTTINgHAm) {
+                    drp_DarK_soUlS && drp_dIstInCtIon(PAdDINgTOn);
+                    if (!drp_TEnSorFlOw.startsWith("来回刷")) {
+                      if (!drp_scRiPt_KiDdo) {
+                        var pADDINgTOn = new Date().getTime();
+                        var mIND_THe_GAp = pADDINgTOn - drp_ScRIpt_KiDdo;
+                        if (mIND_THe_GAp < Math.max(drp_scRIpt_KiDdo, 300)) {
+                          continue;
+                        }
+                        drp_ScRIpt_KiDdo = pADDINgTOn;
+                        PaDDINgTOn.click();
+                      }
+                    } else {
+                      if (drp_TEnSorFlOw == "来回刷") {
+                        var tENSORfLOw = PAdDINgTOn.findOne(text(DiSTINcTIon).algorithm("DFS"));
+                        if (tENSORfLOw) {
+                          {
+                            drp_demOscEnE && console.error("clicked current_selection_btn: ", DiSTINcTIon);
+                            tENSORfLOw.click();
+                            if (DiSTINcTIon == "到店取") {
+                              {
+                                DiSTINcTIon = "送到家";
+                              }
+                            } else {
+                              DiSTINcTIon = "到店取";
+                            }
+                            sleep(100);
+                          }
+                        }
+                      } else {
+                        var aDA_LOVeLAce = "送到家";
+                        var DiSTINcTIon = "到店取";
+                        drp_TEnSorFlOw == "来回刷（送到家）" && (aDA_LOVeLAce = "到店取", DiSTINcTIon = "送到家");
+                        var tENSORfLOw = PAdDINgTOn.findOne(text(aDA_LOVeLAce).algorithm("DFS"));
+                        if (tENSORfLOw) {
+                          {
+                            tENSORfLOw.click();
+                            sleep(300);
+                            tENSORfLOw = PAdDINgTOn.findOne(text(DiSTINcTIon).algorithm("DFS"));
+                            if (tENSORfLOw) {
+                              {
+                                tENSORfLOw.click();
+                                sleep(100);
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              } else {
+                if (drp_TEnSorFlOw != "来回刷" && drp_TEnSorFlOw != "来回刷（到店取）" && drp_TEnSorFlOw != "来回刷（送到家）") {
+                  !drp_scRiPt_KiDdo && PaDDINgTOn.click();
+                } else {
+                  if (drp_TEnSorFlOw == "来回刷") {
+                    var tENSORfLOw = PAdDINgTOn.findOne(text(DiSTINcTIon).algorithm("DFS"));
+                    if (tENSORfLOw) {
+                      {
+                        drp_demOscEnE && console.error("clicked current_selection_btn: ", DiSTINcTIon);
+                        tENSORfLOw.click();
+                        if (DiSTINcTIon == "到店取") {
+                          DiSTINcTIon = "送到家";
+                        } else {
+                          {
+                            DiSTINcTIon = "到店取";
+                          }
+                        }
+                        sleep(100);
+                      }
+                    }
+                  } else {
+                    {
+                      var aDA_LOVeLAce = "送到家";
+                      var DiSTINcTIon = "到店取";
+                      drp_TEnSorFlOw == "来回刷（送到家）" && (aDA_LOVeLAce = "到店取", DiSTINcTIon = "送到家");
+                      var tENSORfLOw = PAdDINgTOn.findOne(text(aDA_LOVeLAce).algorithm("DFS"));
+                      tENSORfLOw && (tENSORfLOw.click(), sleep(300), tENSORfLOw = PAdDINgTOn.findOne(text(DiSTINcTIon).algorithm("DFS")), tENSORfLOw && (tENSORfLOw.click(), sleep(100)));
+                    }
+                  }
+                }
+              }
+            }
+            coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+            if (coMPUTeR_Science) {
+              {
+                if (drp_demOscEnE) {
+                  console.error("confirm_btn found in purchase, break");
+                }
+                break;
+              }
+            }
+            var DISTINcTIon = Math.floor(Math.random() * (drp_noTTinGhAm - drp_deMOscEnE + 1)) + drp_deMOscEnE;
+            !drp_CoMPutEr_Science && (DISTINcTIon = 0);
+            var TENSORfLOw = drp_scRIpt_KiDdo + DISTINcTIon;
+            sleep(TENSORfLOw);
+            coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+            if (coMPUTeR_Science) {
+              break;
+            }
+            purchase_count_label = PAdDINgTOn.findOne(text("数量").algorithm("DFS"));
+            if (!purchase_count_label) {
+              {
+                break;
+              }
+            }
+            console.info("[注意] 库存刷新耗时: ", drp_scRIpt_KiDdo + DISTINcTIon, "ms");
+            coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+            if (coMPUTeR_Science) {
+              drp_demOscEnE && console.error("confirm_btn found in purchase, break");
+              break;
+            }
+          }
+          if (drp_ADa_LovElAce == 0) {
+            continue;
+          }
+          if (drp_paDDinGtOn > 1) {
+            {
+              var DEmOSCeNE = PAdDINgTOn.findOne(text("数量").algorithm("DFS"));
+              DEmOSCeNE && (drp_tEnsOrFlOw(PAdDINgTOn, drp_paDDinGtOn), log("已满足购买数量要求: ", drp_paDDinGtOn));
+            }
+          } else {
+            log("目标购买数量为1，跳过购买数量判断");
+          }
+        }
+        coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+        if (coMPUTeR_Science) {
+          drp_demOscEnE && console.error("confirm_btn found in purchase, try to click");
+          drp_daRk_SoUlS = 0;
+          if (drp_DeMOscEnE) {
+            if (!drp_scRiPt_KiDdo) {
+              var pADDINgTOn = new Date().getTime();
+              var SCRIPT_kIDdo = pADDINgTOn - drp_DaRK_soUlS;
+              if (SCRIPT_kIDdo >= 200) {
+                drp_DaRK_soUlS = pADDINgTOn;
+                coMPUTeR_Science.click();
+                drp_scRiPt_KiDdo = true;
+                MInD_THe_GAp = true;
+                sleep(150 + drp_adA_LovElAce);
+                continue;
+              }
+            }
+            var pADDINgTOn = new Date().getTime();
+            var SCRIPT_kIDdo = pADDINgTOn - drp_NoTTinGhAm;
+            if (SCRIPT_kIDdo >= drp_PaDDinGtOn) {
+              console.warn("[等待] 确认按钮点击时间已超过", drp_PaDDinGtOn, "ms，点击确认");
+              if (drp_TeNsOrFlOw >= 2) {
+                drp_Dark_SoUlS(coMPUTeR_Science);
+                drp_TeNsOrFlOw = 0;
+                drp_demOscEnE && console.error("clicked confirm_btn (physical click)");
+              } else {
+                var pADDINgTOn = new Date().getTime();
+                var SCRIPT_kIDdo = pADDINgTOn - drp_DaRK_soUlS;
+                SCRIPT_kIDdo >= 200 && (drp_DaRK_soUlS = pADDINgTOn, coMPUTeR_Science.click());
+                drp_TeNsOrFlOw++;
+              }
+              drp_scRiPt_KiDdo = true;
+              MInD_THe_GAp = true;
+            } else {
+              console.warn("[等待] 为防止反复被打回， 等待", drp_PaDDinGtOn - SCRIPT_kIDdo, "ms后点击确认");
+              sleep(drp_PaDDinGtOn - SCRIPT_kIDdo);
+              if (drp_TeNsOrFlOw >= 3) {
+                drp_Dark_SoUlS(coMPUTeR_Science);
+                drp_TeNsOrFlOw = 0;
+                if (drp_demOscEnE) {
+                  {
+                    console.error("clicked confirm_btn (physical click)");
+                  }
+                }
+              } else {
+                var pADDINgTOn = new Date().getTime();
+                var SCRIPT_kIDdo = pADDINgTOn - drp_DaRK_soUlS;
+                if (SCRIPT_kIDdo >= 200) {
+                  drp_DaRK_soUlS = pADDINgTOn;
+                  coMPUTeR_Science.click();
+                }
+                drp_TeNsOrFlOw++;
+              }
+              drp_scRiPt_KiDdo = true;
+              MInD_THe_GAp = true;
+            }
+          } else {
+            var pADDINgTOn = new Date().getTime();
+            var SCRIPT_kIDdo = pADDINgTOn - drp_DaRK_soUlS;
+            if (SCRIPT_kIDdo >= 200) {
+              if (drp_TeNsOrFlOw >= 3) {
+                drp_Dark_SoUlS(coMPUTeR_Science);
+                drp_TeNsOrFlOw = 0;
+                if (drp_demOscEnE) {
+                  console.error("clicked confirm_btn (physical click)");
+                }
+              } else {
+                drp_DaRK_soUlS = pADDINgTOn;
+                if (drp_demOscEnE) {
+                  {
+                    console.error("clicked confirm_btn)");
+                  }
+                }
+                !drp_scRiPt_KiDdo && drp_pADDinGtOn ? drp_Dark_SoUlS(coMPUTeR_Science) : coMPUTeR_Science.click();
+                drp_TeNsOrFlOw++;
+              }
+              drp_scRiPt_KiDdo = true;
+              MInD_THe_GAp = true;
+            }
+            drp_scRiPt_KiDdo = true;
+            MInD_THe_GAp = true;
+          }
+          sleep(150 + drp_adA_LovElAce);
+        } else {
+          {
+            drp_daRk_SoUlS++;
+            if (drp_daRk_SoUlS >= 10) {
+              drp_daRk_SoUlS = 0;
+              drp_scRiPt_KiDdo = false;
+              drp_coMpUtEr_Science = false;
+              drp_ScRiPt_KiDdo = 0;
+              MInD_THe_GAp = false;
+              sleep(20);
+              break;
+            }
+          }
+        }
+        break;
+      case "purchase_ready":
+        var coMPUTeR_Science = drp_PAddInGtOn(PAdDINgTOn);
+        coMPUTeR_Science && coMPUTeR_Science.click();
+        sleep(200);
+        break;
+      default:
+        break;
+    }
+  }
+}
+var drp_dIStInCtIon = threads.start(function () {
+  drp_tENsOrFlOw();
 });
-window.addEventListener("load", function () {
-  Object.defineProperty(window, "aerosmith", {
-    writable: false,
-    value: Object.freeze(aerosmith)
-  });
-  window.aerosmith.init();
+events.on("exit", function () {
+  drp_SCRIpt_KiDdo && device.cancelKeepingAwake();
+  console.hide();
 });
+setInterval(() => {}, 10000);
